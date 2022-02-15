@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bd9eba2-50d7-4de9-8f8b-5fa4f7ca2c32" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApplicantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApplicantsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResumesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResumesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShortlistsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShortlistsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/auth/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/auth/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/auth/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Business.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/front/Business.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/front/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Job.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/front/Job.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Jobs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/front/Jobs.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/front/Profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Resumes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/front/Resumes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/profile/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Portfolio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/profile/Portfolio.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/profile/Profile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Resume.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/profile/Resume.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Shortlists.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/profile/Shortlists.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/jobs/candidate/AppliedJobs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/profile/jobs/candidate/AppliedJobs.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/jobs/company/Applicants.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/profile/jobs/company/Applicants.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/jobs/company/Jobs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/profile/jobs/company/Jobs.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="7bd9eba2-50d7-4de9-8f8b-5fa4f7ca2c32" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -308,7 +279,7 @@
       <workItem from="1644496002583" duration="2590000" />
       <workItem from="1644828767629" duration="15569000" />
       <workItem from="1644856174638" duration="7123000" />
-      <workItem from="1644921004131" duration="5586000" />
+      <workItem from="1644921004131" duration="5889000" />
     </task>
     <servers />
   </component>
