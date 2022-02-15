@@ -25,8 +25,11 @@
                                             <th>Action</th>
                                         </tr>
                                         </thead>
-
                                         <tbody>
+
+                                        <tr v-if="shortlists.length == 0">
+                                            <td colspan="4"><p class="text-center">No Shortlists added yet.</p></td>
+                                        </tr>
                                         <tr v-for="(short, index) in shortlists" :key="short.id">
                                             <td>
                                                 <!-- Job Block -->
@@ -173,14 +176,18 @@
                                                 </div>
                                             </td>
                                         </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
+
+                            <div class="widget-loading" v-if="loading">
+                                <img src="/assets/images/loading.gif">
+                            </div>
                         </div>
                     </div>
                 </div>
-
 
             </div>
         </div>
@@ -204,6 +211,7 @@ export default {
         .then((res) => {
             console.log(res.data)
             this.shortlists = res.data
+            this.loading= false
         })
         .catch((err) => {
             console.log(err)
@@ -213,6 +221,7 @@ export default {
         return {
             shortlists: [],
             deleteModal: false,
+            loading: true
         }
     },
     methods: {

@@ -3,7 +3,6 @@
         <div class="dashboard-outer">
             <div class="upper-title-box">
                 <h3>Applied Jobs</h3>
-                <div class="text">Ready to jump back in?</div>
             </div>
 
             <div class="row">
@@ -110,6 +109,11 @@
                                     </table>
                                 </div>
                             </div>
+
+                            <div class="widget-loading" v-if="loading">
+                                <img src="/assets/images/loading.gif">
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -133,14 +137,15 @@ export default {
         document.title = "Dashboard - Applied Jobs"
         axios.get("/request/profile/get-applied-jobs")
             .then((res) => {
-                console.log(res.data)
                 this.user = res.data
+                this.loading = false
             })
     },
     data: function () {
         return {
             user: "",
             deleteModal: false,
+            loading: true
         }
     },
     methods: {

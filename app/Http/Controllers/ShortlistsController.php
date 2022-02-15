@@ -21,6 +21,7 @@ class ShortlistsController extends Controller
         return response()->json($sh);
     }
     public function save(Request $request) {
+        if(!auth()->check()) return 0;
         $data = [
             "target_id" => $request->target_id,
             "user_id" => auth()->id(),

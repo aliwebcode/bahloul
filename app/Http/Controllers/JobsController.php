@@ -90,8 +90,14 @@ class JobsController extends Controller
         $job = Job::with([
             'category', 'country', 'city', 'user', 'user.country', 'user.city', 'applicants'
         ])->find($id);
-        $user = User::with(['country', 'city'])->find(auth()->id());
-        $related = Job::where('category_id',$job->category_id)->get();
+        if(!$job) return 0;
+        if(auth()->check())
+            $user = User::with(['country', 'city'])->find(auth()->id());
+        else
+            $user = "";
+        $related = Job::where('category_id',$job->category_id)
+            ->with(['country', 'city', 'user'])
+            ->get();
         return response()->json(["job" => $job, "user" => $user, "related" => $related]);
     }
 
@@ -116,7 +122,10 @@ class JobsController extends Controller
                 $q->where('created_at', '>=', Carbon::now()->subDays(\request()->date));
             });
         $count = $jobs->count();
-        $jobs = $jobs->with(['user', 'country', 'city', 'category', 'applicants'])->paginate(\request()->per_page ?? 5);
+        $jobs = $jobs->with(['user', 'country', 'city', 'category', 'applicants'])
+            ->latest()
+            ->paginate(\request()->per_page ?? 5);
+
         if(\request()->title || \request()->type || \request()->country_id || \request()->city_id
             || \request()->category_id || \request()->date) {
             return response()->json(["jobs" => $jobs, "count" => $count]);

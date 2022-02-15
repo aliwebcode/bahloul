@@ -258,12 +258,6 @@
                                         <span class="icon flaticon-close-1 ml-2" @click="settings.title = '',filterData()"></span>
                                     </button>
                                 </li>
-                                <li v-if="settings.location">
-                                    <button type="button">
-                                        Location: {{ settings.location }}
-                                        <span class="icon flaticon-close-1 ml-2" @click="settings.location = '',filterData()"></span>
-                                    </button>
-                                </li>
                                 <li v-if="settings.category_id">
                                     <button type="button">
                                         Category: {{ getCategory(settings.category_id).name }}
@@ -285,7 +279,7 @@
                             </ul>
 
                             <div class="jobs-loading" v-if="jobsLoading">
-                                <i class="fas fa-spinner fa-pulse fa-lg"></i>
+                                <img src="/assets/images/loading.gif">
                             </div>
 
                             <div class="text-center" v-if="jobs.data.length == 0 && jobsLoading == false">
@@ -297,8 +291,9 @@
                                 <div class="inner-box">
                                     <div class="content">
                                         <span class="company-logo">
-                                            <img :src="'/images/users/' + job.user.image"
+                                            <img v-if="job.user.image" :src="'/images/users/' + job.user.image"
                                                  style="border-radius: 50%">
+                                            <img src="/assets/images/default_avatar.png" v-else>
                                         </span>
                                         <h4>
                                             <a :href="'job/' + job.id">{{ job.title }}</a>
@@ -339,25 +334,15 @@
                                             </li>
                                             <!--                                            <li class="required">Urgent</li>-->
                                         </ul>
-                                        <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
+                                        <button class="bookmark-btn" @click="saveShortlist(job.id)">
+                                            <span class="flaticon-bookmark"></span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
+
                             <pagination align="center" :data="jobs"
                                         @pagination-change-page="list"></pagination>
-                            <!-- Listing Show More -->
-                            <div class="ls-show-more" v-if="jobs.length > 0">
-                                <p>Showing {{ showingNumber }} of {{ jobs.length }} Jobs</p>
-                                <div class="bar">
-                                    <span class="bar-inner"
-                                          :style="'width: ' + showingNumber/jobs.length * 100 + '%'"></span>
-                                </div>
-                                <button class="show-more"
-                                        v-if="jobs.length > showingNumber"
-                                        @click="showMore">
-                                    Show More
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -398,8 +383,8 @@ export default {
             "&cancelToken="+request.token)
             .then(({data}) => {
                 this.jobs = data.jobs
-                this.jobsLoading = false
                 this.count = data.count
+                this.jobsLoading = false
                 if(data.categories.length) this.categories = data.categories
                 if(data.countries.length) this.countries = data.countries
             }).catch(({response}) => {
@@ -432,12 +417,12 @@ export default {
     },
     methods: {
         filterData: function (v) {
+            this.jobsLoading = true
             let num
             v == 'num' ? num = this.showingNumber : num = ""
             if (this.request) this.cancelRequest();
             const request = axios.CancelToken.source();
             this.request = { cancel: request.cancel, msg: "Loading..." };
-            this.jobsLoading = true
             this.jobs = {}
             axios.get("/request/front/get-jobs?title="+this.settings.title+"&country_id="+this.settings.country_id+"" +
                 "&city_id="+this.settings.city_id+
@@ -454,8 +439,8 @@ export default {
                     //     this.showingNumber = res.data.jobs.length
                     // }
                     this.jobs = res.data.jobs
-                    this.jobsLoading = false
                     this.count = res.data.count
+                    this.jobsLoading = false
                 })
         },
         showMore: function () {
@@ -507,12 +492,12 @@ export default {
             else return string
         },
         async list(page = 1) {
+            this.jobsLoading = true
             let num
             this.showingNumber > 5 ? num = this.showingNumber : num = ""
             if (this.request) this.cancelRequest();
             const request = axios.CancelToken.source();
             this.request = { cancel: request.cancel, msg: "Loading..." };
-            this.jobsLoading = true
             this.jobs = {}
             await axios.get("/request/front/get-jobs/?page="+page+
                 "&title="+this.settings.title+
@@ -525,12 +510,55 @@ export default {
                 "&cancelToken="+request.token)
                 .then(({data}) => {
                     this.jobs = data.jobs
-                    this.jobsLoading = false
                     this.count = data.count
                     if(data.categories.length) this.categories = data.categories
-                    console.log(data)
+                    this.jobsLoading = false
+                    // console.log(data)
                 }).catch(({response}) => {
                     console.error(response)
+                })
+        },
+        saveShortlist: function (id) {
+            axios.post("/request/profile/save-shortlist", {
+                target_id: id,
+                type: "job"
+            })
+                .then((res) => {
+                    if(res.data == 1) {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Added successfully'
+                        })
+                    } else if(res.data == 0) {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.addEventListener('mouseenter', Swal.stopTimer)
+                                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+
+                        Toast.fire({
+                            icon: 'info',
+                            title: 'Please Login First'
+                        })
+                    }
                 })
         }
     },

@@ -37,6 +37,11 @@ class User extends Authenticatable
 
     public $appends = ['time', 'skill', 'lang', 'complete'];
 
+    public function receivesBroadcastNotificationsOn()
+    {
+        return 'App.User.'.$this->id;
+    }
+
     public function user_education() {
         return $this->hasMany('App\Education')->orderBy('id', 'desc');
     }

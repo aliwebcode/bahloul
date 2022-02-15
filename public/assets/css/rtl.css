@@ -1,0 +1,45 @@
+.rtl .main-header .menu-btn {
+    margin-left: 0;
+    margin-right: 30px;
+}
+.rtl .dashboard-option {
+    margin-left: 0;
+    margin-right: 30px;
+}
+.rtl .main-header .logo {
+    margin-left: 100px;
+}
+.rtl .main-menu .navigation > li {
+    margin-right: 0;
+    margin-left: 40px;
+}
+.rtl .user-sidebar {
+    left: unset;
+    right: 0;
+    transform: translateX(100%);
+}
+.rtl.user-sidebar-active .user-sidebar {
+    left: unset;
+    right: 0;
+    transform: translateX(0);
+}
+@media(max-width: 1366px) {
+    .rtl .main-header .menu-btn {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+    .rtl .dashboard-option {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+@media(max-width: 1600px) {
+    .rtl .main-header .logo {
+        margin-right: 0;
+        margin-left: 60px;
+    }
+    .rtl .main-menu .navigation > li {
+        margin-right: 0;
+        margin-left: 35px;
+    }
+}

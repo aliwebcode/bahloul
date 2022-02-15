@@ -32,6 +32,9 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        <tr v-if="jobs.length == 0">
+                                            <td colspan="6"><p class="text-center">No jobs added yet.</p></td>
+                                        </tr>
                                         <tr v-for="(job, index) in jobs" :key="job.id">
                                             <td>
                                                 <h6><a :href="'/job/' + job.id">{{ job.title }}</a></h6>
@@ -91,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="widget-loading" v-if="loading">
-                                <i class="fa fa-spin fa-spinner"></i>
+                                <img src="/assets/images/loading.gif">
                             </div>
                         </div>
                     </div>

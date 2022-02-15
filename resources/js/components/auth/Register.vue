@@ -120,7 +120,7 @@
 export default {
     mounted() {
         document.getElementsByClassName('dashboard')[0].classList.remove('dashboard')
-        document.title = "Register"
+        document.title = "Bahloul - Register"
     },
     data: function () {
         return {

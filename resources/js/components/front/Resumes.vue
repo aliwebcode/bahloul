@@ -33,7 +33,7 @@
                                     <div class="form-group">
                                         <input type="text"
                                                v-model="settings.name"
-                                               @keyup="filterData"
+                                               @keyup="searchTimeOut()"
                                                placeholder="Candidate Name">
                                         <span class="icon flaticon-search-3"></span>
                                     </div>
@@ -41,12 +41,32 @@
 
                                 <!-- Filter Block -->
                                 <div class="filter-block">
-                                    <h4>Location</h4>
+                                    <h4>Country</h4>
                                     <div class="form-group">
-                                        <input type="text"
-                                               placeholder="Country, City or postcode"
-                                               v-model="settings.location"
-                                               @keyup="filterData">
+                                        <select class="chosen-select"
+                                                v-model="settings.country_id"
+                                                @change="getCities(),settings.city_id='',filterData()">
+                                            <option value="" selected>All</option>
+                                            <option v-for="country in countries" :value="country.id">
+                                                {{ country.name }}
+                                            </option>
+                                        </select>
+                                        <span class="icon flaticon-map-locator"></span>
+                                    </div>
+                                </div>
+
+                                <!-- Filter Block -->
+                                <div class="filter-block" v-if="settings.country_id">
+                                    <h4>City</h4>
+                                    <div class="form-group">
+                                        <select class="chosen-select"
+                                                v-model="settings.city_id"
+                                                @change="filterData">
+                                            <option value="" selected>All</option>
+                                            <option v-for="city in cities" :value="city.id">
+                                                {{ city.name }}
+                                            </option>
+                                        </select>
                                         <span class="icon flaticon-map-locator"></span>
                                     </div>
                                 </div>
@@ -144,71 +164,9 @@
                                         </li>
                                     </ul>
                                 </div>
-
-<!--                                &lt;!&ndash; Checkboxes Ouer &ndash;&gt;-->
-<!--                                <div class="checkbox-outer">-->
-<!--                                    <h4>Experience</h4>-->
-<!--                                    <ul class="checkboxes square">-->
-<!--                                        <li>-->
-<!--                                            <input id="check-l" type="checkbox" name="check">-->
-<!--                                            <label for="check-l">0-2 Years</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <input id="check-m" type="checkbox" name="check">-->
-<!--                                            <label for="check-m">10-12 Years</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <input id="check-n" type="checkbox" name="check">-->
-<!--                                            <label for="check-n">12-16 Years</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <input id="check-o" type="checkbox" name="check">-->
-<!--                                            <label for="check-o">16-20 Years</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <input id="check-p" type="checkbox" name="check">-->
-<!--                                            <label for="check-p">20-25 Years</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <button class="view-more"><span class="icon flaticon-plus"></span> View More</button>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </div>-->
-
-<!--                                &lt;!&ndash; Checkboxes Ouer &ndash;&gt;-->
-<!--                                <div class="checkbox-outer">-->
-<!--                                    <h4>Education Levels</h4>-->
-<!--                                    <ul class="checkboxes square">-->
-<!--                                        <li>-->
-<!--                                            <input id="check-a" type="checkbox" name="check">-->
-<!--                                            <label for="check-a">Certificate</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <input id="check-b" type="checkbox" name="check">-->
-<!--                                            <label for="check-b">Diploma</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <input id="check-c" type="checkbox" name="check">-->
-<!--                                            <label for="check-c">Associate Degree</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <input id="check-d" type="checkbox" name="check">-->
-<!--                                            <label for="check-d">Bachelor Degree</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <input id="check-e" type="checkbox" name="check">-->
-<!--                                            <label for="check-e">Master’s Degree</label>-->
-<!--                                        </li>-->
-<!--                                        <li>-->
-<!--                                            <button class="view-more"><span class="icon flaticon-plus"></span> View More</button>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </div>-->
-
                             </div>
                         </div>
                     </div>
-
 
                     <!-- Content Column -->
                     <div class="content-column col-lg-8 col-md-12 col-sm-12">
@@ -218,14 +176,14 @@
                             <!-- ls Switcher -->
                             <div class="ls-switcher">
                                 <div class="showing-result">
-                                    <div class="text" v-if="resumes.length > 0">
-                                        Showing {{ showingNumber }} of {{ resumes.length }} Resumes
+                                    <div class="text" v-if="count > 0">
+                                        <strong>{{ count }} Results</strong>
                                     </div>
                                 </div>
                                 <div class="sort-by">
                                     <select class="chosen-select"
                                             v-model="showingNumber"
-                                            @change="showingNumber > resumes.length ? showingNumber = resumes.length : ''">
+                                            @change="filterData('num')">
                                         <option value="5">Show 5</option>
                                         <option value="10">Show 10</option>
                                         <option value="20">Show 20</option>
@@ -241,53 +199,59 @@
                                 <li v-if="settings.name">
                                     <button type="button">
                                         Keyword: {{ settings.name }}
-                                        <span class="icon flaticon-close-1 ml-2" @click="settings.name = '',filterData()"></span>
+                                        <span class="icon flaticon-close-1 ml-2"
+                                              @click="settings.name = '',filterData()"></span>
                                     </button>
                                 </li>
-                                <li v-if="settings.location">
+                                <li v-if="settings.country_id">
                                     <button type="button">
-                                        Location: {{ settings.location }}
-                                        <span class="icon flaticon-close-1 ml-2" @click="settings.location = '',filterData()"></span>
+                                        Country: {{ settings.country_id }}
+                                        <span class="icon flaticon-close-1 ml-2"
+                                              @click="settings.country_id = '',filterData()"></span>
                                     </button>
                                 </li>
                                 <li v-if="settings.category_id">
                                     <button type="button">
                                         Category: {{ getCategory(settings.category_id).name }}
-                                        <span class="icon flaticon-close-1 ml-2" @click="settings.category_id = '',filterData()"></span>
+                                        <span class="icon flaticon-close-1 ml-2"
+                                              @click="settings.category_id = '',filterData()"></span>
                                     </button>
                                 </li>
                                 <li v-if="settings.gender">
                                     <button type="button">
-                                        Job Type: {{ settings.gender }}
-                                        <span class="icon flaticon-close-1 ml-2" @click="settings.gender = '',filterData()"></span>
+                                        Gender: {{ settings.gender }}
+                                        <span class="icon flaticon-close-1 ml-2"
+                                              @click="settings.gender = '',filterData()"></span>
                                     </button>
                                 </li>
                                 <li v-if="settings.date">
                                     <button type="button">
-                                        Date: {{ settings.date > 1 ? 'Last ' + settings.date + ' Days' : 'Last 24 Hours' }}
-                                        <span class="icon flaticon-close-1 ml-2" @click="settings.date = '',filterData()"></span>
+                                        Date: {{
+                                            settings.date > 1 ? 'Last ' + settings.date + ' Days' : 'Last 24 Hours'
+                                        }}
+                                        <span class="icon flaticon-close-1 ml-2"
+                                              @click="settings.date = '',filterData()"></span>
                                     </button>
                                 </li>
                             </ul>
 
-                            <div class="resumes-loading" v-if="resumesLoading">
-                                <i class="fas fa-spinner fa-pulse fa-lg"></i>
+                            <div class="resumes-loading" v-if="loading">
+                                <img src="/assets/images/loading.gif">
                             </div>
 
-                            <div class="text-center" v-if="resumes.length == 0 && !resumesLoading">
+                            <div class="text-center" v-if="resumes.data.length == 0 && loading == false">
                                 <p>No Results, Try to change search settings.</p>
                             </div>
 
-
-                            <div class="row">
-
+                            <div class="row" v-if="resumes.data.length">
                                 <!-- Candidate block Four -->
                                 <div class="candidate-block-four col-lg-6 col-md-6 col-sm-12"
-                                     v-for="resume in showingResumes"
+                                     v-for="resume in resumes.data"
                                      :key="resume.id">
                                     <div class="inner-box">
                                         <ul class="job-other-info">
-                                            <li title="Completed profile" class="green" v-if="resume.complete.profile < 5 && !resume.complete.edu && !resume.complete.exp && !resume.complete.cv && !resume.complete.portfolio">
+                                            <li title="Completed profile" class="green"
+                                                v-if="resume.complete.profile < 5 && !resume.complete.edu && !resume.complete.exp && !resume.complete.cv && !resume.complete.portfolio">
                                                 Featured
                                             </li>
                                         </ul>
@@ -314,26 +278,13 @@
                                             <li>{{ resume.skill[1] }}</li>
                                             <li>{{ resume.skill[2] }}</li>
                                         </ul>
-                                        <a :href="'/u/' + resume.username" class="theme-btn btn-style-three">View Profile</a>
+                                        <a :href="'/u/' + resume.username" class="theme-btn btn-style-three">View
+                                            Profile</a>
                                     </div>
                                 </div>
-
                             </div>
-
-                            <!-- Listing Show More -->
-                            <div class="ls-show-more" v-if="resumes.length > 0">
-                                <p>Showing {{ showingNumber }} of {{ resumes.length }} Resumes</p>
-                                <div class="bar">
-                                    <span class="bar-inner"
-                                          :style="'width: ' + showingNumber/resumes.length * 100 + '%'"></span>
-                                </div>
-                                <button class="show-more"
-                                        v-if="resumes.length > showingNumber"
-                                        @click="showMore">
-                                    Show More
-                                </button>
-                            </div>
-
+                            <pagination align="center" :data="resumes"
+                                        @pagination-change-page="list"></pagination>
                         </div>
                     </div>
                 </div>
@@ -347,62 +298,158 @@ export default {
     mounted() {
         document.getElementsByClassName('dashboard')[0].classList.remove('dashboard')
         document.title = "Resumes"
-        axios.get("/request/front/get-resumes")
-            .then((res) => {
-                // console.log(res.data)
-                if(res.data.resumes.length < 5)
-                    this.showingNumber = res.data.resumes.length
-                this.resumes = res.data.resumes
-                this.showingResumes = this.resumes.slice(0, this.showingNumber)
-                this.categories = res.data.categories
-                this.resumesLoading = false
-            })
+        if (this.request) this.cancelRequest();
+        const request = axios.CancelToken.source();
+        this.request = {cancel: request.cancel, msg: "Loading..."};
+        let t = this.$route.query
+        let params = {
+            name: "",
+            gender: "",
+            category_id: "",
+            country_id: "",
+            city_id: "",
+            date: "",
+        };
+        if (t.name) params.name = t.name;
+        if (t.gender) params.gender = t.gender;
+        if (t.category_id) params.category_id = t.category_id;
+        if (t.country_id) params.country_id = t.country_id;
+        if (t.city_id) params.city_id = t.city_id;
+        if (t.date) params.date = t.date;
+        axios.get("/request/front/get-resumes/?name=" + params.name +
+            "&country_id=" + params.country_id + "" +
+            "&city_id=" + params.city_id +
+            "&category_id=" + params.category_id +
+            "&date=" + params.date +
+            "&gender=" + params.gender +
+            "&cancelToken=" + request.token)
+            .then(({data}) => {
+                this.resumes = data.resumes
+                this.count = data.count
+                this.loading = false
+                if (data.categories.length) this.categories = data.categories
+                if (data.countries.length) this.countries = data.countries
+            }).catch(({response}) => {
+            console.error(response)
+        })
     },
     data: function () {
         return {
-            resumes: [],
+            resumes: {
+                data: ""
+            },
             categories: [],
+            countries: [],
             resumesLoading: true,
             settings: {
                 gender: "",
                 category_id: "",
-                location: "",
+                country_id: "",
+                city_id: "",
                 name: "",
                 date: ""
             },
-            showingNumber: 5
+            showingNumber: 5,
+            requests: [],
+            request: null,
+            count: null,
+            loading: true
         }
     },
     methods: {
-        filterData: function () {
-            this.resumesLoading = true
-            this.resumes = []
-            axios.post("/request/front/resume-filter", {
-                data: this.settings
+        filterData: function (v) {
+            this.loading = true
+            let num
+            v == 'num' ? num = this.showingNumber : num = ""
+            if (this.request) this.cancelRequest();
+            const request = axios.CancelToken.source();
+            this.request = {cancel: request.cancel, msg: "Loading..."};
+            this.resumes = {}
+            axios.get("/request/front/get-resumes/?name=" + this.settings.name +
+                "&country_id=" + this.settings.country_id + "" +
+                "&city_id=" + this.settings.city_id +
+                "&category_id=" + this.settings.category_id +
+                "&date=" + this.settings.date +
+                "&gender=" + this.settings.gender +
+                "&per_page="+num+
+                "&cancelToken=" + request.token)
+                .then(({data}) => {
+                    this.resumes = data.resumes
+                    this.count = data.count
+                    this.loading = false
+                }).catch(({response}) => {
+                console.error(response)
             })
-                .then((res) => {
-                    console.log(res.data)
-                    if(res.data.length > 5) {
-                        this.showingNumber = 5
-                    } else {
-                        this.showingNumber = res.data.length
-                    }
-                    this.resumes = res.data
-                    this.resumesLoading = false
-                })
         },
         showMore: function () {
             let diff = this.resumes.length - this.showingNumber
-            if(diff >= 5)
+            if (diff >= 5)
                 this.showingNumber += 5
             else
-                this.showingNumber = parseInt(this.showingNumber) +  diff
+                this.showingNumber = parseInt(this.showingNumber) + diff
         },
         getCategory: function (i) {
             return this.categories.find(function (e) {
-                if(e.id === i)
+                if (e.id === i)
                     return e
             })
+        },
+        getCities: function () {
+            axios.get("/request/get-city/" + this.settings.country_id)
+                .then((res) => {
+                    console.log(res.data)
+                    if(res.data.length) {
+                        this.cities = res.data
+                        // this.settings.city_id = this.cities[0].id
+                    }
+                    else
+                        this.settings.city_id = ""
+                })
+        },
+        cancelRequest: function () {
+            this.request.cancel();
+            this.clearOldRequest("Cancelled");
+        },
+        clearOldRequest(msg) {
+            this.request.msg = msg;
+            this.requests.push(this.request);
+            this.request = null;
+        },
+        searchTimeOut() {
+            if (this.timer) {
+                clearTimeout(this.timer);
+                this.timer = null;
+            }
+            this.timer = setTimeout(() => {
+                this.filterData()
+            }, 800);
+        },
+        async list(page = 1) {
+            this.loading = true
+            let num
+            this.showingNumber > 5 ? num = this.showingNumber : num = ""
+            if (this.request) this.cancelRequest();
+            const request = axios.CancelToken.source();
+            this.request = { cancel: request.cancel, msg: "Loading..." };
+            this.resumes = {}
+            await axios.get("/request/front/get-resumes/?page="+page+
+                "&name="+this.settings.name+
+                "&country_id="+this.settings.country_id+"" +
+                "&city_id="+this.settings.city_id+
+                "&category_id="+this.settings.category_id+
+                "&date="+this.settings.date+
+                "&gender="+this.settings.gender+
+                "&per_page="+num+
+                "&cancelToken="+request.token)
+                .then(({data}) => {
+                    this.resumes = data.resumes
+                    this.count = data.count
+                    if(data.categories.length) this.categories = data.categories
+                    this.loading = false
+                    // console.log(data)
+                }).catch(({response}) => {
+                    console.error(response)
+                })
         }
     },
     computed: {
@@ -418,6 +465,7 @@ export default {
     text-align: center;
     font-size: 22px;
 }
+
 .sort-by select {
     position: relative;
     width: 100%;
@@ -434,15 +482,17 @@ export default {
     transition: all 300ms ease;
     margin: 0 5px;
 }
+
 .tags-style-one li button {
     position: relative;
     border-radius: 4px;
     font-size: 14px;
     line-height: 20px;
     padding: 5px 20px;
-    background: rgba(25,103,210,.15);
+    background: rgba(25, 103, 210, .15);
     color: #1967D2;
 }
+
 .tags-style-one li button span.icon {
     font-size: 10px;
 }

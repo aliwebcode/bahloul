@@ -5,7 +5,7 @@
                 <!-- Login Form -->
                 <div class="login-form default-form mt-5 px-2">
                     <div class="form-inner">
-                        <h3>Login to website</h3>
+                        <h3>Login to Bahloul</h3>
 
                         <!--Login Form-->
                         <form method="post" action="">
@@ -61,7 +61,7 @@
 export default {
     mounted() {
         document.getElementsByClassName('dashboard')[0].classList.remove('dashboard')
-        document.title = "Login"
+        document.title = "Bahloul - Login"
     },
     data: function () {
         return {

@@ -47,13 +47,15 @@ class ProfileController extends Controller
                     $query->where('expire_date',null)
                         ->orWhere('expire_date', '>', Date("Y-m-d"));
                 })
-                ->orderBy('id', 'desc')
+                ->latest()
                 ->take(5)
                 ->get();
             return response()->json(["user" => $user, "suggestedJobs" => $suggestedJobs]);
         } else if (auth()->user()->type == 2) {
             $user = User::with('jobs', 'shortlists')->find(auth()->id());
-            return response()->json(["user" => $user]);
+            $notifications = $user->notifications;
+            $unread = $user->unreadNotifications->count();
+            return response()->json(["user" => $user, "notifications" => $notifications, "unread" => $unread]);
 
         } else if(auth()->user()->type == 3) {
             $user = User::with([
@@ -84,6 +86,7 @@ class ProfileController extends Controller
             'country_id' => $request['country_id'] == 'null' ? null : $request['country_id'],
             'city_id' => $request['city_id'] == 'null' ? null : $request['city_id'],
             'address' => $request['address'] == 'null' ? '' : $request['address'],
+            'zip' => $request['zip'] == 'null' ? '' : $request['zip'],
             'skills' => $request['skills'] == 'null' ? '' : $request['skills'],
             'languages' => $request['languages'] == 'null' ? '' : $request['languages'],
             'education' => $request['education'] == 'null' ? '' : $request['education'],
@@ -102,6 +105,17 @@ class ProfileController extends Controller
             $newName = uniqid() . '-' . now()->timestamp . $filename;
             $image->move('images/users/', $newName);
             $user->image = $newName;
+            $user->save();
+        }
+        if ($request->hasFile('cover')) {
+            if (File::exists('images/covers/' . $user->cover)) {
+                File::delete('images/covers/' . $user->cover);
+            }
+            $image = $request->file('cover');
+            $filename = $image->getClientOriginalName();
+            $newName = uniqid() . '-' . now()->timestamp . $filename;
+            $image->move('images/covers/', $newName);
+            $user->cover = $newName;
             $user->save();
         }
         return response()->json(1, 200);

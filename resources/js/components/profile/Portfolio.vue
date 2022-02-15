@@ -48,13 +48,15 @@
                                     </div>
                                 </form>
                             </div>
+
+                            <div class="widget-loading" v-if="loading">
+                                <img src="/assets/images/loading.gif">
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="overlay" v-if="loading">
-            <i class="fa fa-spin fa-spinner"></i>
         </div>
         <Modal v-model="modals.delete" title="Are you sure?">
             <div class="modal-body">
@@ -75,7 +77,7 @@ export default {
         axios.get("/request/profile/get-portfolio")
         .then((res) => {
             this.portfolio = res.data.user_portfolio
-            console.log(res.data)
+            this.loading = false
         })
     },
     data: function () {
@@ -83,12 +85,10 @@ export default {
             images: [],
             preview: [],
             portfolio: [],
-            loading: false,
             modals: {
                 delete: false
             },
-            isLoading: false,
-            fullPage: true
+            loading: true
         }
     },
     methods: {

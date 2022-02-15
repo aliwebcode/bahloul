@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Country;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -12,11 +13,44 @@ class ResumesController extends Controller
 
     public function get_resumes()
     {
-        $resumes = User::with(['country', 'city', 'category'])
-            ->where('status', 1)
-            ->where('type', 1)->get();
+//        $resumes = User::with(['country', 'city', 'category'])
+//            ->where('status', 1)
+//            ->where('type', 1)->get();
+        $resumes = User::when(\request()->name != null, function ($q) {
+            $q->where('name', 'like', '%' . \request()->name . '%');
+        })->when(\request()->gender != null, function ($q) {
+            $q->where('gender', \request()->gender);
+        })->when(\request()->category_id != null, function ($q) {
+            $q->where('category_id', \request()->category_id);
+        })->when(\request()->country_id != null, function ($q) {
+            $q->where('country_id', \request()->country_id);
+        })->when(\request()->city_id != null, function ($q) {
+            $q->where('city_id', \request()->city_id);
+        })->when(\request()->date != null, function ($q) {
+            $q->where('created_at', '>=', Carbon::now()->subDays(\request()->date));
+        })->where('status', 1)->where('type', 1);
+
+        $count = $resumes->count();
+        $resumes = $resumes->with(['country', 'city', 'category'])
+            ->latest()
+            ->paginate(\request()->per_page ?? 5);
+
+
+        if(\request()->name || \request()->gender || \request()->category_id || \request()->country_id
+            || \request()->city_id || \request()->date) {
+            return response()->json(["resumes" => $resumes, "count" => $count]);
+        }
+
+        $countries = Country::all();
         $categories = Category::all();
-        return response()->json(["resumes" => $resumes, "categories" => $categories]);
+
+        return response()->json([
+            "resumes" => $resumes,
+            "categories" => $categories,
+            "countries" => $countries,
+            "count" => $count
+        ]);
+
     }
 
     public function resume_filter(Request $request)

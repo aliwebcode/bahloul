@@ -1,14 +1,10 @@
 <template>
     <div>
         <!-- Banner Section-->
-        <section class="banner-section-nine" style="background-image: url(assets/images/hero.jpg);">
+        <section class="banner-section-nine" style="background-image: url(assets/images/hero.png);">
             <div class="over"></div>
             <div class="auto-container">
                 <div class="cotnent-box">
-                    <div class="title-box wow fadeInUp" data-wow-delay='300ms'>
-                        <h3>15,000+ Browse Jobs</h3>
-                        <div class="text">Find Jobs, Employment & Career Opportunities</div>
-                    </div>
 
                     <!-- Job Search Form -->
                     <div class="job-search-form wow fadeInUp" data-wow-delay='600ms'>
@@ -76,664 +72,114 @@
                     <!-- Job Search Form -->
 
                     <!-- Fun Fact Section -->
-                    <div class="fun-fact-section">
-                        <div class="row">
-                            <!--Column-->
-                            <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">
-                                <div class="count-box"><span class="count-text" data-speed="3000" data-stop="97216">0</span></div>
-                                <h4 class="counter-title">Jobs</h4>
-                            </div>
+<!--                    <div class="fun-fact-section">-->
+<!--                        <div class="row">-->
+<!--                            &lt;!&ndash;Column&ndash;&gt;-->
+<!--                            <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp">-->
+<!--                                <div class="count-box">-->
+<!--                                    <span class="count-text" data-speed="3000" data-stop="97216">0</span>-->
+<!--                                </div>-->
+<!--                                <h4 class="counter-title">Jobs</h4>-->
+<!--                            </div>-->
 
-                            <!--Column-->
-                            <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
-                                <div class="count-box"><span class="count-text" data-speed="3000" data-stop="4782">0</span></div>
-                                <h4 class="counter-title">Members</h4>
-                            </div>
+<!--                            &lt;!&ndash;Column&ndash;&gt;-->
+<!--                            <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">-->
+<!--                                <div class="count-box">-->
+<!--                                    <span class="count-text" data-speed="3000" data-stop="4782">0</span>-->
+<!--                                </div>-->
+<!--                                <h4 class="counter-title">Members</h4>-->
+<!--                            </div>-->
 
-                            <!--Column-->
-                            <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
-                                <div class="count-box"><span class="count-text" data-speed="3000" data-stop="5322">0</span></div>
-                                <h4 class="counter-title">Resume</h4>
-                            </div>
+<!--                            &lt;!&ndash;Column&ndash;&gt;-->
+<!--                            <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">-->
+<!--                                <div class="count-box">-->
+<!--                                    <span class="count-text" data-speed="3000" data-stop="5322">0</span>-->
+<!--                                </div>-->
+<!--                                <h4 class="counter-title">Business</h4>-->
+<!--                            </div>-->
 
-                            <!--Column-->
-                            <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">
-                                <div class="count-box"><span class="count-text" data-speed="3000" data-stop="6329">0</span></div>
-                                <h4 class="counter-title">Company</h4>
-                            </div>
-                        </div>
-                    </div>
+<!--                            &lt;!&ndash;Column&ndash;&gt;-->
+<!--                            <div class="counter-column col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="1200ms">-->
+<!--                                <div class="count-box">-->
+<!--                                    <span class="count-text" data-speed="3000" data-stop="6329">0</span>-->
+<!--                                </div>-->
+<!--                                <h4 class="counter-title">Company</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <!-- Fun Fact Section -->
                 </div>
             </div>
         </section>
         <!-- End Banner Section-->
 
-        <!-- Job Section -->
-        <section class="job-section">
-            <div class="auto-container wow fadeInUp">
+        <!-- Services -->
+        <section class="process-section pt-0" style="margin-top: 60px;">
+            <div class="auto-container">
                 <div class="sec-title text-center">
-                    <h2>Featured Jobs</h2>
-                    <div class="text">Know your worth and find the job that qualify your life</div>
+                    <h2>Our Services</h2>
+                    <div class="text">Discover our creative services</div>
                 </div>
 
-                <div class="job-carousel owl-carousel owl-theme default-dots">
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-1.png" alt=""></span>
-                                <h4><a href="#">Software Engineer</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="required">Urgent</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
+                <div class="row wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+                    <!-- Process Block -->
+                    <div class="process-block col-lg-4 col-md-6 col-sm-12">
+                        <div class="icon-box"><img src="assets/images/process-1.png" alt=""></div>
+                        <h4>Register an account <br>to start</h4>
                     </div>
 
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-2.png" alt=""></span>
-                                <h4><a href="#">Recruiting Coordinator</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="required">Urgent</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
+                    <!-- Process Block -->
+                    <div class="process-block col-lg-4 col-md-6 col-sm-12">
+                        <div class="icon-box"><img src="assets/images/process-2.png" alt=""></div>
+                        <h4>Explore over thousands <br>of resumes</h4>
                     </div>
 
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-3.png" alt=""></span>
-                                <h4><a href="#">Product Manager, Studio</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="required">Urgent</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
-                    </div>
-
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-4.png" alt=""></span>
-                                <h4><a href="#">Senior Product Designer</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="required">Urgent</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
-                    </div>
-
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-5.png" alt=""></span>
-                                <h4><a href="#">Product Manager, Risk</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="privacy">Private</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
-                    </div>
-
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-6.png" alt=""></span>
-                                <h4><a href="#">Technical Architect</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="privacy">Private</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
-                    </div>
-
-
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-7.png" alt=""></span>
-                                <h4><a href="#">Web Developer</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="required">Urgent</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
-                    </div>
-
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-8.png" alt=""></span>
-                                <h4><a href="#">Senior Product Designer</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="privacy">Private</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
-                    </div>
-
-                    <!-- Job Block -->
-                    <div class="job-block-three">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="company-logo"><img src="images/resource/company-logo/2-9.png" alt=""></span>
-                                <h4><a href="#">Senior BI Analyst</a></h4>
-                                <ul class="job-info">
-                                    <li><span class="icon flaticon-briefcase"></span> Segment</li>
-                                    <li><span class="icon flaticon-map-locator"></span> London, UK</li>
-                                </ul>
-                            </div>
-                            <ul class="job-other-info">
-                                <li class="time">Full Time</li>
-                                <li class="privacy">Private</li>
-                            </ul>
-                            <button class="bookmark-btn"><span class="flaticon-bookmark"></span></button>
-                        </div>
+                    <!-- Process Block -->
+                    <div class="process-block col-lg-4 col-md-6 col-sm-12">
+                        <div class="icon-box"><img src="assets/images/process-3.png" alt=""></div>
+                        <h4>Find the most suitable <br>candidate</h4>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Job Section -->
+        <!-- End Services -->
 
-        <!-- steps Section -->
-        <section class="steps-section pt-0">
+        <!-- About Section -->
+        <section class="about-section-two style-two">
             <div class="auto-container">
-                <div class="row">
-                    <div class="image-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column">
-                            <figure class="image"><img src="images/resource/steps-img.png" alt=""></figure>
-                            <!-- Count Employers -->
-                            <div class="count-employers wow fadeInUp">
-                                <span class="title">300k+ Employers</span>
-                                <figure class="image"><img src="images/resource/multi-peoples.png" alt=""></figure>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                        <div class="inner-column wow fadeInUp">
+                <div class="row ">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
+                        <div class="inner-column wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft;">
                             <div class="sec-title">
-                                <h2>Find Jobs with 3 easy steps</h2>
-                                <div class="text">Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</div>
-                                <ul class="steps-list">
-                                    <li><span class="count">1</span> Register an account to start</li>
-                                    <li><span class="count">2</span> Explore over thousands  of resumes</li>
-                                    <li><span class="count">3</span> Find the most suitable candidate</li>
-                                </ul>
+                                <h2>Get applications from the <br>world best talents.</h2>
+                                <div class="text">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide.</div>
                             </div>
+                            <ul class="list-style-one">
+                                <li>Bring to the table win-win survival</li>
+                                <li>Capitalize on low hanging fruit to identify</li>
+                                <li>But I must explain to you how all this</li>
+                            </ul>
                         </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-12 col-sm-12 wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight;">
+                        <figure class="image-box"><img src="/assets/images/about.jpg" alt=""></figure>
+
+                        <!-- Count Employers -->
+
                     </div>
                 </div>
             </div>
         </section>
-        <!-- End Steps Section -->
-
-        <!-- Call To Action Two -->
-        <section class="call-to-action-two" style="background-image: url(images/background/8.png);">
-            <div class="auto-container wow fadeInUp">
-                <div class="sec-title light text-center">
-                    <h2>Make a Difference with Your Online Resume!</h2>
-                    <div class="text">Your resume in minutes with JobHunt resume assistant is ready!</div>
-                </div>
-
-                <div class="btn-box">
-                    <a href="#" class="theme-btn btn-style-three">Create an Account</a>
-                </div>
-            </div>
-        </section>
-        <!-- End Call To Action -->
-
-        <!-- Job Categories -->
-        <section class="job-categories">
-            <div class="auto-container">
-                <div class="sec-title text-center">
-                    <h2>Popular Job Categories</h2>
-                    <div class="text">2020 jobs live - 293 added today.</div>
-                </div>
-
-                <div class="row wow fadeInUp">
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-money-1"></span>
-                                <h4><a href="#">Accounting / Finance</a></h4>
-                                <p>(2 open positions)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-promotion"></span>
-                                <h4><a href="#">Marketing</a></h4>
-                                <p>86 open positions)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-vector"></span>
-                                <h4><a href="#">Design</a></h4>
-                                <p>43 open positions)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-web-programming"></span>
-                                <h4><a href="#">Development</a></h4>
-                                <p>(12 open positions)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-headhunting"></span>
-                                <h4><a href="#">Human Resource</a></h4>
-                                <p>55 open positions)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-rocket-ship"></span>
-                                <h4><a href="#">Project Management</a></h4>
-                                <p>(2 open positions)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-support-1"></span>
-                                <h4><a href="#">Customer Service</a></h4>
-                                <p>(2 open positions)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-first-aid-kit-1"></span>
-                                <h4><a href="#">Health and Care</a></h4>
-                                <p>(25 open positions)</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category Block -->
-                    <div class="category-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="inner-box">
-                            <div class="content">
-                                <span class="icon flaticon-car"></span>
-                                <h4><a href="#">Automotive Jobs</a></h4>
-                                <p>92 open positions</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- End Job Categories -->
-
-        <!-- Candidates Section -->
-        <section class="candidates-section pt-0">
-            <div class="auto-container">
-                <div class="sec-title-outer">
-                    <div class="sec-title">
-                        <h2>Featured Candidates</h2>
-                        <div class="text">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor</div>
-                    </div>
-                    <a href="#" class="link">Browse All <span class="fa fa-angle-right"></span></a>
-                </div>
-
-                <div class="carousel-outer wow fadeInUp">
-                    <div class="candidates-carousel owl-carousel owl-theme default-dots">
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-1.png" alt=""></figure>
-                                <h4 class="name">Darlene Robertson</h4>
-                                <span class="designation">UI Designer</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-2.png" alt=""></figure>
-                                <h4 class="name">Wade Warren</h4>
-                                <span class="designation">Developer</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-3.png" alt=""></figure>
-                                <h4 class="name">Leslie Alexander</h4>
-                                <span class="designation">Marketing Expert</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-4.png" alt=""></figure>
-                                <h4 class="name">Floyd Miles</h4>
-                                <span class="designation">Charted Accountant</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-1.png" alt=""></figure>
-                                <h4 class="name">Darlene Robertson</h4>
-                                <span class="designation">UI Designer</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-2.png" alt=""></figure>
-                                <h4 class="name">Wade Warren</h4>
-                                <span class="designation">Developer</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-3.png" alt=""></figure>
-                                <h4 class="name">Leslie Alexander</h4>
-                                <span class="designation">Marketing Expert</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-4.png" alt=""></figure>
-                                <h4 class="name">Floyd Miles</h4>
-                                <span class="designation">Charted Accountant</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-1.png" alt=""></figure>
-                                <h4 class="name">Darlene Robertson</h4>
-                                <span class="designation">UI Designer</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-2.png" alt=""></figure>
-                                <h4 class="name">Wade Warren</h4>
-                                <span class="designation">Developer</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-3.png" alt=""></figure>
-                                <h4 class="name">Leslie Alexander</h4>
-                                <span class="designation">Marketing Expert</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-
-                        <!-- Candidate Block -->
-                        <div class="candidate-block">
-                            <div class="inner-box">
-                                <figure class="image"><img src="images/resource/candidate-4.png" alt=""></figure>
-                                <h4 class="name">Floyd Miles</h4>
-                                <span class="designation">Charted Accountant</span>
-                                <div class="location"><i class="flaticon-map-locator"></i> London, UK</div>
-                                <a href="#" class="theme-btn btn-style-one"><span class="btn-title">View Profile</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Candidates Section -->
-
-        <!-- Testimonial Section -->
-        <section class="testimonial-section style-two alternate" style="background-image: url(images/background/9.png);">
-            <div class="auto-container">
-                <!-- Sec Title -->
-                <div class="sec-title text-center light">
-                    <h2>Testimonials From Our Customers</h2>
-                    <div class="text">Lorem ipsum dolor sit amet elit, sed do eiusmod tempor</div>
-                </div>
-
-                <div class="carousel-outer wow fadeInUp">
-
-                    <!-- Testimonial Carousel -->
-                    <div class="testimonial-carousel-three owl-carousel owl-theme default-dots light">
-
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <h4 class="title">Good theme</h4>
-                                <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                                <div class="info-box">
-                                    <div class="thumb"><img src="images/resource/testi-thumb-1.png" alt=""></div>
-                                    <h4 class="name">Nicole Wells</h4>
-                                    <span class="designation">Web Developer</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <h4 class="title">Great quality!</h4>
-                                <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                                <div class="info-box">
-                                    <div class="thumb"><img src="images/resource/testi-thumb-2.png" alt=""></div>
-                                    <h4 class="name">Gabriel Nolan</h4>
-                                    <span class="designation">Consultant</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <h4 class="title">Good theme</h4>
-                                <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                                <div class="info-box">
-                                    <div class="thumb"><img src="images/resource/testi-thumb-1.png" alt=""></div>
-                                    <h4 class="name">Nicole Wells</h4>
-                                    <span class="designation">Web Developer</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <h4 class="title">Great quality!</h4>
-                                <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                                <div class="info-box">
-                                    <div class="thumb"><img src="images/resource/testi-thumb-2.png" alt=""></div>
-                                    <h4 class="name">Gabriel Nolan</h4>
-                                    <span class="designation">Consultant</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <h4 class="title">Good theme</h4>
-                                <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                                <div class="info-box">
-                                    <div class="thumb"><img src="images/resource/testi-thumb-1.png" alt=""></div>
-                                    <h4 class="name">Nicole Wells</h4>
-                                    <span class="designation">Web Developer</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Testimonial Block -->
-                        <div class="testimonial-block">
-                            <div class="inner-box">
-                                <h4 class="title">Great quality!</h4>
-                                <div class="text">Without JobHunt i’d be homeless, they found me a job and got me sorted out quickly with everything! Can’t quite… The Mitech team works really hard to ensure high level of quality</div>
-                                <div class="info-box">
-                                    <div class="thumb"><img src="images/resource/testi-thumb-2.png" alt=""></div>
-                                    <h4 class="name">Gabriel Nolan</h4>
-                                    <span class="designation">Consultant</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Testimonial Section -->
-
-        <!-- Fun Fact Section -->
-        <div class="fun-fact-section style-two">
-            <div class="auto-container">
-                <div class="row wow fadeInUp">
-                    <!--Column-->
-                    <div class="counter-column col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-                        <div class="count-box"><span class="count-text" data-speed="3000" data-stop="4">0</span>M</div>
-                        <h4 class="counter-title">4 million daily active users</h4>
-                    </div>
-
-                    <!--Column-->
-                    <div class="counter-column col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="count-box"><span class="count-text" data-speed="3000" data-stop="12">0</span>k</div>
-                        <h4 class="counter-title">Over 12k open job positions</h4>
-                    </div>
-
-                    <!--Column-->
-                    <div class="counter-column col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="800ms">
-                        <div class="count-box"><span class="count-text" data-speed="3000" data-stop="20">0</span>M</div>
-                        <h4 class="counter-title">Over 20 million stories shared</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Fun Fact Section -->
+        <!-- End About Section -->
 
         <!-- News Section -->
         <section class="news-section">
             <div class="auto-container">
                 <div class="sec-title text-center">
                     <h2>Recent News Articles</h2>
-                    <div class="text">Fresh job related news content posted each day.</div>
                 </div>
 
                 <div class="row wow fadeInUp">
@@ -741,7 +187,7 @@
                     <div class="news-block col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><img src="images/resource/news-1.jpg" alt="" /></figure>
+                                <figure class="image"><img src="/assets/images/about.jpg" alt="" /></figure>
                             </div>
                             <div class="lower-content">
                                 <ul class="post-meta">
@@ -759,7 +205,7 @@
                     <div class="news-block col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><img src="images/resource/news-2.jpg" alt="" /></figure>
+                                <figure class="image"><img src="/assets/images/hero.png" alt="" /></figure>
                             </div>
                             <div class="lower-content">
                                 <ul class="post-meta">
@@ -777,7 +223,7 @@
                     <div class="news-block col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><img src="images/resource/news-3.jpg" alt="" /></figure>
+                                <figure class="image"><img src="/assets/images/about.jpg" alt="" /></figure>
                             </div>
                             <div class="lower-content">
                                 <ul class="post-meta">
@@ -795,6 +241,67 @@
         </section>
         <!-- End News Section -->
 
+        <!-- FAQ Section -->
+        <section class="about-section-two style-two">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h2>FAQ</h2>
+                </div>
+                <div class="row ">
+                    <!-- Content Column -->
+                    <div class="content-column col-12">
+                        <ul class="accordion-box">
+                            <!--Block-->
+                            <li class="accordion block active-block" @click="faqTrigger($event)">
+                                <div class="acc-btn active">Why won't my payment go through? <span class="icon flaticon-add"></span></div>
+                                <div class="acc-content current">
+                                    <div class="content">
+                                        <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
+                                        <p>Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!--Block-->
+                            <li class="accordion block" @click="faqTrigger($event)">
+                                <div class="acc-btn"> How do I get a refund? <span class="icon flaticon-add"></span></div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
+                                        <p>Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!--Block-->
+                            <li class="accordion block" @click="faqTrigger($event)">
+                                <div class="acc-btn">How do I redeem a coupon? <span class="icon flaticon-add"></span></div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
+                                        <p>Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!--Block-->
+                            <li class="accordion block" @click="faqTrigger($event)">
+                                <div class="acc-btn">Changing account name <span class="icon flaticon-add"></span></div>
+                                <div class="acc-content">
+                                    <div class="content">
+                                        <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
+                                        <p>Elementum lectus a porta commodo suspendisse arcu, aliquam lectus faucibus.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End FAQ Section -->
+
         <!-- Call To Action Three -->
         <section class="call-to-action-three style-two">
             <div class="auto-container wow fadeInUp">
@@ -811,6 +318,7 @@
             </div>
         </section>
         <!-- End Call To Action -->
+
     </div>
 </template>
 
@@ -879,9 +387,28 @@ export default {
             if(type == "job")
                 window.location.href = "/jobs?title="+title+"&category_id="+category_id+"&city_id="+city_id
             else if(type == "candidate")
-                window.location.href = "/resumes?title="+title+"&category_id="+category_id+"&city_id="+city_id
+                window.location.href = "/resumes?name="+title+"&category_id="+category_id+"&city_id="+city_id
             else if(type == "business")
                 window.location.href = "/local-businesses?title="+title+"&category_id="+category_id+"&city_id="+city_id
+        },
+        faqTrigger(e) {
+            // console.log(e)
+            // console.log(e.target.nextElementSibling)
+            let btns = document.getElementsByClassName('acc-btn')
+            let cont = document.getElementsByClassName('acc-content')
+            let acc = document.getElementsByClassName('accordion')
+            let i = 0, j = 0, k = 0
+            for(i; i< btns.length; i++) {
+                btns[i].classList.remove('active')
+            }
+            for(j; j< cont.length; j++) {
+                cont[j].classList.remove('current')
+            }
+            for(k; k< cont.length; k++) {
+                acc[k].classList.remove('active-block')
+            }
+            e.target.nextElementSibling.classList.add('current')
+            e.target.classList.add('active')
         }
     }
 }

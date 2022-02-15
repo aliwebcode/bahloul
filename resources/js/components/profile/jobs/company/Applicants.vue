@@ -60,28 +60,6 @@
                                                                     {{ applicant.user.country.name }}, {{ applicant.user.city.name }}
                                                                 </li>
                                                             </ul>
-                                                            <ul class="post-tags">
-                                                                <li><a href="#">App</a></li>
-                                                                <li><a href="#">Design</a></li>
-                                                                <li><a href="#">Digital</a></li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="option-box">
-                                                            <ul class="option-list">
-                                                                <li>
-                                                                    <a :href="'/u/'+applicant.user.username" data-text="View Aplication">
-                                                                        <span class="la la-eye"></span>
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <button data-text="Approve Aplication"><span
-                                                                        class="la la-check"></span></button>
-                                                                </li>
-                                                                <li>
-                                                                    <button data-text="Reject Aplication"><span
-                                                                        class="la la-times-circle"></span></button>
-                                                                </li>
-                                                            </ul>
                                                         </div>
                                                     </div>
                                                 </div>

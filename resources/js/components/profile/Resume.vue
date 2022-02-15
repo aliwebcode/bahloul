@@ -157,7 +157,7 @@
                             </div>
 
                             <div class="widget-loading" v-if="loading">
-                                <i class="fa fa-spin fa-spinner"></i>
+                                <img src="/assets/images/loading.gif">
                             </div>
 
                         </div>

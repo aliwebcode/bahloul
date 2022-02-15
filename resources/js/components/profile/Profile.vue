@@ -1,9 +1,5 @@
 <template>
     <div>
-        <!-- Loading -->
-        <loading :active.sync="isLoading"
-                 :is-full-page="fullPage"></loading>
-
         <section v-if="user.type == 1" class="user-dashboard">
             <div class="dashboard-outer">
                 <div class="upper-title-box">
@@ -178,6 +174,10 @@
                                     </form>
                                 </div>
 
+                                <div class="widget-loading" v-if="loading">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </div>
+
                             </div>
                         </div>
 
@@ -230,6 +230,11 @@
                                         </div>
                                     </form>
                                 </div>
+
+                                <div class="widget-loading" v-if="loading">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </div>
+
                             </div>
                         </div>
 
@@ -281,6 +286,11 @@
                                         </div>
                                     </form>
                                 </div>
+
+                                <div class="widget-loading" v-if="loading">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </div>
+
                             </div>
                         </div>
 
@@ -405,6 +415,11 @@
                                         </div>
                                     </form>
                                 </div>
+
+                                <div class="widget-loading" v-if="loading">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </div>
+
                             </div>
                         </div>
 
@@ -457,6 +472,11 @@
                                         </div>
                                     </form>
                                 </div>
+
+                                <div class="widget-loading" v-if="loading">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </div>
+
                             </div>
                         </div>
 
@@ -505,9 +525,22 @@
                                                        v-model="user.address"
                                                        @keydown="showSaveBtn = true">
                                             </div>
+
+                                            <!-- Input -->
+                                            <div class="form-group col-lg-12 col-md-12">
+                                                <label>Postal Code</label>
+                                                <input type="text"
+                                                       v-model="user.zip"
+                                                       @keydown="showSaveBtn = true">
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
+
+                                <div class="widget-loading" v-if="loading">
+                                    <i class="fa fa-spin fa-spinner"></i>
+                                </div>
+
                             </div>
                         </div>
 
@@ -533,14 +566,13 @@
                                 </div>
 
                                 <div class="widget-content">
-
+                                    <h6 style="font-size: 15px;line-height: 20px;color: #202124;font-weight: 500;margin-bottom: 10px;">Profile Image</h6>
                                     <div class="uploading-outer">
                                         <div class="uploadButton">
                                             <form action="">
                                                 <input
                                                     class="uploadButton-input"
                                                     type="file"
-                                                    ref="file"
                                                     @change="uploadImage($event),showSaveBtn = true"
                                                     id="upload"/>
                                             </form>
@@ -553,10 +585,35 @@
                                             files are .jpg & .png
                                         </div>
                                     </div>
-
                                     <div class="preview view-personal-image" v-if="previewImage || user.image">
                                         <img :src="previewImage" v-if="previewImage">
                                         <img :src="'/images/users/' + user.image" v-else>
+                                    </div>
+                                    <h6 style="font-size: 15px;line-height: 20px;color: #202124;font-weight: 500;margin-bottom: 10px;">
+                                        Profile Cover
+                                    </h6>
+                                    <div class="uploading-outer">
+                                        <div class="uploadButton">
+                                            <form action="">
+                                                <input
+                                                    class="uploadButton-input"
+                                                    type="file"
+                                                    @change="uploadCover($event),showSaveBtn = true"
+                                                    id="up"/>
+                                            </form>
+                                            <label class="uploadButton-button ripple-effect" for="up">
+                                                Browse Image
+                                            </label>
+                                            <span class="uploadButton-file-name"></span>
+                                        </div>
+                                        <div class="text">Max file size is 1MB, Minimum dimension: 330x300 And Suitable
+                                            files are .jpg & .png
+                                        </div>
+                                    </div>
+
+                                    <div class="preview view-personal-image cover-preview" v-if="previewCover || user.cover">
+                                        <img :src="previewCover" v-if="previewCover">
+                                        <img :src="'/images/covers/' + user.cover" v-else>
                                     </div>
 
                                     <form class="default-form">
@@ -698,6 +755,10 @@
                                     </form>
                                 </div>
 
+                                <div class="widget-loading" v-if="loading">
+                                    <img src="/assets/images/loading.gif">
+                                </div>
+
                             </div>
                         </div>
 
@@ -750,6 +811,11 @@
                                         </div>
                                     </form>
                                 </div>
+
+                                <div class="widget-loading" v-if="loading">
+                                    <img src="/assets/images/loading.gif">
+                                </div>
+
                             </div>
                         </div>
 
@@ -798,9 +864,22 @@
                                                        v-model="user.address"
                                                        @keydown="showSaveBtn = true">
                                             </div>
+
+                                            <!-- Input -->
+                                            <div class="form-group col-lg-12 col-md-12">
+                                                <label>Postal Code</label>
+                                                <input type="text"
+                                                       v-model="user.zip"
+                                                       @keydown="showSaveBtn = true">
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
+
+                                <div class="widget-loading" v-if="loading">
+                                    <img src="/assets/images/loading.gif">
+                                </div>
+
                             </div>
                         </div>
 
@@ -821,15 +900,11 @@
                 <i class="fas fa-spinner fa-pulse fa-lg" v-if="btnLoading"></i>
             </button>
         </div>
-
     </div>
 </template>
 
 <script>
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
 export default {
-    components: {Loading},
     mounted() {
         document.title = "Dashboard - Profile"
         // Get User
@@ -844,7 +919,7 @@ export default {
                 this.cities = res.data.cities
                 // Trigger Cities
                 this.selectCities()
-                this.isLoading = false
+                this.loading = false
             })
             .catch((err) => {
                 console.log(err)
@@ -859,7 +934,9 @@ export default {
             cities: [],
             selectedCities: [],
             previewImage: "",
+            previewCover: "",
             newImage: "",
+            newCover: "",
             btnLoading: false,
             skills: [
                 'PHP',
@@ -878,8 +955,7 @@ export default {
                 'Arabic',
                 'Germany',
             ],
-            isLoading: false,
-            fullPage: true
+            loading: true
         }
     },
     methods: {
@@ -893,6 +969,7 @@ export default {
                 fd.append(key, value);
             });
             fd.append('image', this.newImage)
+            fd.append('cover', this.newCover)
 
             axios({
                 method: "post",
@@ -932,6 +1009,10 @@ export default {
         uploadImage: function (e) {
             this.previewImage = URL.createObjectURL(e.target.files[0])
             this.newImage = e.target.files[0]
+        },
+        uploadCover: function (e) {
+            this.previewCover = URL.createObjectURL(e.target.files[0])
+            this.newCover = e.target.files[0]
         },
         selectCities: function (i) {
             let user_country = this.user.country_id
@@ -996,5 +1077,9 @@ export default {
     box-sizing: border-box !important;
     border-radius: 8px !important;
     transition: all 300ms ease;
+}
+.cover-preview img {
+    width: 100% !important;
+    height: auto !important;
 }
 </style>
