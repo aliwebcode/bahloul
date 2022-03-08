@@ -14,24 +14,26 @@
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
 
-    @yield('style')
-    <!-- Responsive -->
+@yield('style')
+<!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="{{ asset('assets/js/respond.js') }}"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="{{ asset('assets/js/respond.js') }}"></script><![endif]-->
+
+
 </head>
 
 <body>
 
 <div class="page-wrapper dashboard">
-
     <!-- Preloader -->
     <div class="preloader"></div>
 
-    @include('front.partials.header')
+@include('front.partials.header')
 
-    <!-- Sidebar Backdrop -->
+<!-- Sidebar Backdrop -->
     <div class="sidebar-backdrop"></div>
     <!-- User Sidebar -->
     <div class="user-sidebar">
@@ -41,9 +43,11 @@
                 <li class="active"><a href="{{ route('home') }}"> <i class="la la-home"></i> Dashboard</a></li>
                 <li><a href="{{ route('profile.index') }}"><i class="la la-user-tie"></i>My Profile</a></li>
                 <li><a href="{{ route('profile.resume') }}"><i class="la la-file-invoice"></i>My Resume</a></li>
-                <li><a href="candidate-dashboard-applied-job.html"><i class="la la-briefcase"></i> Applied Jobs </a></li>
+                <li><a href="candidate-dashboard-applied-job.html"><i class="la la-briefcase"></i> Applied Jobs </a>
+                </li>
                 <li><a href="candidate-dashboard-job-alerts.html"><i class="la la-bell"></i>Job Alerts</a></li>
-                <li><a href="candidate-dashboard-shortlisted-resume.html"><i class="la la-bookmark-o"></i>Shortlisted Jobs</a></li>
+                <li><a href="candidate-dashboard-shortlisted-resume.html"><i class="la la-bookmark-o"></i>Shortlisted
+                        Jobs</a></li>
                 <li><a href="candidate-dashboard-cv-manager.html"><i class="la la-file-invoice"></i> CV manager</a></li>
                 <li><a href="dashboard-packages.html"><i class="la la-box"></i>Packages</a></li>
                 <li><a href="dashboard-messages.html"><i class="la la-comment-o"></i>Messages</a></li>
@@ -60,8 +64,11 @@
                 <!-- Pie Graph -->
                 <div class="pie-graph">
                     <div class="graph-outer">
-                        <input type="text" class="dial" data-fgColor="#7367F0" data-bgColor="transparent" data-width="234" data-height="234" data-linecap="normal"  value="30">
-                        <div class="inner-text count-box"><span class="count-text txt" data-stop="30" data-speed="2000"></span>%</div>
+                        <input type="text" class="dial" data-fgColor="#7367F0" data-bgColor="transparent"
+                               data-width="234" data-height="234" data-linecap="normal" value="30">
+                        <div class="inner-text count-box"><span class="count-text txt" data-stop="30"
+                                                                data-speed="2000"></span>%
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,9 +117,9 @@
                 backgroundColor: 'transparent',
                 borderColor: '#1967D2',
                 borderWidth: "1",
-                data: [196,132,215,362,210,252],
+                data: [196, 132, 215, 362, 210, 252],
                 pointRadius: 3,
-                pointHoverRadius:3,
+                pointHoverRadius: 3,
                 pointHitRadius: 10,
                 pointBackgroundColor: "#1967D2",
                 pointHoverBackgroundColor: "#1967D2",
@@ -127,8 +134,8 @@
                 padding: 10,
             },
 
-            legend: { display: false },
-            title:  { display: false },
+            legend: {display: false},
+            title: {display: false},
 
             scales: {
                 yAxes: [{
@@ -142,8 +149,8 @@
                     },
                 }],
                 xAxes: [{
-                    scaleLabel: { display: false },
-                    gridLines:  { display: false },
+                    scaleLabel: {display: false},
+                    gridLines: {display: false},
                 }],
             },
 

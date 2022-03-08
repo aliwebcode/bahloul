@@ -166,7 +166,8 @@
                                                 <span class="icon fa fa-eye"></span>
                                             </figure>
                                             <h6 class="my-3 mb-5 pl-2">
-                                                <a :href="'/portfolio/'+port.id"
+                                                <a href="javascript:void(0);"
+                                                   @click="showPortfolio(port.id,$event)"
                                                    class="text-dark">
                                                     {{ stringCut(port.title) }}
                                                 </a>
@@ -340,10 +341,65 @@
                 <div class="auto-container">
                     <div class="row">
                         <div class="content-column col-lg-8 col-md-12 col-sm-12">
-                            <div class="job-detail">
+                            <div class="job-detail" v-if="selectedPortfolio == null">
                                 <h4>About Company</h4>
                                 <p v-if="user.description" style="white-space: break-spaces">{{ user.description }}</p>
                                 <h6 class="mb-3" v-else>No information added yet.</h6>
+                                <!-- Portfolio -->
+                                <div class="portfolio-outer">
+                                    <div class="row" v-if="user.user_portfolio.length > 0">
+                                        <div class="col-12">
+                                            <h4>Portfolio of  {{ user.name }}</h4>
+                                        </div>
+                                        <div class="col-lg-4 col-md-4 col-sm-6"
+                                             v-for="port in user.user_portfolio"
+                                             :key="port.id">
+                                            <figure class="image">
+                                                <button type="button"
+                                                        class="lightbox-image"
+                                                        @click="showPortfolio(port.id,$event)">
+                                                    <img :src="'/images/portfolio/' + port.portfolio_images[0].image">
+                                                </button>
+                                                <span class="icon fa fa-eye"></span>
+                                            </figure>
+                                            <h6 class="my-3 mb-5 pl-2">
+                                                <a href="javascript:void(0);"
+                                                   @click="showPortfolio(port.id,$event)"
+                                                   class="text-dark">
+                                                    {{ stringCut(port.title) }}
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="show-portfolio" v-if="selectedPortfolio != null">
+                                <h4 id="port_title">
+                                    {{ selectedPortfolio.title }}
+                                    <a v-if="selectedPortfolio.url"
+                                       :href="selectedPortfolio.url"
+                                       target="_blank"
+                                       class="btn btn-primary btn-sm float-right">
+                                        <i class="fa fa-external-link-alt fa-sm"></i>
+                                        Visit
+                                    </a>
+                                </h4>
+                                <p class="my-3">{{ selectedPortfolio.description }}</p>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 mt-4"
+                                         v-for="work in selectedPortfolio.portfolio_images"
+                                         :key="work.id">
+                                        <img :src="'/images/portfolio/' + work.image"
+                                             class="w-100 h-100">
+                                    </div>
+                                    <div class="col-12 text-center mt-3">
+                                        <button type="button" class="btn btn-primary"
+                                                @click="selectedPortfolio=null">
+                                            Back
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Related Jobs -->
@@ -363,7 +419,7 @@
                                                 <img src="/assets/images/default_avatar.png" v-else>
                                             </span>
                                             <h4>
-                                                <a :href="'/job/' + job.id">{{ job.title }}</a>
+                                                <a :href="'/en/job/' + job.id">{{ job.title }}</a>
                                             </h4>
                                             <ul class="job-info">
                                                 <li>
@@ -536,7 +592,8 @@
                                                 <span class="icon fa fa-eye"></span>
                                             </figure>
                                             <h6 class="my-3 mb-5 pl-2">
-                                                <a :href="'/portfolio/'+port.id"
+                                                <a href="javascript:void(0)"
+                                                   @click="showPortfolio(port.id,$event)"
                                                    class="text-dark">
                                                     {{ stringCut(port.title) }}
                                                 </a>

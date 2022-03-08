@@ -164,6 +164,9 @@ export default {
         // Get User
         axios.get('/request/profile/get-edit-job/' + job_id)
             .then((res) => {
+                if(res.data == 0) {
+                    window.location.href = "/dashboard"
+                }
                 this.user = res.data.user
                 this.countries = res.data.countries
                 this.cities = res.data.cities

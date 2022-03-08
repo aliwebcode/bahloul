@@ -33,7 +33,9 @@ class HomeController extends Controller
     }
 
     public function get_cities($c) {
-        $city = City::where('name', 'like', '%' . $c. '%')->get();
+        $city = City::where('name', 'like', '%' . $c. '%')
+            ->orWhere('zip', 'like', '%' . $c. '%')
+            ->get();
         return response()->json($city);
     }
 }

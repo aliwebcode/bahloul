@@ -2,7 +2,7 @@
     <section class="user-dashboard">
         <div class="dashboard-outer">
             <div class="upper-title-box">
-                <h3>Manage Jobs</h3>
+                <h3>إدارة الوظائف</h3>
             </div>
 
             <div class="row">
@@ -11,10 +11,10 @@
                     <div class="ls-widget">
                         <div class="tabs-box">
                             <div class="widget-title">
-                                <h4>My Job Listings</h4>
+                                <h4>وظائفي</h4>
                                 <div class="chosen-outer">
-                                    <router-link to="/profile/jobs/add" class="btn btn-primary">
-                                        Add New Job
+                                    <router-link to="/ar/profile/jobs/add" class="btn btn-primary">
+                                        إضافة وظيفة
                                     </router-link>
                                 </div>
                             </div>
@@ -23,23 +23,23 @@
                                     <table class="default-table manage-job-table">
                                         <thead>
                                         <tr>
-                                            <th>Title</th>
-                                            <th>Applications</th>
-                                            <th>Date</th>
-                                            <th>Status</th>
-                                            <th>Expiration Date</th>
-                                            <th>Action</th>
+                                            <th>عنوان الوظيفة</th>
+                                            <th>المتقدمين</th>
+                                            <th>التاريخ</th>
+                                            <th>الحالة</th>
+                                            <th>تاريخ إنتهاء الصلاحية</th>
+                                            <th>خيارات</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr v-if="jobs.length == 0">
-                                            <td colspan="6"><p class="text-center">No jobs added yet.</p></td>
+                                            <td colspan="6"><p class="text-center">لا يوجد وظائف بعد.</p></td>
                                         </tr>
                                         <tr v-for="(job, index) in jobs" :key="job.id">
                                             <td>
-                                                <h6><a :href="'/job/' + job.id">{{ job.title }}</a></h6>
+                                                <h6><a :href="'/ar/job/' + job.id">{{ job.title }}</a></h6>
                                                 <span class="mr-2">
-                                                    <span class="icon flaticon-briefcase"></span> {{ job.category.name }}
+                                                    <span class="icon flaticon-briefcase"></span> {{ job.category.name_ar }}
                                                 </span>
                                                 <span class="info" v-if="job.country">
                                                     <i class="icon flaticon-map-locator"></i>
@@ -47,19 +47,19 @@
                                                 </span>
                                                 <span class="info" v-else>
                                                     <span class="icon flaticon-monitor"></span>
-                                                    Remotely
+                                                    عن بعد
                                                 </span>
                                             </td>
                                             <td :class="{applied:job.applicants.length > 0}" v-if="job.applicants.length > 0">
-                                                <a :href="'/profile/job/'+job.id">
-                                                    {{ job.applicants.length }} Applied
+                                                <a :href="'/ar/profile/job/'+job.id">
+                                                    {{ job.applicants.length }} متقدم
                                                 </a>
                                             </td>
-                                            <td v-else>No Applicants</td>
+                                            <td v-else>لا يوجد متقدمين</td>
                                             <td>{{ job.time }}</td>
                                             <td>
-                                                <span v-if="job.expire != 0" class="status">Active</span>
-                                                <span v-if="job.expire == 0" class="text-danger">Expired</span>
+                                                <span v-if="job.expire != 0" class="status">فعال</span>
+                                                <span v-if="job.expire == 0" class="text-danger">منتهي الصلاحية</span>
                                             </td>
                                             <td v-if="job.expire == -1">Open</td>
                                             <td v-else-if="job.expire == 0" class="text-danger">{{ job.expire_date }}</td>
@@ -72,17 +72,17 @@
                                                 <div class="option-box">
                                                     <ul class="option-list">
                                                         <li>
-                                                            <a :href="'/job/'+job.id" data-text="View Job">
+                                                            <a :href="'/ar/job/'+job.id" data-text="معاينة">
                                                                 <span class="la la-eye"></span>
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a :href="'/profile/job/edit/'+job.id" data-text="Edit Job"><span
-                                                                class="la la-pencil"></span>
+                                                            <a :href="'/ar/profile/job/edit/'+job.id" data-text="تعديل">
+                                                                <span class="la la-pencil"></span>
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <button data-text="Delete Job"><span
+                                                            <button data-text="حذف"><span
                                                                 class="la la-trash"></span></button>
                                                         </li>
                                                     </ul>
@@ -107,10 +107,13 @@
 <script>
 export default {
     mounted() {
-        document.title = "Dashboard - My Jobs"
+        document.title = "لوحة التحكم - الوظائف"
         // Get User
         axios.get('/request/profile/get-user-jobs')
             .then((res) => {
+                if(res.data == 0) {
+                    window.location.href = "/ar/dashboard"
+                }
                 // console.log(res.data)
                 this.user = res.data
                 this.jobs = res.data.jobs

@@ -14,6 +14,8 @@ class JobsController extends Controller
 {
     public function get_user_jobs()
     {
+        if(auth()->user()->type != 2)
+            return 0;
         $data = User::with(['jobs', 'jobs.category', 'jobs.applicants', 'jobs.country', 'jobs.city'])->find(auth()->id());
         return response()->json($data);
     }
@@ -21,6 +23,9 @@ class JobsController extends Controller
     public function get_add_job()
     {
         $user = auth()->user();
+        if($user->type != 2) {
+            return 0;
+        }
         $countries = Country::all();
         $cities = City::all();
         $categories = Category::all();
@@ -35,6 +40,9 @@ class JobsController extends Controller
     public function get_edit_job($id)
     {
         $user = auth()->user();
+        if($user->type != 2) {
+            return 0;
+        }
         $countries = Country::all();
         $cities = City::all();
         $categories = Category::all();
@@ -96,6 +104,7 @@ class JobsController extends Controller
         else
             $user = "";
         $related = Job::where('category_id',$job->category_id)
+            ->where('id', '!=', $id)
             ->with(['country', 'city', 'user'])
             ->get();
         return response()->json(["job" => $job, "user" => $user, "related" => $related]);

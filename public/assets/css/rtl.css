@@ -8,6 +8,10 @@
 }
 .rtl .main-header .logo {
     margin-left: 100px;
+    float: right;
+}
+.rtl .main-header .nav-outer {
+    float: left;
 }
 .rtl .main-menu .navigation > li {
     margin-right: 0;
@@ -22,6 +26,222 @@
     left: unset;
     right: 0;
     transform: translateX(0);
+}
+.rtl .ls-section .filter-block .icon {
+    left: unset;
+    right: 20px;
+}
+.rtl .ls-section .filter-block .chosen-container .chosen-single,
+.rtl .ls-section .filter-block input,
+.rtl .ls-section .filter-block select,
+.rtl .ls-section .filter-block textarea {
+    padding-left: 20px;
+    padding-right: 54px;
+}
+.rtl .switchbox .title {
+    margin-right: 10px;
+}
+.rtl .job-block .content {
+    padding-left: 0;
+    padding-right: 68px;
+}
+.rtl .job-block .company-logo {
+    left: unset;
+    right: 0;
+}
+.rtl .job-block .bookmark-btn {
+    right: unset;
+    left: 0
+}
+.rtl .page-breadcrumb li::after {
+    right: unset;
+    left: -5px
+}
+.rtl .job-block .job-info li {
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 25px;
+    margin-left: 20px;
+}
+.rtl .job-block .job-info li .icon {
+    left: unset;
+    right: 0;
+}
+.rtl .page-item:first-child .page-link {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+.rtl .page-item:last-child .page-link {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+.rtl .job-search-form .form-group .icon {
+    left: unset;
+    right: 15px
+}
+.rtl .job-search-form .ui-selectmenu-button.ui-button,
+.rtl .job-search-form .form-group input,
+.rtl .job-search-form .form-group select,
+.rtl .job-search-form .form-group textarea {
+    padding-left: 0;
+    padding-right: 40px;
+}
+.rtl .banner-section-nine .job-search-form form {
+    padding-left: 0;
+    padding-right: 30px;
+}
+.rtl .job-search-form .form-group:first-child {
+    border-right: 0 !important;
+    border-left: 1px solid #e6e6e6;
+}
+.rtl .job-search-form .form-group.location,
+.rtl .job-search-form .form-group.category
+{
+    border-left: 1px solid #e6e6e6;
+}
+.rtl .job-search-form .form-group.type {
+    border-left: 0 !important;
+}
+.rtl .banner-section-nine .job-search-form .form-group label {
+    left: unset;
+    right: 15px;
+}
+.rtl .accordion-box .block .acc-btn .icon {
+    right: unset;
+    left: 0;
+}
+.rtl .job-overview-two ul {
+    margin-right: 0;
+    margin-left: -20px;
+}
+.rtl .job-overview-two li {
+    padding-left: 20px;
+    padding-right: 50px;
+}
+.rtl .job-overview-two .icon {
+    left: unset;
+    right: 0;
+}
+.rtl .job-block-four .location .icon {
+    left: unset;
+    right: 0
+}
+.rtl .job-block-four .location {
+    padding-left: 0;
+    padding-right: 25px;
+}
+.rtl .social-share h5 {
+    margin-right: 0;
+    margin-left: 20px;
+}
+.rtl .candidate-block-five .inner-box .content {
+    padding-left: 0;
+    padding-right: 120px;
+}
+.rtl .candidate-block-five .image {
+    left: unset;
+    right: 0;
+}
+.rtl .candidate-block-five .candidate-info li.designation {
+    padding-right: 0;
+}
+.rtl .candidate-block-five .candidate-info li {
+    padding-right: 25px;
+    margin-left: 30px;
+    padding-left: 0;
+    margin-right: 0;
+}
+.rtl .candidate-block-five .candidate-info li .icon {
+    left: unset;
+    right: 0;
+}
+.rtl .resume-block .inner {
+    padding-left: 0;
+    padding-right: 60px;
+}
+.rtl .resume-block .name {
+    left: unset;
+    right: 0;
+}
+.rtl .resume-block .info-box {
+    margin-right: 0;
+    margin-left: 20px;
+}
+.rtl .resume-block .edit-box {
+    direction: ltr;
+}
+.rtl .job-overview li {
+    padding-left: 0;
+    padding-right: 50px;
+}
+.rtl .job-overview .icon {
+    left: unset;
+    right: 0;
+}
+.rtl .candidate-block-three .image {
+    left: unset;
+    right: 0;
+}
+.rtl .candidate-block-three .inner-box .content {
+    padding-left: 0;
+    padding-right: 110px;
+}
+.rtl .candidate-block-three .candidate-info li .icon {
+    left: unset;
+    right: 0;
+}
+.candidate-block-three .candidate-info li {
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 25px;
+    margin-left: 20px;
+}
+.rtl .complete-profile-list {
+    text-align: right !important;
+    margin-left: 0 !important;
+    margin-right: 25px;
+}
+.rtl .user-sidebar .navigation li a i {
+    margin-right: 0;
+    margin-left: 15px;
+}
+.rtl .ls-widget .widget-title h4 {
+    margin-right: 0;
+    margin-left: 30px;
+}
+.rtl .notification-list li .icon {
+    left: unset;
+    right: 0
+}
+.rtl .notification-list li {
+    padding-left: 0;
+    padding-right: 47px;
+}
+.sidebar .btn-box .bookmark-btn {
+    margin-left: 0;
+    margin-right: 20px;
+}
+.job-block-seven .job-info li {
+    padding-left: 0;
+    margin-right: 0;
+    padding-right: 25px;
+    margin-left: 20px;
+}
+.job-block-seven .job-info li .icon {
+    left: unset;
+    right: 0
+}
+.candidate-block-four .job-info li {
+    padding-left: 0;
+    padding-right: 25px;
+}
+.candidate-block-four .job-info li .icon {
+    left: unset;
+    right: 0;
 }
 @media(max-width: 1366px) {
     .rtl .main-header .menu-btn {
@@ -39,7 +259,12 @@
         margin-left: 60px;
     }
     .rtl .main-menu .navigation > li {
-        margin-right: 0;
-        margin-left: 35px;
+        margin-right: 0 !important;
+        margin-left: 1.5rem !important;
+    }
+}
+@media(max-width: 767px) {
+    .rtl .candidate-block-five .inner-box .content {
+        padding-right: 0;
     }
 }

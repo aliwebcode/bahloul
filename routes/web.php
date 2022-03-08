@@ -105,6 +105,14 @@ Route::group(['prefix' => 'request', 'as' => 'request.'], function () {
     });
 
 });
+Route::get('/ar/logout', function () {
+    auth()->logout();
+    return redirect("/ar/login");
+});
+Route::get('/en/logout', function () {
+    auth()->logout();
+    return redirect("/en/login");
+});
 Route::get('/logout', function () {
     auth()->logout();
     return redirect("/login");

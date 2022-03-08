@@ -2,8 +2,7 @@
     <section class="user-dashboard">
         <div class="dashboard-outer">
             <div class="upper-title-box">
-                <h3>{{ job.title }} - All Aplicants</h3>
-                <div class="text">Ready to jump back in?</div>
+                <h3>{{ job.title }} - المتقدمين</h3>
             </div>
 
             <div class="row">
@@ -12,11 +11,11 @@
                     <div class="ls-widget">
                         <div class="tabs-box">
                             <div class="widget-title">
-                                <h4>Applicant</h4>
+                                <h4>المتقدمين</h4>
                                 <div class="chosen-outer">
-                                    <a href="/profile/jobs" class="btn btn-primary">
-                                        Back To Jobs
-                                        <i class="fa fa-angle-right"></i>
+                                    <a href="/ar/profile/jobs" class="btn btn-primary">
+                                        عودة للوظائف
+                                        <i class="fa fa-angle-left"></i>
                                     </a>
                                 </div>
                             </div>
@@ -53,20 +52,21 @@
                                                                 <li class="designation">{{ applicant.user.job_title }}</li>
                                                                 <li v-if="applicant.user.category">
                                                                     <span class="icon flaticon-briefcase"></span>
-                                                                    {{ applicant.user.category.name }}
+                                                                    {{ applicant.user.category.name_ar }}
                                                                 </li>
                                                                 <li v-if="applicant.user.country">
                                                                     <span class="icon flaticon-map-locator"></span>
                                                                     {{ applicant.user.country.name }}, {{ applicant.user.city.name }}
                                                                 </li>
                                                             </ul>
+                                                            <span v-if="applicant.notes">{{ applicant.notes }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div v-else><p class="text-center">No Applicants yet.</p></div>
+                                        <div v-else><p class="text-center">لا يوجد متقدمين بعد.</p></div>
 
                                     </div>
                                 </div>
@@ -82,18 +82,15 @@
 <script>
 export default {
     mounted() {
-        document.title = "Dashboard - Applicants"
+        document.title = "لوحة التحكم المتقدمين"
         let job_id = this.$route.params.id
         axios.get("/request/profile/get-applicants/" + job_id)
             .then((res) => {
-                console.log(res.data)
+                if(res.data == 0) {
+                    window.location.href = "/ar/dashboard"
+                }
                 this.job = res.data
                 this.applicants = res.data.applicants
-                // let i = 0
-                // this.job = res.data[0].job
-                // for (i; i x< res.data.length; i++) {
-                //     this.users.push(res.data[i].user)
-                // }
             })
     },
     data: function () {

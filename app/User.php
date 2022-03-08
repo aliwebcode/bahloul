@@ -147,7 +147,12 @@ class User extends Authenticatable
             if(!$this->company_type) $count++;
             if(!$this->company_size) $count++;
             if(!$this->address) $count++;
-            return $count;
+            // Check Portfolio
+            if($this->user_portfolio->count() == 0) $portfolio = 1;
+            return [
+                "profile" => $count,
+                "portfolio" => $portfolio,
+            ];
         } else if($this->type == 3) {
             if(!$this->image) $count++;
             if(!$this->phone) $count++;

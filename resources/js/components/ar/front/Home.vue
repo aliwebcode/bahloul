@@ -12,22 +12,22 @@
                             <div class="row">
                                 <!-- Form Group -->
                                 <div class="form-group col-lg-3 col-md-12 col-sm-12">
-                                    <label>What job are you looking for?</label>
+                                    <label>عن ماذا تبحث؟</label>
                                     <span class="icon flaticon-search-1"></span>
                                     <input type="text"
                                            v-model="search.title"
-                                           placeholder="Search Word...">
+                                           placeholder="كلمة البحث...">
                                 </div>
 
                                 <!-- Form Group -->
                                 <div class="form-group col-lg-3 col-md-12 col-sm-12 location">
-                                    <label>Where?</label>
+                                    <label>أين؟</label>
                                     <span class="icon flaticon-map-locator"></span>
                                     <input type="text"
                                            @keydown.space.prevent
                                            @keyup="getCities()"
                                            v-model="city"
-                                           placeholder="City or postcode">
+                                           placeholder="المدينة أو الرمز البريدي">
                                     <ul class="suggestions" v-if="suggestions.cities.length">
                                         <li v-for="city in suggestions.cities" :key="city.id">
                                             <button type="button"
@@ -40,31 +40,33 @@
 
                                 <!-- Form Group -->
                                 <div class="form-group col-lg-3 col-md-12 col-sm-12 category">
-                                    <label>Categories</label>
+                                    <label>التصنيف</label>
                                     <span class="icon flaticon-briefcase"></span>
                                     <select class="chosen-select" v-model="search.category_id">
-                                        <option value="">All Categories</option>
+                                        <option value="">كل التصنيفات</option>
                                         <option v-for="category in categories"
                                                 :key="category.id"
-                                                :value="category.id">{{ category.name }}</option>
+                                                :value="category.id">{{ category.name_ar }}</option>
                                     </select>
                                 </div>
 
                                 <!-- Form Group -->
-                                <div class="form-group col-lg-3 col-md-12 col-sm-12 category">
-                                    <label>Type</label>
+                                <div class="form-group col-lg-3 col-md-12 col-sm-12 type">
+                                    <label>نوع البحث</label>
                                     <span class="icon flaticon-briefcase"></span>
                                     <select class="chosen-select" v-model="search.type">
-                                        <option value="">Search Type</option>
-                                        <option value="job">Job</option>
-                                        <option value="candidate">Candidate</option>
-                                        <option value="business">Local Business</option>
+                                        <option value="">نوع البحث</option>
+                                        <option value="job">وظيفة</option>
+                                        <option value="candidate">مستقل</option>
+                                        <option value="business">عمل محلي</option>
                                     </select>
                                 </div>
 
                                 <!-- Form Group -->
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 mt-4" style="text-align: center !important;">
-                                    <button type="button" @click="explore()" class="theme-btn btn-style-two p-2">Explore</button>
+                                    <button type="button" @click="explore()" class="theme-btn btn-style-two p-2">
+                                        استكشف
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -117,8 +119,8 @@
         <section class="process-section pt-0" style="margin-top: 60px;">
             <div class="auto-container">
                 <div class="sec-title text-center">
-                    <h2>Our Services</h2>
-                    <div class="text">Discover our creative services</div>
+                    <h2>خدماتنا</h2>
+                    <div class="text">اكتشف خدماتنا الاحترافية</div>
                 </div>
 
                 <div class="row wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
@@ -253,7 +255,7 @@
                         <ul class="accordion-box">
                             <!--Block-->
                             <li class="accordion block active-block" @click="faqTrigger($event)">
-                                <div class="acc-btn active">Why won't my payment go through? <span class="icon flaticon-add"></span></div>
+                                <div class="acc-btn active">كيف يعمل موقع بهلول؟ <span class="icon flaticon-add"></span></div>
                                 <div class="acc-content current">
                                     <div class="content">
                                         <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
@@ -264,7 +266,7 @@
 
                             <!--Block-->
                             <li class="accordion block" @click="faqTrigger($event)">
-                                <div class="acc-btn"> How do I get a refund? <span class="icon flaticon-add"></span></div>
+                                <div class="acc-btn"> ما الخدمات التي نقدمها؟ <span class="icon flaticon-add"></span></div>
                                 <div class="acc-content">
                                     <div class="content">
                                         <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
@@ -275,7 +277,7 @@
 
                             <!--Block-->
                             <li class="accordion block" @click="faqTrigger($event)">
-                                <div class="acc-btn">How do I redeem a coupon? <span class="icon flaticon-add"></span></div>
+                                <div class="acc-btn">ما أفضل طريقة لاستخدام الموقع؟ <span class="icon flaticon-add"></span></div>
                                 <div class="acc-content">
                                     <div class="content">
                                         <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
@@ -286,7 +288,7 @@
 
                             <!--Block-->
                             <li class="accordion block" @click="faqTrigger($event)">
-                                <div class="acc-btn">Changing account name <span class="icon flaticon-add"></span></div>
+                                <div class="acc-btn">هل الموقع مجاني؟ <span class="icon flaticon-add"></span></div>
                                 <div class="acc-content">
                                     <div class="content">
                                         <p>Pharetra nulla ullamcorper sit lectus. Fermentum mauris pellentesque nec nibh sed et, vel diam, massa. Placerat quis vel fames interdum urna lobortis sagittis sed pretium. Aliquam eget posuere sit enim elementum nulla vulputate magna. Morbi sed arcu proin quis tortor non risus.</p>
@@ -307,12 +309,14 @@
             <div class="auto-container wow fadeInUp">
                 <div class="outer-box">
                     <div class="sec-title light">
-                        <h2>Gat a question?</h2>
-                        <div class="text">We're here to help. Check out our FAQs, send us an email or call us at 1 <br><a href="#">(900) 777-7777.</a></div>
+                        <h2>لديك سؤال؟</h2>
+                        <div class="text">نحن هنا لمساعدتك, أرسل لنا بريد بسؤالك أو اتصل على الرقم <br>
+                            <a href="#">(900) 777-7777.</a>
+                        </div>
                     </div>
 
                     <div class="btn-box">
-                        <a href="#" class="theme-btn btn-style-three">Get Started</a>
+                        <a href="#" class="theme-btn btn-style-three">تواصل معنا</a>
                     </div>
                 </div>
             </div>
@@ -327,7 +331,7 @@ export default {
     mounted() {
         document.getElementsByClassName('dashboard')[0].classList.remove('dashboard')
         document.getElementsByClassName('main-header')[0].classList.remove('header-shaddow')
-        document.title = "Home"
+        document.title = "بهلول - الرئيسية"
         axios.get("/request/get-all-categories")
         .then((res) => {
             this.categories = res.data
@@ -361,7 +365,7 @@ export default {
                             this.suggestions.cities = res.data
                         else {
                             this.suggestions.cities = []
-                            this.suggestions.cities.push({name: "No Data Found."})
+                            this.suggestions.cities.push({name: "لا يوجد نتائج."})
                             console.log(this.suggestions.cities)
                         }
                     })
@@ -385,11 +389,11 @@ export default {
                 return
             }
             if(type == "job")
-                window.location.href = "/jobs?title="+title+"&category_id="+category_id+"&city_id="+city_id
+                window.location.href = "/ar/jobs?title="+title+"&category_id="+category_id+"&city_id="+city_id
             else if(type == "candidate")
-                window.location.href = "/resumes?name="+title+"&category_id="+category_id+"&city_id="+city_id
+                window.location.href = "/ar/resumes?name="+title+"&category_id="+category_id+"&city_id="+city_id
             else if(type == "business")
-                window.location.href = "/local-businesses?title="+title+"&category_id="+category_id+"&city_id="+city_id
+                window.location.href = "/ar/local-businesses?title="+title+"&category_id="+category_id+"&city_id="+city_id
         },
         faqTrigger(e) {
             // console.log(e)

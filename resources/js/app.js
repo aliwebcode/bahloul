@@ -31,20 +31,22 @@ const app = new Vue({
     el: '#app',
     router: routes,
     mounted() {
-        // Listen to notification
-        Echo.private(`App.User.${authUser.id}`)
-            .notification((notification) => {
-                const Toast = Swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: true,
-                    timerProgressBar: false,
-                    showCloseButton: true,
-                })
-                Toast.fire({
-                    icon: 'info',
-                    title: notification.data.candidate.name + ' Applied ' + notification.data.job.title + ' Job'
-                })
-            });
+        if(authUser) {
+            // Listen to notification
+            Echo.private(`App.User.${authUser.id}`)
+                .notification((notification) => {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: true,
+                        timerProgressBar: false,
+                        showCloseButton: true,
+                    })
+                    Toast.fire({
+                        icon: 'info',
+                        title: notification.data.candidate.name + ' Applied ' + notification.data.job.title + ' Job'
+                    })
+                });
+        }
     }
 });

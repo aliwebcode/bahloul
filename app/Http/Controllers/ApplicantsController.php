@@ -47,6 +47,9 @@ class ApplicantsController extends Controller
     }
 
     public function get_applicants($id) {
+        if(auth()->user()->type != 2) {
+            return 0;
+        }
         $data = Job::with([
             'applicants.user','applicants.user.country','applicants.user.city',
             'applicants.user.category'

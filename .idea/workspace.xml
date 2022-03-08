@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bd9eba2-50d7-4de9-8f8b-5fa4f7ca2c32" name="Default Changelist" comment="" />
+    <list default="true" id="7bd9eba2-50d7-4de9-8f8b-5fa4f7ca2c32" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApplicantsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApplicantsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/auth/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/auth/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/auth/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Business.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Business.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Job.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Job.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Jobs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Jobs.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Portfolio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Portfolio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Profile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/front/Resumes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Resumes.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/global/NotFound.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/global/NotFound.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/AddWork.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Dashboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/MyAccount.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Portfolio.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Profile.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Resume.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/Shortlists.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/jobs/candidate/AppliedJobs.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/jobs/company/AddJob.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/jobs/company/Applicants.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/jobs/company/EditJob.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/profile/jobs/company/Jobs.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,6 +202,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\jobs\resources\js\components\de" />
       <recent name="C:\xampp\htdocs\jobs\resources\js\components\profile\jobs\company" />
       <recent name="C:\xampp\htdocs\jobs\resources\js\components\profile\jobs" />
       <recent name="C:\xampp\htdocs\jobs\resources\js\components\profile" />
@@ -279,7 +318,21 @@
       <workItem from="1644496002583" duration="2590000" />
       <workItem from="1644828767629" duration="15569000" />
       <workItem from="1644856174638" duration="7123000" />
-      <workItem from="1644921004131" duration="5889000" />
+      <workItem from="1644921004131" duration="7291000" />
+      <workItem from="1645012490900" duration="2137000" />
+      <workItem from="1645105023598" duration="2797000" />
+      <workItem from="1645111781027" duration="11427000" />
+      <workItem from="1645166130336" duration="5925000" />
+      <workItem from="1645179497635" duration="10374000" />
+      <workItem from="1645213886458" duration="1283000" />
+      <workItem from="1645854820533" duration="501000" />
+      <workItem from="1646159970255" duration="598000" />
+      <workItem from="1646241908400" duration="1691000" />
+      <workItem from="1646290035753" duration="7147000" />
+      <workItem from="1646315788707" duration="1211000" />
+      <workItem from="1646391701649" duration="2511000" />
+      <workItem from="1646740944541" duration="5818000" />
+      <workItem from="1646768276843" duration="590000" />
     </task>
     <servers />
   </component>
@@ -295,26 +348,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1644253220586" />
-    <state x="441" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1637001547656">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="441" y="223" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1637001547656" />
     <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1644407576564">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1644407576564" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1643128678347">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1645855330597">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1643128678347" />
-    <state x="518" y="287" key="NewPhpFileDialog" timestamp="1639574989434">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1645855330597" />
+    <state x="518" y="287" key="NewPhpFileDialog" timestamp="1645108001228">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="518" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1639574989434" />
+    <state x="518" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1645108001228" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1643988622389">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1643988622389" />
+    <state x="0" y="0" width="585" height="728" key="find.popup" timestamp="1646751211918">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1646751211918" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1641396839999">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -385,11 +385,11 @@
                                                 <select class="chosen-select"
                                                         v-model="user.company_size"
                                                         @change="showSaveBtn = true">
-                                                    <option>50 - 100</option>
-                                                    <option>100 - 150</option>
-                                                    <option>200 - 250</option>
-                                                    <option>300 - 350</option>
-                                                    <option>500 - 1000</option>
+                                                    <option value="50-100">50 - 100</option>
+                                                    <option value="100-150">100 - 150</option>
+                                                    <option value="200-250">200 - 250</option>
+                                                    <option value="300-350">300 - 350</option>
+                                                    <option value="500-1000">500 - 1000</option>
                                                 </select>
                                             </div>
 
@@ -911,7 +911,7 @@ export default {
         axios.get('/request/profile/get-user-profile')
             .then((res) => {
                 if(res.data == 0) {
-                    window.location.href= "/login"
+                    window.location.href= "/en/login"
                 }
                 this.user = res.data.user
                 this.categories = res.data.categories
