@@ -2,7 +2,7 @@
     <section class="user-dashboard">
         <div class="dashboard-outer">
             <div class="upper-title-box">
-                <h3>My Resume</h3>
+                <h3>السيرة الذاتية</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -10,10 +10,10 @@
                     <div class="ls-widget">
                         <div class="tabs-box">
                             <div class="widget-title">
-                                <h4>CV</h4>
+                                <h4>ملف السيرة الذاتية (CV)</h4>
                                 <span v-if="user.cv" style="font-size: 15px;">
-                                    <strong>Current CV file:</strong> {{ user.cv }}
-                                    <button type="button" @click="deleteCv" class="btn btn-danger btn-sm">Delete Cv</button>
+                                    <strong>ملف السيرة الذاتية الحالي:</strong> {{ user.cv }}
+                                    <button type="button" @click="deleteCv" class="btn btn-danger btn-sm">حذف ملف السيرة الذاتية</button>
                                 </span>
                             </div>
 
@@ -22,20 +22,20 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="alert alert-info" v-if="uploadingCv">
-                                                Uploading...don't close this window unit finishing uploading.
+                                                جاري الرفع.. لا تغلق الصفحة حتى إكتمال الرفع.
                                             </div>
                                         </div>
                                         <div class="col-12 mb-4" v-if="cv">
-                                            <h6>File: {{ cv.name }} Selected.</h6>
+                                            <h6>تم تحديد الملف: {{ cv.name }}</h6>
                                             <div class="my-4">
                                                 <button type="button"
                                                         class="theme-btn btn-style-seven"
                                                         @click="saveCv">
-                                                    Save
+                                                    حفظ
                                                 </button>
                                                 <button type="button" class="btn btn-link"
                                                         @click="cv=''">
-                                                    Cancel
+                                                    إلغاء
                                                 </button>
                                             </div>
                                         </div>
@@ -47,12 +47,9 @@
                                                        @change="uploadCv($event)"
                                                        id="upload"/>
                                                 <label class="uploadButton-button ripple-effect" for="upload">
-                                                    Browse CV
+                                                    اختيار ملف سيرة ذاتية
                                                 </label>
                                                 <span class="uploadButton-file-name"></span>
-                                            </div>
-                                            <div class="text">
-                                                Max file size is 2MB, Suitable files are .pdf
                                             </div>
                                         </div>
 
@@ -60,12 +57,12 @@
                                             <!-- Resume / Education -->
                                             <div class="resume-outer">
                                                 <div class="upper-title">
-                                                    <h4>Education</h4>
+                                                    <h4>التعليم</h4>
                                                     <button class="add-info-btn"
                                                             type="button"
                                                             @click="modals.addEdu=true">
                                                         <span class="icon flaticon-plus"></span>
-                                                        Add Education
+                                                        إضافة تعليم
                                                     </button>
                                                 </div>
                                                 <div v-if="education.length > 0">
@@ -77,7 +74,7 @@
                                                             <div class="title-box">
                                                                 <div class="info-box">
                                                                     <h3> {{ edu.certificate }}
-                                                                        in {{ edu.field }}</h3>
+                                                                        في {{ edu.field }}</h3>
                                                                     <span>{{ edu.college }}</span>
                                                                 </div>
                                                                 <div class="edit-box">
@@ -103,18 +100,18 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="text-center">
-                                                    No Education yet.
+                                                    لم يتم إضافة تعليم بعد.
                                                 </div>
                                             </div>
 
                                             <!-- Resume / Work & Experience -->
                                             <div class="resume-outer theme-blue">
                                                 <div class="upper-title">
-                                                    <h4>Work & Experience</h4>
+                                                    <h4>العمل والخبرات</h4>
                                                     <button class="add-info-btn"
                                                             type="button"
                                                             @click="modals.addExp=true">
-                                                        <span class="icon flaticon-plus"></span> Add Work
+                                                        <span class="icon flaticon-plus"></span> إضافة خبرة عمل
                                                     </button>
                                                 </div>
                                                 <div v-if="experience.length > 0">
@@ -148,7 +145,7 @@
                                                     </div>
                                                 </div>
                                                 <div v-else class="text-center">
-                                                    No Work Experience yet.
+                                                    لم يتم إضافة خبرة بعد.
                                                 </div>
                                             </div>
                                         </div>
@@ -168,95 +165,95 @@
         <!-- Education Modals -->
         <Modal v-model="modals.addEdu" title="Add New Education">
             <div class="form-group">
-                <label>College Name</label>
+                <label>اسم الكلية</label>
                 <input type="text" class="form-control" v-model="newRecords.education.college" required>
             </div>
             <div class="form-group">
-                <label>Certificate</label>
+                <label>الشهادة</label>
                 <input type="text" class="form-control" v-model="newRecords.education.certificate" required>
             </div>
             <div class="form-group">
-                <label>Field</label>
+                <label>مجال الدراسة</label>
                 <input type="text" class="form-control" v-model="newRecords.education.field" required>
             </div>
             <div class="form-group">
-                <label>Start Year</label>
+                <label>سنة البدء</label>
                 <input type="text" class="form-control" v-model="newRecords.education.start_year" required>
             </div>
             <div class="form-group">
-                <label>End Year</label>
+                <label>سنة التخرج</label>
                 <input type="text" class="form-control" v-model="newRecords.education.end_year" required>
             </div>
             <div class="form-group">
-                <label>Description</label>
+                <label>ملاحظات</label>
                 <textarea cols="30" rows="10" class="form-control" v-model="newRecords.education.description"
                           required></textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-success" type="button" @click="addEdu">Add</button>
+                <button class="btn btn-success" type="button" @click="addEdu">إضافة</button>
             </div>
         </Modal>
         <Modal v-model="modals.editEdu" title="Edit">
             <div v-if="modals.editEdu">
                 <div class="form-group">
-                    <label>College Name</label>
+                    <label>اسم الكلية</label>
                     <input type="text" class="form-control" v-model="education[ed].college" required>
                 </div>
                 <div class="form-group">
-                    <label>Certificate</label>
+                    <label>الشهادة</label>
                     <input type="text" class="form-control" v-model="education[ed].certificate" required>
                 </div>
                 <div class="form-group">
-                    <label>Field</label>
+                    <label>مجال الدراسة</label>
                     <input type="text" class="form-control" v-model="education[ed].field" required>
                 </div>
                 <div class="form-group">
-                    <label>Start Year</label>
+                    <label>سنة البدء</label>
                     <input type="text" class="form-control" v-model="education[ed].start_year" required>
                 </div>
                 <div class="form-group">
-                    <label>End Year</label>
+                    <label>سنة التخرج</label>
                     <input type="text" class="form-control" v-model="education[ed].end_year" required>
                 </div>
                 <div class="form-group">
-                    <label>Description</label>
+                    <label>ملاحظات</label>
                     <textarea cols="30" rows="10" class="form-control" v-model="education[ed].description"
                               required></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success" type="button" @click="updateEdu(ed)">Save</button>
+                    <button class="btn btn-success" type="button" @click="updateEdu(ed)">حفظ</button>
                 </div>
             </div>
         </Modal>
-        <Modal v-model="modals.deleteEdu" title="Are you sure?">
+        <Modal v-model="modals.deleteEdu" title="هل أنت متأكد؟">
             <div class="modal-body">
-                Are you sure delete?
+                هل أنت متأكد من الحذف؟
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger" @click="deleteEdu(ed)">Yes</button>
-                <button class="btn btn-secondary" @click="modals.deleteEdu=false">Cancel</button>
+                <button class="btn btn-danger" @click="deleteEdu(ed)">حذف</button>
+                <button class="btn btn-secondary" @click="modals.deleteEdu=false">إلغاء</button>
             </div>
         </Modal>
         <!-- Experience Modals -->
         <Modal v-model="modals.addExp" title="Add New Experience">
             <div class="form-group">
-                <label>Job Title</label>
+                <label>المسمى الوظيفي</label>
                 <input type="text" class="form-control" v-model="newRecords.experience.job_title" required>
             </div>
             <div class="form-group">
-                <label>Company</label>
+                <label>الشركة</label>
                 <input type="text" class="form-control" v-model="newRecords.experience.company" required>
             </div>
             <div class="form-group">
-                <label>Start Year</label>
+                <label>سنة البدء</label>
                 <input type="text" class="form-control" v-model="newRecords.experience.start_year" required>
             </div>
             <div class="form-group">
-                <label>End Year</label>
+                <label>سنة ترك العمل</label>
                 <input type="text" class="form-control" v-model="newRecords.experience.end_year" required>
             </div>
             <div class="form-group">
-                <label>Description</label>
+                <label>ملاحظات</label>
                 <textarea cols="30" rows="10" class="form-control" v-model="newRecords.experience.description"
                           required></textarea>
             </div>
@@ -267,38 +264,38 @@
         <Modal v-model="modals.editExp" title="Edit">
             <div v-if="modals.editExp">
                 <div class="form-group">
-                    <label>Job Title</label>
+                    <label>المسمى الوظيفي</label>
                     <input type="text" class="form-control" v-model="experience[ex].job_title" required>
                 </div>
                 <div class="form-group">
-                    <label>Company</label>
+                    <label>الشركة</label>
                     <input type="text" class="form-control" v-model="experience[ex].company" required>
                 </div>
                 <div class="form-group">
-                    <label>Start Year</label>
+                    <label>سنة البدء</label>
                     <input type="text" class="form-control" v-model="experience[ex].start_year" required>
                 </div>
                 <div class="form-group">
-                    <label>End Year</label>
+                    <label>سنة ترك العمل</label>
                     <input type="text" class="form-control" v-model="experience[ex].end_year" required>
                 </div>
                 <div class="form-group">
-                    <label>Description</label>
+                    <label>ملاحظات</label>
                     <textarea cols="30" rows="10" class="form-control" v-model="experience[ex].description"
                               required></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success" type="button" @click="updateExp(ex)">Save</button>
+                    <button class="btn btn-success" type="button" @click="updateExp(ex)">حفظ</button>
                 </div>
             </div>
         </Modal>
-        <Modal v-model="modals.deleteExp" title="Are you sure?">
+        <Modal v-model="modals.deleteExp" title="هل أنت متأكد؟">
             <div class="modal-body">
-                Are you sure delete?
+                هل أنت متأكد من الحذف؟
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger" @click="deleteExp(ex)">Yes</button>
-                <button class="btn btn-secondary" @click="modals.deleteExp=false">Cancel</button>
+                <button class="btn btn-danger" @click="deleteExp(ex)">حذف</button>
+                <button class="btn btn-secondary" @click="modals.deleteExp=false">إلغاء</button>
             </div>
         </Modal>
 
@@ -308,7 +305,7 @@
 <script>
 export default {
     mounted() {
-        document.title = "Dashboard - Resume"
+        document.title = "لوحة التحكم - السيرة الذاتية"
         // Get User
         axios.get('/request/profile/get-resume')
             .then((res) => {
@@ -376,7 +373,7 @@ export default {
 
                     Toast.fire({
                         icon: 'success',
-                        title: 'Added successfully'
+                        title: 'تمت الإضافة بنجاح'
                     })
                     // console.log(res.data)
                     this.education.unshift(res.data)
@@ -412,7 +409,7 @@ export default {
 
                     Toast.fire({
                         icon: 'success',
-                        title: 'Saved successfully'
+                        title: 'تم الحفظ بنجاح'
                     })
                 })
                 .catch((err) => {
@@ -438,7 +435,7 @@ export default {
 
                     Toast.fire({
                         icon: 'success',
-                        title: 'Deleted successfully'
+                        title: 'تم الحذف بنجاح'
                     })
                     this.education.splice(index, 1)
                     this.modals.deleteEdu = false
@@ -466,7 +463,7 @@ export default {
 
                     Toast.fire({
                         icon: 'success',
-                        title: 'Added successfully'
+                        title: 'تمت الإضافة بنجاح'
                     })
                     // console.log(res.data)
                     this.experience.unshift(res.data)
@@ -500,7 +497,7 @@ export default {
 
                     Toast.fire({
                         icon: 'success',
-                        title: 'Saved successfully'
+                        title: 'تم الحفظ بنجاح'
                     })
                     this.modals.editExp = false
                 })
@@ -527,7 +524,7 @@ export default {
 
                     Toast.fire({
                         icon: 'success',
-                        title: 'Deleted successfully'
+                        title: 'تم الحذف بنجاح'
                     })
                     this.experience.splice(index, 1)
                     this.modals.deleteExp = false
@@ -565,7 +562,7 @@ export default {
 
                     Toast.fire({
                         icon: 'success',
-                        title: 'Saved successfully'
+                        title: 'تم الحفظ بنجاح'
                     })
                     this.cv = ""
                     this.uploadingCv = false
@@ -590,7 +587,7 @@ export default {
                     })
                     Toast.fire({
                         icon: 'success',
-                        title: 'Deleted successfully'
+                        title: 'تم الحذف بنجاح'
                     })
                 }
             })

@@ -61,9 +61,43 @@
         <style>
             body {
                 font-family: 'Cairo', sans-serif !important;
+                position: relative;
             }
         </style>
     @endif
+
+    <style>
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            font-size: 55px;
+            padding: 12px;
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            transition: .4s all;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75px;
+            height: 75px;
+        }
+        .whatsapp-icon i {
+            color: #189d0e;
+            display: block;
+            padding-bottom: 5px;
+        }
+        @media(max-width: 756px) {
+            .whatsapp-icon {
+                font-size: 35px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
 
 </head>
 
@@ -165,6 +199,13 @@
     @include('front.partials.footer')
 
 </div><!-- End Page Wrapper -->
+
+
+<div class="whatsapp-icon" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="انقر للتواصل على واتساب" data-bs-original-title="" title="">
+    <a href="https://wa.me/491776424399">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

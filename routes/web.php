@@ -92,6 +92,8 @@ Route::group(['prefix' => 'request', 'as' => 'request.'], function () {
         Route::group(['prefix' => 'home'], function() {
             /* Get Cities */
             Route::get('/get-cities/{c}','HomeController@get_cities');
+            /* Get FAQ */
+            Route::get('/get-faq','HomeController@get_faq');
         });
 
 
@@ -117,4 +119,4 @@ Route::get('/logout', function () {
     auth()->logout();
     return redirect("/login");
 });
-Route::get('/{any?}', 'HomeController@index')->where('any', '.*');
+Route::get('/{any?}', 'HomeController@index')->where('any', '^(?!admin).*$');

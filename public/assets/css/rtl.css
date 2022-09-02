@@ -243,6 +243,10 @@
     left: unset;
     right: 0;
 }
+.add-info-btn .icon {
+    margin-right: 0;
+    margin-left: 10px;
+}
 @media(max-width: 1366px) {
     .rtl .main-header .menu-btn {
         margin-left: 0;

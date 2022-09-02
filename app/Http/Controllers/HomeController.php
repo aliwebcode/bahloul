@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\City;
+use App\Faq;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('front.index');
+    }
+
+    public function get_faq() {
+        $faq = Faq::latest()->get();
+        return response()->json($faq, 200);
     }
 
     public function check_username($username) {

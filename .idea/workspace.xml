@@ -3,6 +3,31 @@
   <component name="ChangeListManager">
     <list default="true" id="7bd9eba2-50d7-4de9-8f8b-5fa4f7ca2c32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c480b67190f-1640267958Screenshot 2021-12-23 at 15-55-54 منصة قرِّب الرئيسية.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c480b689fb9-1640267958Screenshot 2021-12-23 at 15-56-06 منصة قرِّب الرئيسية.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c480b69fbed-1640267958Screenshot 2021-12-23 at 15-56-20 منصة قرِّب الرئيسية.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c480b6c42aa-1640267958Screenshot 2021-12-23 at 15-56-31 منصة قرِّب الرئيسية.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c4813daf835-1640268093Screenshot 2021-12-23 at 15-52-35 الكوكب اللطيف - الرئيسية.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c4813dbbbcd-1640268093Screenshot 2021-12-23 at 15-54-04 الكوكب اللطيف - الرئيسية.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c4813dca8cb-1640268093Screenshot 2021-12-23 at 15-54-29 الكوكب اللطيف - الرئيسية.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c48161c8ee7-16402681291.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c48161dbfee-16402681292.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c4816201c15-16402681303.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c481620f174-16402681304.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c48162161b8-16402681305.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/61c4816224ef4-16402681306.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ar/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ar/front/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ar/profile/Resume.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ar/profile/Resume.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/de/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/en/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/en/front/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/front/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/front/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +321,25 @@
       <workItem from="1646315788707" duration="1211000" />
       <workItem from="1646391701649" duration="2511000" />
       <workItem from="1646740944541" duration="5818000" />
-      <workItem from="1646768276843" duration="1546000" />
+      <workItem from="1646768276843" duration="5242000" />
+      <workItem from="1646823432658" duration="5826000" />
+      <workItem from="1646926276226" duration="202000" />
+      <workItem from="1648805773102" duration="2742000" />
+      <workItem from="1648835669404" duration="1599000" />
+      <workItem from="1648890754744" duration="3521000" />
+      <workItem from="1648971156241" duration="392000" />
+      <workItem from="1648986289264" duration="12734000" />
+      <workItem from="1649142643858" duration="5521000" />
+      <workItem from="1649165898888" duration="1658000" />
+      <workItem from="1649194028184" duration="636000" />
+      <workItem from="1649244921960" duration="145000" />
+      <workItem from="1649246445598" duration="3310000" />
+      <workItem from="1649515970662" duration="187000" />
+      <workItem from="1653030933533" duration="8904000" />
+      <workItem from="1653149385068" duration="69000" />
+      <workItem from="1661683753540" duration="5327000" />
+      <workItem from="1662034895899" duration="751000" />
+      <workItem from="1662152600178" duration="594000" />
     </task>
     <servers />
   </component>
@@ -304,41 +347,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="485" y="72" key="#Vue" timestamp="1638698587549">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1661698722059">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="485" y="72" key="#Vue/0.0.1366.728@0.0.1366.728" timestamp="1638698587549" />
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1644253220586">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1644253220586" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1644407576564">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1644407576564" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1645855330597">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1645855330597" />
-    <state x="518" y="287" key="NewPhpFileDialog" timestamp="1645108001228">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="518" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1645108001228" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1643988622389">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1643988622389" />
-    <state x="0" y="0" width="585" height="728" key="find.popup" timestamp="1646751211918">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="0" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1646751211918" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1641396839999">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1641396839999" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1643988630300">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1643988630300" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1661698722059" />
   </component>
 </project>
