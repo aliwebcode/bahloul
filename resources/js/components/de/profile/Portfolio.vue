@@ -13,7 +13,7 @@
                                 <h4>My portfolio</h4>
                                 <span>
                                     <a href="/profile/portfolio/add" class="btn btn-primary">
-                                        Add New Work
+                                        Neue Arbeit hinzufügen
                                     </a>
                                 </span>
                             </div>
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="row" v-else>
                                         <div class="col-12">
-                                            <p class="text-center">No Works added yet.</p>
+                                            <p class="text-center">Keine Stelle hinzugefügt.</p>
                                         </div>
                                     </div>
                                 </form>
@@ -63,7 +63,7 @@
                 Are you sure delete?
             </div>
             <div class="modal-footer">
-                <button class="btn btn-danger" @click="deletePortfolio(x)">Yes</button>
+                <button class="btn btn-danger" @click="deletePortfolio(x)">Löschen</button>
                 <button class="btn btn-secondary" @click="modals.delete=false">Cancel</button>
             </div>
         </Modal>

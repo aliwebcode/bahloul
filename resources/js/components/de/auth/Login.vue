@@ -11,27 +11,27 @@
                         <form method="post" action="">
                             <input type="hidden" name="_token" :value="csrf">
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" v-model="email" placeholder="Email" required>
+                                <label>E-Mail</label>
+                                <input type="email" v-model="email" placeholder="E-Mail" required>
                             </div>
 
                             <div class="form-group">
-                                <label>Password</label>
-                                <input id="password-field" type="password" v-model="password"  placeholder="Password" required>
+                                <label>Passwort</label>
+                                <input id="password-field" type="password" v-model="password"  placeholder="Passwort" required>
                             </div>
 
                             <div class="form-group">
                                 <div class="field-outer">
-                                    <a href="#" class="pwd">Forgot password?</a>
+                                    <a href="#" class="pwd">Passwort vergessen?</a>
                                 </div>
                             </div>
 
                             <div class="form-group" v-if="errors.empty">
-                                <div class="alert alert-danger">Please fill all fields.</div>
+                                <div class="alert alert-danger">Bitte alle Felder ausfüllen.</div>
                             </div>
 
                             <div class="form-group" v-if="errors.wrongData">
-                                <div class="alert alert-danger">Wrong Email or Password.</div>
+                                <div class="alert alert-danger">Falsche E-Mail oder Passwort.</div>
                             </div>
 
                             <div class="form-group">
@@ -40,14 +40,14 @@
                                         type="button"
                                         id="login-btn"
                                         @click="login">
-                                    <span v-if="!btnLoading">Log In</span>
+                                    <span v-if="!btnLoading">Anmelden</span>
                                     <span v-if="btnLoading">Please Wait...</span>
                                 </button>
                             </div>
                         </form>
 
                         <div class="bottom-box">
-                            <div class="text">Don't have an account? <a href="/register">Signup</a></div>
+                            <div class="text">Haben Sie kein Konto? <a href="/register">Registrieren</a></div>
                         </div>
                     </div>
                 </div>

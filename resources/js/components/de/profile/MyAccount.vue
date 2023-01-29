@@ -2,20 +2,20 @@
     <section class="user-dashboard">
         <div class="dashboard-outer">
             <div class="upper-title-box">
-                <h3>My Account</h3>
+                <h3>Mein Konto</h3>
             </div>
 
             <!-- Ls widget -->
             <div class="ls-widget">
                 <div class="widget-title">
-                    <h4>Change Email</h4>
+                    <h4>E-Mail ändern</h4>
                 </div>
                 <div class="widget-content">
                     <form class="default-form">
                         <div class="row">
                             <!-- Input -->
                             <div class="form-group col-lg-7 col-md-12">
-                                <label>New Email address</label>
+                                <label>Neue Email-Adresse</label>
                                 <input type="email" v-model="data.email">
                             </div>
 
@@ -41,33 +41,33 @@
             <!-- Ls widget -->
             <div class="ls-widget">
                 <div class="widget-title">
-                    <h4>Change Password</h4>
+                    <h4>Passwort ändern</h4>
                 </div>
                 <div class="widget-content">
                     <form class="default-form">
                         <div class="row">
                             <!-- Input -->
                             <div class="form-group col-lg-7 col-md-12">
-                                <label>Old Password </label>
+                                <label>Altes Passwort </label>
                                 <input type="password" v-model="data.oldPassword">
                             </div>
 
                             <!-- Input -->
                             <div class="form-group col-lg-7 col-md-12">
-                                <label>New Password</label>
+                                <label>Neues Passwort</label>
                                 <input type="password" v-model="data.newPassword">
                             </div>
 
                             <!-- Input -->
                             <div class="form-group col-lg-7 col-md-12">
-                                <label>Confirm Password</label>
+                                <label>Passwort bestätigen</label>
                                 <input type="password" v-model="data.confirmPassword">
                             </div>
 
                             <!-- Messages -->
                             <div class="form-group col-12 col-md-6 alert alert-danger"
                                  v-if="errors.empty">
-                                Please fill all fields.
+                                Bitte alle Felder ausfüllen.
                             </div>
                             <div class="form-group col-12 col-md-6 alert alert-danger"
                                  v-if="errors.dontMatch">

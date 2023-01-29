@@ -5,7 +5,7 @@
                 <!-- Register Form -->
                 <div class="login-form default-form mt-5 px-2">
                     <div class="form-inner">
-                        <h3>Create Free Account</h3>
+                        <h3>Registrieren</h3>
                         <!--Register Form-->
                         <form method="post" action="">
                             <input type="hidden" name="_token" :value="csrf">
@@ -16,7 +16,7 @@
                                            class="theme-btn btn-style-four"
                                            :class="{active:user.type == 1}"
                                            @click="changeType(1)">
-                                            <i class="la la-user"></i> Candidate
+                                            <i class="la la-user"></i> Arbeitgeber
                                         </a>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
@@ -24,7 +24,7 @@
                                            class="theme-btn btn-style-four"
                                            :class="{active:user.type == 2}"
                                            @click="changeType(2)">
-                                            <i class="la la-briefcase"></i> Employer
+                                            <i class="la la-briefcase"></i> Angestellter
                                         </a>
                                     </div>
                                     <div class="col-lg-4 col-md-12">
@@ -32,22 +32,22 @@
                                            class="theme-btn btn-style-four"
                                            :class="{active:user.type == 3}"
                                            @click="changeType(3)">
-                                            <i class="la la-user-tie"></i> Business
+                                            <i class="la la-user-tie"></i> Geschäft
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" v-model="user.name" placeholder="Full Name">
+                                <label>Vollständiger Name</label>
+                                <input type="text" v-model="user.name" placeholder="Vollständiger Name">
                             </div>
 
                             <div class="form-group">
-                                <label>Username</label>
+                                <label>Benutzername</label>
                                 <input type="text" v-model="user.username"
                                        @keyup="checkUsername"
-                                       placeholder="Username">
+                                       placeholder="Benutzername">
                                 <small style="color: rgb(8, 117, 37);font-size: 14px;"
                                        v-if="user.username != '' && errors.usernameExists == false">
                                     <i class="fa fa-check"></i> {{ user.username }} Looks good
@@ -59,22 +59,22 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" v-model="user.email" placeholder="Email">
+                                <label>E-Mail</label>
+                                <input type="email" v-model="user.email" placeholder="E-Mail">
                             </div>
 
                             <div class="form-group">
-                                <label>Password</label>
-                                <input id="password-field" type="password" v-model="user.password" placeholder="Password">
+                                <label>Passwort</label>
+                                <input id="password-field" type="password" v-model="user.password" placeholder="Passwort">
                             </div>
 
                             <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input id="password-confirm" type="password" class="form-control" v-model="user.confirmPassword" placeholder="Confirm Password">
+                                <label>Passwort bestätigen</label>
+                                <input id="password-confirm" type="password" class="form-control" v-model="user.confirmPassword" placeholder="Passwort bestätigen">
                             </div>
 
                             <div class="form-group" v-if="errors.empty">
-                                <div class="alert alert-danger">Please fill all fields and choose account type.</div>
+                                <div class="alert alert-danger">Bitte alle Felder ausfüllen und Kontotyp wählen.</div>
                             </div>
 
                             <div class="form-group" v-if="errors.passwordsDontMatch">
@@ -105,7 +105,7 @@
                         </form>
 
                         <div class="bottom-box">
-                            <div class="text">Do You have an account? <a href="/login">Login</a></div>
+                            <div class="text">Haben Sie ein Konto? <a href="/login">Anmelden</a></div>
                         </div>
 
                     </div>

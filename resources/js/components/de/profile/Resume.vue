@@ -2,7 +2,7 @@
     <section class="user-dashboard">
         <div class="dashboard-outer">
             <div class="upper-title-box">
-                <h3>My Resume</h3>
+                <h3>Mein Lebenslauf</h3>
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -31,7 +31,7 @@
                                                 <button type="button"
                                                         class="theme-btn btn-style-seven"
                                                         @click="saveCv">
-                                                    Save
+                                                    Speichern
                                                 </button>
                                                 <button type="button" class="btn btn-link"
                                                         @click="cv=''">
@@ -51,21 +51,18 @@
                                                 </label>
                                                 <span class="uploadButton-file-name"></span>
                                             </div>
-                                            <div class="text">
-                                                Max file size is 2MB, Suitable files are .pdf
-                                            </div>
                                         </div>
 
                                         <div class="form-group col-lg-12 col-md-12">
                                             <!-- Resume / Education -->
                                             <div class="resume-outer">
                                                 <div class="upper-title">
-                                                    <h4>Education</h4>
+                                                    <h4>Bildung</h4>
                                                     <button class="add-info-btn"
                                                             type="button"
                                                             @click="modals.addEdu=true">
                                                         <span class="icon flaticon-plus"></span>
-                                                        Add Education
+                                                        Bildung hinzufügen
                                                     </button>
                                                 </div>
                                                 <div v-if="education.length > 0">
@@ -110,11 +107,11 @@
                                             <!-- Resume / Work & Experience -->
                                             <div class="resume-outer theme-blue">
                                                 <div class="upper-title">
-                                                    <h4>Work & Experience</h4>
+                                                    <h4>Arbeit & Erfahrung</h4>
                                                     <button class="add-info-btn"
                                                             type="button"
                                                             @click="modals.addExp=true">
-                                                        <span class="icon flaticon-plus"></span> Add Work
+                                                        <span class="icon flaticon-plus"></span> Arbeit hinzufügen
                                                     </button>
                                                 </div>
                                                 <div v-if="experience.length > 0">
@@ -168,63 +165,63 @@
         <!-- Education Modals -->
         <Modal v-model="modals.addEdu" title="Add New Education">
             <div class="form-group">
-                <label>College Name</label>
+                <label>Name der Hochschule</label>
                 <input type="text" class="form-control" v-model="newRecords.education.college" required>
             </div>
             <div class="form-group">
-                <label>Certificate</label>
+                <label>Zertifikat</label>
                 <input type="text" class="form-control" v-model="newRecords.education.certificate" required>
             </div>
             <div class="form-group">
-                <label>Field</label>
+                <label>Fachrichtung</label>
                 <input type="text" class="form-control" v-model="newRecords.education.field" required>
             </div>
             <div class="form-group">
-                <label>Start Year</label>
+                <label>Anfangsjahr</label>
                 <input type="text" class="form-control" v-model="newRecords.education.start_year" required>
             </div>
             <div class="form-group">
-                <label>End Year</label>
+                <label>Ende Jahr</label>
                 <input type="text" class="form-control" v-model="newRecords.education.end_year" required>
             </div>
             <div class="form-group">
-                <label>Description</label>
+                <label>Beschreibung</label>
                 <textarea cols="30" rows="10" class="form-control" v-model="newRecords.education.description"
                           required></textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-success" type="button" @click="addEdu">Add</button>
+                <button class="btn btn-success" type="button" @click="addEdu">Hinzufügen</button>
             </div>
         </Modal>
-        <Modal v-model="modals.editEdu" title="Edit">
+        <Modal v-model="modals.editEdu" title="Bearbeiten">
             <div v-if="modals.editEdu">
                 <div class="form-group">
-                    <label>College Name</label>
+                    <label>Name der Hochschule</label>
                     <input type="text" class="form-control" v-model="education[ed].college" required>
                 </div>
                 <div class="form-group">
-                    <label>Certificate</label>
+                    <label>Zertifikat</label>
                     <input type="text" class="form-control" v-model="education[ed].certificate" required>
                 </div>
                 <div class="form-group">
-                    <label>Field</label>
+                    <label>Fachrichtung</label>
                     <input type="text" class="form-control" v-model="education[ed].field" required>
                 </div>
                 <div class="form-group">
-                    <label>Start Year</label>
+                    <label>Anfangsjahr</label>
                     <input type="text" class="form-control" v-model="education[ed].start_year" required>
                 </div>
                 <div class="form-group">
-                    <label>End Year</label>
+                    <label>Ende Jahr</label>
                     <input type="text" class="form-control" v-model="education[ed].end_year" required>
                 </div>
                 <div class="form-group">
-                    <label>Description</label>
+                    <label>Beschreibung</label>
                     <textarea cols="30" rows="10" class="form-control" v-model="education[ed].description"
                               required></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success" type="button" @click="updateEdu(ed)">Save</button>
+                    <button class="btn btn-success" type="button" @click="updateEdu(ed)">Speichern</button>
                 </div>
             </div>
         </Modal>
@@ -240,55 +237,55 @@
         <!-- Experience Modals -->
         <Modal v-model="modals.addExp" title="Add New Experience">
             <div class="form-group">
-                <label>Job Title</label>
+                <label>Stellen-Titel</label>
                 <input type="text" class="form-control" v-model="newRecords.experience.job_title" required>
             </div>
             <div class="form-group">
-                <label>Company</label>
+                <label>Unternehmen</label>
                 <input type="text" class="form-control" v-model="newRecords.experience.company" required>
             </div>
             <div class="form-group">
-                <label>Start Year</label>
+                <label>Anfangsjahr</label>
                 <input type="text" class="form-control" v-model="newRecords.experience.start_year" required>
             </div>
             <div class="form-group">
-                <label>End Year</label>
+                <label>Ende Jahr</label>
                 <input type="text" class="form-control" v-model="newRecords.experience.end_year" required>
             </div>
             <div class="form-group">
-                <label>Description</label>
+                <label>Beschreibung</label>
                 <textarea cols="30" rows="10" class="form-control" v-model="newRecords.experience.description"
                           required></textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-success" type="button" @click="addExp">Add</button>
+                <button class="btn btn-success" type="button" @click="addExp">Hinzufügen</button>
             </div>
         </Modal>
-        <Modal v-model="modals.editExp" title="Edit">
+        <Modal v-model="modals.editExp" title="Bearbeiten">
             <div v-if="modals.editExp">
                 <div class="form-group">
-                    <label>Job Title</label>
+                    <label>Job Titel</label>
                     <input type="text" class="form-control" v-model="experience[ex].job_title" required>
                 </div>
                 <div class="form-group">
-                    <label>Company</label>
+                    <label>Unternehmen</label>
                     <input type="text" class="form-control" v-model="experience[ex].company" required>
                 </div>
                 <div class="form-group">
-                    <label>Start Year</label>
+                    <label>Anfangsjahr</label>
                     <input type="text" class="form-control" v-model="experience[ex].start_year" required>
                 </div>
                 <div class="form-group">
-                    <label>End Year</label>
+                    <label>Ende Jahr</label>
                     <input type="text" class="form-control" v-model="experience[ex].end_year" required>
                 </div>
                 <div class="form-group">
-                    <label>Description</label>
+                    <label>Beschreibung</label>
                     <textarea cols="30" rows="10" class="form-control" v-model="experience[ex].description"
                               required></textarea>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-success" type="button" @click="updateExp(ex)">Save</button>
+                    <button class="btn btn-success" type="button" @click="updateExp(ex)">Speichern</button>
                 </div>
             </div>
         </Modal>

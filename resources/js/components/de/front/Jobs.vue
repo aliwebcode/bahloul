@@ -4,9 +4,9 @@
         <section class="page-title">
             <div class="auto-container">
                 <div class="title-outer">
-                    <h1>Find Jobs</h1>
+                    <h1>Jobs finden</h1>
                     <ul class="page-breadcrumb">
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/">Startseite</a></li>
                         <li>Jobs</li>
                     </ul>
                 </div>
@@ -27,24 +27,23 @@
 
                                 <!-- Filter Block -->
                                 <div class="filter-block">
-                                    <h4>Search by Keywords</h4>
+                                    <h4>Suche nach Stichworten</h4>
                                     <div class="form-group">
                                         <input type="text"
                                                v-model="settings.title"
-                                               @keyup="searchTimeOut()"
-                                               placeholder="Job title, keywords, or company">
+                                               @keyup="searchTimeOut()">
                                         <span class="icon flaticon-search-3"></span>
                                     </div>
                                 </div>
 
                                 <!-- Filter Block -->
                                 <div class="filter-block">
-                                    <h4>Category</h4>
+                                    <h4>Kategorie</h4>
                                     <div class="form-group">
                                         <select class="chosen-select"
                                                 v-model="settings.category_id"
                                                 @change="filterData">
-                                            <option value="" selected>All</option>
+                                            <option value="" selected>Alle</option>
                                             <option v-for="category in categories" :value="category.id">
                                                 {{ category.name }}
                                             </option>
@@ -55,12 +54,12 @@
 
                                 <!-- Filter Block -->
                                 <div class="filter-block">
-                                    <h4>Country</h4>
+                                    <h4>Land</h4>
                                     <div class="form-group">
                                         <select class="chosen-select"
                                                 v-model="settings.country_id"
                                                 @change="getCities(),settings.city_id='',filterData()">
-                                            <option value="" selected>All</option>
+                                            <option value="" selected>Alle</option>
                                             <option v-for="country in countries" :value="country.id">
                                                 {{ country.name }}
                                             </option>
@@ -71,12 +70,12 @@
 
                                 <!-- Filter Block -->
                                 <div class="filter-block" v-if="settings.country_id">
-                                    <h4>City</h4>
+                                    <h4>Stadt</h4>
                                     <div class="form-group">
                                         <select class="chosen-select"
                                                 v-model="settings.city_id"
                                                 @change="filterData">
-                                            <option value="" selected>All</option>
+                                            <option value="" selected>Alle</option>
                                             <option v-for="city in cities" :value="city.id">
                                                 {{ city.name }}
                                             </option>
@@ -87,7 +86,7 @@
 
                                 <!-- Switchbox Outer -->
                                 <div class="switchbox-outer">
-                                    <h4>Job type</h4>
+                                    <h4>Jobtyp</h4>
                                     <ul class="switchbox">
                                         <li>
                                             <label class="switch">
@@ -98,7 +97,7 @@
                                                        checked
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">All</span>
+                                                <span class="title">Alle</span>
                                             </label>
                                         </li>
                                         <li>
@@ -109,7 +108,7 @@
                                                        value="Freelance"
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">Freelance</span>
+                                                <span class="title">Freiberuflich</span>
                                             </label>
                                         </li>
                                         <li>
@@ -131,7 +130,7 @@
                                                        value="Internship"
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">Internship</span>
+                                                <span class="title">Ausbildung</span>
                                             </label>
                                         </li>
                                         <li>
@@ -142,7 +141,7 @@
                                                        value="Part Time"
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">Part Time</span>
+                                                <span class="title">Teilzeit</span>
                                             </label>
                                         </li>
                                         <li>
@@ -153,7 +152,7 @@
                                                        value="Temporary"
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">Temporary</span>
+                                                <span class="title">Befristet</span>
                                             </label>
                                         </li>
                                     </ul>
@@ -161,7 +160,7 @@
 
                                 <!-- Checkboxes Ouer -->
                                 <div class="switchbox-outer">
-                                    <h4>Date Posted</h4>
+                                    <h4>Datum veröffentlicht</h4>
                                     <ul class="switchbox">
                                         <li>
                                             <label class="switch">
@@ -172,7 +171,7 @@
                                                        checked
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">All</span>
+                                                <span class="title">Alle</span>
                                             </label>
                                         </li>
                                         <li>
@@ -183,7 +182,7 @@
                                                        value="1"
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">Last 24 Hours</span>
+                                                <span class="title">Letzte 24 Stunden</span>
                                             </label>
                                         </li>
                                         <li>
@@ -194,7 +193,7 @@
                                                        value="7"
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">Last 7 Days</span>
+                                                <span class="title">Letzte 7 Tage</span>
                                             </label>
                                         </li>
                                         <li>
@@ -205,7 +204,7 @@
                                                        value="14"
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">Last 14 Days</span>
+                                                <span class="title">Letzte 14 Tage</span>
                                             </label>
                                         </li>
                                         <li>
@@ -216,7 +215,7 @@
                                                        value="30"
                                                        @change="filterData()">
                                                 <span class="slider round"></span>
-                                                <span class="title">Last 30 Days</span>
+                                                <span class="title">Letzte 30 Tage</span>
                                             </label>
                                         </li>
                                     </ul>
@@ -234,45 +233,45 @@
                             <div class="ls-switcher">
                                 <div class="showing-result">
                                     <div class="text" v-if="count > 0">
-                                        <strong>{{ count }} Results</strong>
+                                        <strong>{{ count }} Ergebnisse</strong>
                                     </div>
                                 </div>
                                 <div class="sort-by">
                                     <select class="chosen-select"
                                             v-model="showingNumber"
                                             @change="filterData('num')">
-                                        <option value="5">Show 5</option>
-                                        <option value="10">Show 10</option>
-                                        <option value="20">Show 20</option>
-                                        <option value="30">Show 30</option>
-                                        <option value="40">Show 40</option>
-                                        <option value="50">Show 50</option>
-                                        <option value="60">Show 60</option>
+                                        <option value="5">Anzeigen 5</option>
+                                        <option value="10">Anzeigen 10</option>
+                                        <option value="20">Anzeigen 20</option>
+                                        <option value="30">Anzeigen 30</option>
+                                        <option value="40">Anzeigen 40</option>
+                                        <option value="50">Anzeigen 50</option>
+                                        <option value="60">Anzeigen 60</option>
                                     </select>
                                 </div>
                             </div>
                             <ul class="tags-style-one">
                                 <li v-if="settings.title">
                                     <button type="button">
-                                        Keyword: {{ settings.title }}
+                                        Stichworten: {{ settings.title }}
                                         <span class="icon flaticon-close-1 ml-2" @click="settings.title = '',filterData()"></span>
                                     </button>
                                 </li>
                                 <li v-if="settings.category_id">
                                     <button type="button">
-                                        Category: {{ getCategory(settings.category_id).name }}
+                                        Kategorie: {{ getCategory(settings.category_id).name }}
                                         <span class="icon flaticon-close-1 ml-2" @click="settings.category_id = '',filterData()"></span>
                                     </button>
                                 </li>
                                 <li v-if="settings.type">
                                     <button type="button">
-                                        Job Type: {{ settings.type }}
+                                        Jobtyp: {{ settings.type }}
                                         <span class="icon flaticon-close-1 ml-2" @click="settings.type = '',filterData()"></span>
                                     </button>
                                 </li>
                                 <li v-if="settings.date">
                                     <button type="button">
-                                        Date: {{ settings.date > 1 ? 'Last ' + settings.date + ' Days' : 'Last 24 Hours' }}
+                                        Datum: {{ settings.date > 1 ? 'Last ' + settings.date + ' Days' : 'Last 24 Hours' }}
                                         <span class="icon flaticon-close-1 ml-2" @click="settings.date = '',filterData()"></span>
                                     </button>
                                 </li>
@@ -312,11 +311,11 @@
                                             </li>
                                             <li v-if="job.country">
                                                 <span class="icon flaticon-map-locator"></span>
-                                                {{ job.city.name }}, {{ job.country.name }}
+                                                {{ job.city ? job.city.city : '' }}, {{ job.country.name }}
                                             </li>
                                             <li v-else>
                                                 <span class="icon flaticon-monitor"></span>
-                                                Remotely
+                                                Aus der Ferne
                                             </li>
                                             <li>
                                                 <span class="icon flaticon-clock-3"></span>

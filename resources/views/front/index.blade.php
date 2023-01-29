@@ -45,32 +45,10 @@
         .dropdown-toggle img {
             border-radius: 2px;
         }
-    </style>
-
-    <!-- Responsive -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="{{ asset('assets/js/respond.js') }}"></script><![endif]-->
-
-    @if(substr(Request::path(), 0, 2) == "ar")
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
-        <style>
-            body {
-                font-family: 'Cairo', sans-serif !important;
-                position: relative;
-            }
-        </style>
-    @endif
-
-    <style>
         .whatsapp-icon {
             position: fixed;
             bottom: 30px;
-            right: 30px;
+            left: 30px;
             z-index: 9999;
             font-size: 55px;
             padding: 12px;
@@ -98,6 +76,25 @@
             }
         }
     </style>
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="{{ asset('assets/js/respond.js') }}"></script><![endif]-->
+
+    @if(substr(Request::path(), 0, 2) == "ar")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Cairo', sans-serif !important;
+                position: relative;
+            }
+        </style>
+    @endif
 
 </head>
 
@@ -168,12 +165,12 @@
                         <li class="{{ Request::is('dashboard') ? 'active' : '' }}"><a href="/dashboard"> <i
                                         class="la la-home"></i> Dashboard</a></li>
                         <li class="{{ Request::is('profile') ? 'active' : '' }}"><a href="/profile"><i
-                                        class="la la-user-tie"></i>My Profile</a></li>
+                                        class="la la-user-tie"></i>Mein Profil</a></li>
                         @if(auth()->user()->type == 1)
                             <li class="{{ Request::is('profile/resume') ? 'active' : '' }}"><a href="/profile/resume"><i
-                                            class="la la-file-invoice"></i>My Resume</a></li>
+                                            class="la la-file-invoice"></i>Mein Lebenslauf</a></li>
                             <li class="{{ Request::is('profile/applied-jobs') ? 'active' : '' }}"><a
-                                        href="/profile/applied-jobs"><i class="la la-briefcase"></i> Applied Jobs </a></li>
+                                        href="/profile/applied-jobs"><i class="la la-briefcase"></i> Beworbene Jobs </a></li>
                         @elseif(auth()->user()->type == 2)
                             <li class="{{ Request::is('profile/jobs') ? 'active' : '' }}"><a href="/profile/jobs"><i
                                             class="la la-briefcase"></i>Jobs</a></li>
@@ -181,10 +178,10 @@
                         <li class="{{ Request::is('profile/portfolio') ? 'active' : '' }}"><a href="/profile/portfolio"><i
                                         class="la la-images"></i>Portfolio</a></li>
                         <li class="{{ Request::is('profile/shortlists') ? 'active' : '' }}"><a href="/profile/shortlists"><i
-                                        class="la la-bookmark-o"></i>Shortlists</a></li>
+                                        class="la la-bookmark-o"></i>Auswahllisten</a></li>
                         <li class="{{ Request::is('profile/my-account') ? 'active' : '' }}"><a
-                                    href="/profile/my-account"><i class="la la-lock"></i>My Account</a></li>
-                        <li><a href="/logout"><i class="la la-sign-out"></i>Logout</a></li>
+                                    href="/profile/my-account"><i class="la la-lock"></i>Mein Konto</a></li>
+                        <li><a href="/logout"><i class="la la-sign-out"></i>Abmelden</a></li>
                     </ul>
                 @endif
             </div>
@@ -193,7 +190,8 @@
     @endif
 
     <div id="app">
-        <router-view></router-view>
+        <router-view :settings="settings"></router-view>
+{{--        <div id="map" style="height:400px; width: 800px;" class="my-3"></div>--}}
     </div>
 
     @include('front.partials.footer')
@@ -201,11 +199,13 @@
 </div><!-- End Page Wrapper -->
 
 
-<div class="whatsapp-icon" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="انقر للتواصل على واتساب" data-bs-original-title="" title="">
-    <a href="https://wa.me/491776424399">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
+@if(\App\Setting::first()->whatsapp)
+    <div class="whatsapp-icon" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="انقر للتواصل على واتساب" data-bs-original-title="" title="">
+        <a href="https://wa.me/{{ \App\Setting::first()->whatsapp }}">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+@endif
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -230,7 +230,41 @@
         let authUser =@JSON(auth()->user())
     </script>
 @endif
+
 <script src="{{ asset('js/app.js') }}"></script>
+
+@if(auth()->check())
+    <script>
+        let map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8,
+                scrollwheel: true,
+            });
+            const uluru = { lat: -34.397, lng: 150.644 };
+            let marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                draggable: true
+            });
+            google.maps.event.addListener(marker,'position_changed',
+                function (){
+                    let lat = marker.position.lat()
+                    let lng = marker.position.lng()
+                    $('#lat').val(lat)
+                    $('#lng').val(lng)
+                })
+            google.maps.event.addListener(map,'click',
+                function (event){
+                    pos = event.latLng
+                    marker.setPosition(pos)
+                })
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDve3bov1xzqWzPFvAZGYcxmCns-ddeVto&callback=initMap"
+            type="text/javascript"></script>
+@endif
 
 @stack('script')
 

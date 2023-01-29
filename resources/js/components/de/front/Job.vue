@@ -38,7 +38,7 @@
                                             <ul class="job-other-info">
                                                 <li class="time">{{ job.type }}</li>
                                                 <li class="privacy" v-if="job.show_applicants_num">
-                                                    {{ job.applicants.length }} Applicant
+                                                    {{ job.applicants.length }} Antragsteller
                                                 </li>
                                             </ul>
                                         </div>
@@ -47,58 +47,58 @@
                             </div>
 
                             <div class="job-overview-two">
-                                <h4>Job Description</h4>
+                                <h4>Stellenbeschreibung</h4>
                                 <ul>
                                     <li>
                                         <i class="icon icon-calendar"></i>
-                                        <h5>Date Posted:</h5>
+                                        <h5>Datum veröffentlicht:</h5>
                                         <span>{{ job.time }}</span>
                                     </li>
                                     <li v-if="job.expire_date">
                                         <i class="icon icon-expiry"></i>
-                                        <h5>Expiration date:</h5>
+                                        <h5>Ablaufdatum:</h5>
                                         <span>
                                         {{ job.expire_date }}
-                                        <span v-if="job.expire == 0" class="text-danger">(Expired)</span>
+                                        <span v-if="job.expire == 0" class="text-danger">(Abgelaufen)</span>
                                     </span>
                                     </li>
                                     <li v-else>
                                         <i class="icon icon-expiry"></i>
-                                        <h5>Expiration date:</h5>
+                                        <h5>Ablaufdatum:</h5>
                                         <span>Open</span>
                                     </li>
                                     <li v-if="job.country">
                                         <i class="icon icon-location"></i>
-                                        <h5>Location:</h5>
+                                        <h5>Standort:</h5>
                                         <span>{{ job.city.name }}, {{ job.country.name }}</span>
                                     </li>
                                     <li>
                                         <i class="icon icon-user-2"></i>
-                                        <h5>Job Title:</h5>
+                                        <h5>Job Titel:</h5>
                                         <span>{{ job.title }}</span>
                                     </li>
                                     <li v-if="job.hours">
                                         <i class="icon icon-clock"></i>
-                                        <h5>Hours:</h5>
-                                        <span>{{ job.hours }} hours / day</span>
+                                        <h5>Arbeitsstunden:</h5>
+                                        <span>{{ job.hours }} Arbeitsstunden / Tag</span>
                                     </li>
                                     <li v-if="job.salary">
                                         <i class="icon icon-salary"></i>
-                                        <h5>Salary:</h5>
+                                        <h5>Gehalt:</h5>
                                         <span>{{ job.salary }}$</span>
                                     </li>
                                 </ul>
                             </div>
 
                             <div class="job-detail">
-                                <h4>Job Description</h4>
+                                <h4>Stellenbeschreibung</h4>
                                 <p>{{ job.description }}</p>
                             </div>
 
                             <!-- Other Options -->
                             <div class="other-options">
                                 <div class="social-share">
-                                    <h5>Share this job</h5>
+                                    <h5>Diese Stelle teilen</h5>
                                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                                     <a href="#" class="twitter"><i class="fab fa-twitter"></i> Twitter</a>
                                 </div>
@@ -115,7 +115,7 @@
                                             class="theme-btn btn-style-one"
                                             :class="{'bg-gray':applyBtnLoading}"
                                             @click="showModal = true">
-                                        <span v-if="!applyBtnLoading">Apply For Job</span>
+                                        <span v-if="!applyBtnLoading">Für Job bewerben</span>
                                         <i class="fas fa-spinner fa-pulse fa-lg" v-if="applyBtnLoading"></i>
                                     </button>
                                     <button class="bookmark-btn" @click="saveShortlist">
@@ -135,15 +135,15 @@
 
                                         <ul class="company-info">
                                             <li>Primary industry: <span>Software</span></li>
-                                            <li v-if="job.user.company_size">Company size: <span>{{ job.user.company_size }}</span></li>
-                                            <li v-if="job.user.founded_in">Founded in: <span>{{ job.user.founded_in }}</span></li>
-                                            <li v-if="job.user.phone">Phone: <span>{{ job.user.phone ? job.user.phone : '' }}</span></li>
-                                            <li v-if="job.user.company_email">Email: <span>{{ job.user.company_email }}</span></li>
-                                            <li v-if="job.user.country">Location:
+                                            <li v-if="job.user.company_size">Firmengröße: <span>{{ job.user.company_size }}</span></li>
+                                            <li v-if="job.user.founded_in">Gegründet in: <span>{{ job.user.founded_in }}</span></li>
+                                            <li v-if="job.user.phone">Telefon: <span>{{ job.user.phone ? job.user.phone : '' }}</span></li>
+                                            <li v-if="job.user.company_email">E-Mail: <span>{{ job.user.company_email }}</span></li>
+                                            <li v-if="job.user.country">Standort:
                                                 <span>{{ job.user.city.name ? job.user.city.name : '' }}, {{ job.user.country.name }}</span>
                                             </li>
                                             <li v-if="job.user.facebook || job.user.twitter || job.user.linkedin">
-                                                Social media:
+                                                Soziale Medien:
                                                 <div class="social-links">
                                                     <a :href="job.user.facebook">
                                                         <i class="fab fa-facebook-f"></i>
@@ -172,7 +172,7 @@
                     <!-- Related Jobs -->
                     <div class="related-jobs">
                         <div class="title-box">
-                            <h3>Related Jobs</h3>
+                            <h3>Verwandte Jobs</h3>
                         </div>
                         <div class="row">
                             <!-- Job Block -->
@@ -195,7 +195,7 @@
                                     </div>
                                     <div class="location" v-else>
                                         <span class="icon flaticon-monitor"></span>
-                                        Freelance
+                                        Aus der Ferne
                                     </div>
                                 </div>
                             </div>
@@ -214,19 +214,19 @@
                             Name: {{ user.name }}
                         </div>
                         <div class="col-12 col-md-6 mt-3" v-if="user.job_title">
-                            Job Title: {{ user.job_title }}
+                            Job Titel: {{ user.job_title }}
                         </div>
                         <div class="col-12 col-md-6 mt-3" v-if="user.country_id">
-                            Country: {{ user.country.name }}
+                            Land: {{ user.country.name }}
                         </div>
                         <div class="col-12 col-md-6 mt-3" v-if="user.city_id">
-                            City: {{ user.city.name }}
+                            Stadt: {{ user.city.name }}
                         </div>
                         <div class="col-12 col-md-6 mt-3" v-if="user.education">
-                            Education Level: {{ user.education }}
+                            Bildungsniveau: {{ user.education }}
                         </div>
                         <div class="col-12 col-md-6 mt-3" v-if="user.experience">
-                            Experience: {{ user.experience }} years
+                            Erfahrung: {{ user.experience }} Jahre
                         </div>
                         <div class="col-12 mt-4">
                             <p>Notes:</p>

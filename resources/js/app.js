@@ -14,23 +14,32 @@ Vue.component('Modal', VueModal)
 import pagination from 'laravel-vue-pagination'
 Vue.component('pagination',pagination)
 
-/* Multi Languages */
-require('lang.js');
-import VueLang from '@eli5/vue-lang-js'
-// get the data source
-import translations from './lang/words';
-// import messages from "./lang/en"
-Vue.use(VueLang, {
-    messages: translations, // Provide locale file
-    // locale: 'en', // Set locale
-    fallback: ['ar', 'es'] // Set fallback locale
-});
+// /* Multi Languages */
+// require('lang.js');
+// import VueLang from '@eli5/vue-lang-js'
+// // get the data source
+// import translations from './lang/words';
+// // import messages from "./lang/en"
+// Vue.use(VueLang, {
+//     messages: translations, // Provide locale file
+//     // locale: 'en', // Set locale
+//     fallback: ['ar', 'es'] // Set fallback locale
+// });
 
 
 const app = new Vue({
     el: '#app',
     router: routes,
+    data: function () {
+        return {
+            settings: []
+        }
+    },
     mounted() {
+        axios.get('/request/get-settings')
+            .then((res) => {
+                this.settings = res.data
+            })
         if(authUser) {
             // Listen to notification
             Echo.private(`App.User.${authUser.id}`)

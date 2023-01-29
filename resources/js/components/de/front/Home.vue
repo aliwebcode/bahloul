@@ -12,27 +12,27 @@
                             <div class="row">
                                 <!-- Form Group -->
                                 <div class="form-group col-lg-3 col-md-12 col-sm-12">
-                                    <label>What job are you looking for?</label>
+                                    <label>Welche Stelle suchen Sie?</label>
                                     <span class="icon flaticon-search-1"></span>
                                     <input type="text"
                                            v-model="search.title"
-                                           placeholder="Search Word...">
+                                           placeholder="Suchbegriff...">
                                 </div>
 
                                 <!-- Form Group -->
                                 <div class="form-group col-lg-3 col-md-12 col-sm-12 location">
-                                    <label>Where?</label>
+                                    <label>Wo?</label>
                                     <span class="icon flaticon-map-locator"></span>
                                     <input type="text"
                                            @keydown.space.prevent
                                            @keyup="getCities()"
                                            v-model="city"
-                                           placeholder="City or postcode">
+                                           placeholder="Stadt oder Postleitzahl">
                                     <ul class="suggestions" v-if="suggestions.cities.length">
                                         <li v-for="city in suggestions.cities" :key="city.id">
                                             <button type="button"
                                                     @click="selectCity(city)">
-                                                {{ city.name }} {{ city.zip ? '(' + city.zip + ')' : '' }}
+                                                {{ city.city }} {{ city.zip ? '(' + city.zip + ')' : '' }}
                                             </button>
                                         </li>
                                     </ul>
@@ -40,10 +40,10 @@
 
                                 <!-- Form Group -->
                                 <div class="form-group col-lg-3 col-md-12 col-sm-12 category">
-                                    <label>Categories</label>
+                                    <label>Kategorien</label>
                                     <span class="icon flaticon-briefcase"></span>
                                     <select class="chosen-select" v-model="search.category_id">
-                                        <option value="">All Categories</option>
+                                        <option value="">Alle Kategorien</option>
                                         <option v-for="category in categories"
                                                 :key="category.id"
                                                 :value="category.id">{{ category.name }}
@@ -53,13 +53,13 @@
 
                                 <!-- Form Group -->
                                 <div class="form-group col-lg-3 col-md-12 col-sm-12 category">
-                                    <label>Type</label>
+                                    <label>Typ</label>
                                     <span class="icon flaticon-briefcase"></span>
                                     <select class="chosen-select" v-model="search.type">
-                                        <option value="">Search Type</option>
-                                        <option value="job">Job</option>
-                                        <option value="candidate">Candidate</option>
-                                        <option value="business">Local Business</option>
+                                        <option value="">Suchart</option>
+                                        <option value="job">Stelle</option>
+                                        <option value="candidate">Arbeitgeber</option>
+                                        <option value="business">Lokalgeschäft</option>
                                     </select>
                                 </div>
 
@@ -67,7 +67,7 @@
                                 <div class="form-group col-lg-12 col-md-12 col-sm-12 mt-4"
                                      style="text-align: center !important;">
                                     <button type="button" @click="explore()" class="theme-btn btn-style-two p-2">
-                                        Explore
+                                        Erkunden
                                     </button>
                                 </div>
                             </div>
@@ -121,8 +121,8 @@
         <section class="process-section pt-0" style="margin-top: 60px;">
             <div class="auto-container">
                 <div class="sec-title text-center">
-                    <h2>Our Services</h2>
-                    <div class="text">Discover our creative services</div>
+                    <h2>Unsere Services</h2>
+                    <div class="text">Entdecken Sie unsere kreativen Services</div>
                 </div>
 
                 <div class="row wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
@@ -156,24 +156,16 @@
                     <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2">
                         <div class="inner-column wow fadeInLeft animated"
                              style="visibility: visible; animation-name: fadeInLeft;">
-                            <div class="sec-title">
-                                <h2>Get applications from the <br>world best talents.</h2>
-                                <div class="text">Search all the open positions on the web. Get your own personalized
-                                    salary estimate. Read reviews on over 600,000 companies worldwide.
-                                </div>
-                            </div>
-                            <ul class="list-style-one">
-                                <li>Bring to the table win-win survival</li>
-                                <li>Capitalize on low hanging fruit to identify</li>
-                                <li>But I must explain to you how all this</li>
-                            </ul>
+                            <div class="sec-title" v-html="settings.about_text"></div>
                         </div>
                     </div>
 
                     <!-- Image Column -->
                     <div class="image-column col-lg-6 col-md-12 col-sm-12 wow fadeInRight animated"
                          style="visibility: visible; animation-name: fadeInRight;">
-                        <figure class="image-box"><img src="/assets/images/about.jpg" alt=""></figure>
+                        <figure class="image-box">
+                            <img :src="'/images/' + settings.about_image">
+                        </figure>
 
                         <!-- Count Employers -->
 
@@ -187,7 +179,7 @@
         <section class="news-section">
             <div class="auto-container">
                 <div class="sec-title text-center">
-                    <h2>Latest Posts</h2>
+                    <h2>Neueste Beiträge</h2>
                 </div>
 
                 <div class="row wow fadeInUp">
@@ -254,8 +246,8 @@
             <div class="auto-container wow fadeInUp">
                 <div class="outer-box">
                     <div class="sec-title light">
-                        <h2>Gat a question?</h2>
-                        <div class="text">We're here to help. Check out our FAQs, send us an email or call us at 1
+                        <h2>Haben Sie eine Frage?</h2>
+                        <div class="text">Wir sind hier, um zu helfen. Sehen Sie sich unsere FAQs an, schicken Sie uns eine E-Mail oder rufen Sie uns an
                             <br><a href="#">(900) 777-7777.</a></div>
                     </div>
 
@@ -272,6 +264,7 @@
 
 <script>
 export default {
+    props: ['settings'],
     mounted() {
         document.getElementsByClassName('dashboard')[0].classList.remove('dashboard')
         document.getElementsByClassName('main-header')[0].classList.remove('header-shaddow')
@@ -284,6 +277,31 @@ export default {
         .then((response) => {
             this.faq = response.data
         })
+
+        let lat,lng
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((p) => {
+                lat = p.coords.latitude
+                lng = p.coords.longitude
+                console.log(p.coords.latitude)
+                console.log(p.coords.longitude)
+                // console.log("RUN")
+
+                axios.post("/request/near", {
+                    long: lng,
+                    lat: lat
+                })
+                .then((res) => {
+                    console.log(res.data)
+                })
+
+            });
+        } else {
+            console.log("ERROR SELECTING LOCATION")
+        }
+
+
         // axios.get("/blog/wp-json/wp/v2/posts?_embed&per_page=3&order=desc")
         //     .then((res) => {
         //         this.posts = res.data

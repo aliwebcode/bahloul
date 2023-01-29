@@ -72,13 +72,13 @@
                     <div class="row">
                         <div class="content-column col-lg-8 col-md-12 col-sm-12">
                             <div class="job-detail" v-if="selectedPortfolio == null">
-                                <h4>About {{ user.name }}</h4>
+                                <h4>Über {{ user.name }}</h4>
                                 <p v-if="user.description">{{ user.description }}</p>
-                                <p v-else>No Description added</p>
+                                <p v-else>Keine Beschreibung hinzugefügt</p>
                                 <!-- Resume / Education -->
                                 <div class="resume-outer" v-if="user.user_education.length > 0">
                                     <div class="upper-title">
-                                        <h4>Education</h4>
+                                        <h4>Bildung</h4>
                                     </div>
                                     <!-- Resume BLock -->
                                     <div class="resume-block" v-for="(ed,index) in user.user_education" :key="ed.id">
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="resume-outer" v-else>
                                     <div class="upper-title">
-                                        <h4>Education</h4>
+                                        <h4>Bildung</h4>
                                     </div>
                                     <div class="text-center">
                                         <p>No Education added.</p>
@@ -114,7 +114,7 @@
                                 <!-- Resume / Work & Experience -->
                                 <div class="resume-outer theme-blue" v-if="user.user_experience.length > 0">
                                     <div class="upper-title">
-                                        <h4>Work & Experience</h4>
+                                        <h4>Arbeit & Erfahrung</h4>
                                     </div>
                                     <!-- Resume BLock -->
                                     <div class="resume-block" v-for="(ex,index) in user.user_experience" :key="ex.id">
@@ -141,7 +141,7 @@
 
                                 <div class="resume-outer theme-blue" v-else>
                                     <div class="upper-title">
-                                        <h4>Work & Experience</h4>
+                                        <h4>Arbeit & Erfahrung</h4>
                                     </div>
                                     <div class="text-center">
                                         <p>No Experience added.</p>
@@ -197,7 +197,7 @@
                                     <div class="col-12 text-center mt-3">
                                         <button type="button" class="btn btn-primary"
                                                 @click="selectedPortfolio=null">
-                                            Back
+                                            Zurück
                                         </button>
                                     </div>
                                 </div>
@@ -211,8 +211,8 @@
                                         <ul class="job-overview">
                                             <li v-if="user.experience">
                                                 <i class="icon icon-calendar"></i>
-                                                <h5>Experience:</h5>
-                                                <span>{{ user.experience }} Years</span>
+                                                <h5>Erfahrung:</h5>
+                                                <span>{{ user.experience }} Jahre</span>
                                             </li>
 
 <!--                                            <li>-->
@@ -235,19 +235,19 @@
 
                                             <li v-if="user.gender">
                                                 <i class="icon icon-user-2"></i>
-                                                <h5>Gender:</h5>
+                                                <h5>Geschlecht:</h5>
                                                 <span>{{ user.gender }}</span>
                                             </li>
 
                                             <li v-if="user.lang">
                                                 <i class="icon icon-language"></i>
-                                                <h5>Language:</h5>
+                                                <h5>Sprache:</h5>
                                                 <span v-for="lan in user.lang" class="pt-2 mx-2 d-block">{{ lan }}</span>
                                             </li>
 
                                             <li v-if="user.education">
                                                 <i class="icon icon-degree"></i>
-                                                <h5>Education Level:</h5>
+                                                <h5>Bildungsniveau:</h5>
                                                 <span>{{ user.education }}</span>
                                             </li>
 
@@ -258,7 +258,7 @@
 
                                 <div class="sidebar-widget social-media-widget"
                                      v-if="user.facebook || user.twitter || user.instagram || user.linkedin">
-                                    <h4 class="widget-title">Social media</h4>
+                                    <h4 class="widget-title">Soziale Medien</h4>
                                     <div class="widget-content">
                                         <div class="social-links">
                                             <a :href="user.facebook" v-if="user.facebook">
@@ -277,7 +277,7 @@
 
                                 <div class="sidebar-widget" v-if="user.skill">
                                     <!-- Job Skills -->
-                                    <h4 class="widget-title">Professional Skills</h4>
+                                    <h4 class="widget-title">Berufliche Fähigkeiten</h4>
                                     <div class="widget-content">
                                         <ul class="job-skills">
                                             <li v-for="skill in user.skill">
@@ -341,7 +341,7 @@
                     <div class="row">
                         <div class="content-column col-lg-8 col-md-12 col-sm-12">
                             <div class="job-detail" v-if="selectedPortfolio == null">
-                                <h4>About Company</h4>
+                                <h4>Über das Unternehmen</h4>
                                 <p v-if="user.description" style="white-space: break-spaces">{{ user.description }}</p>
                                 <h6 class="mb-3" v-else>No information added yet.</h6>
                                 <!-- Portfolio -->
@@ -394,7 +394,7 @@
                                     <div class="col-12 text-center mt-3">
                                         <button type="button" class="btn btn-primary"
                                                 @click="selectedPortfolio=null">
-                                            Back
+                                            Zurück
                                         </button>
                                     </div>
                                 </div>
@@ -439,7 +439,7 @@
                                             </ul>
                                             <ul class="job-other-info">
                                                 <li class="time">{{ job.type }}</li>
-                                                <li class="time bg-danger text-white" v-if="job.expire == 0">Expired</li>
+                                                <li class="time bg-danger text-white" v-if="job.expire == 0">Abgelaufen</li>
                                             </ul>
                                             <button class="bookmark-btn" @click="saveJobShortlist(job.id)">
                                                 <span class="flaticon-bookmark"></span>
@@ -459,16 +459,16 @@
                                     <div class="widget-content">
 
                                         <ul class="company-info mt-0">
-                                            <li v-if="user.company_size">Company size: <span>{{ user.company_size }}</span></li>
-                                            <li v-if="user.founded_in">Founded in: <span>{{ user.founded_in }}</span></li>
-                                            <li v-if="user.phone">Phone: <span>{{ user.phone }}</span></li>
-                                            <li v-if="user.company_email">Email: <span>{{ user.company_email }}</span></li>
-                                            <li v-if="user.country">Country: <span>{{ user.country.name }}</span></li>
-                                            <li v-if="user.city">City: <span>{{ user.city.name }}</span></li>
-                                            <li v-if="user.address">Address: <span>{{ user.address }}</span></li>
-                                            <li v-if="user.zip">Postal Code: <span>{{ user.zip }}</span></li>
+                                            <li v-if="user.company_size">Firmengröße: <span>{{ user.company_size }}</span></li>
+                                            <li v-if="user.founded_in">Gegründet in: <span>{{ user.founded_in }}</span></li>
+                                            <li v-if="user.phone">Telefon: <span>{{ user.phone }}</span></li>
+                                            <li v-if="user.company_email">E-Mail: <span>{{ user.company_email }}</span></li>
+                                            <li v-if="user.country">Land: <span>{{ user.country.name }}</span></li>
+                                            <li v-if="user.city">Stadt: <span>{{ user.city.name }}</span></li>
+                                            <li v-if="user.address">Adresse: <span>{{ user.address }}</span></li>
+                                            <li v-if="user.zip">Postleitzahl: <span>{{ user.zip }}</span></li>
                                             <li v-if="user.facebook || user.twitter || user.linkedin || user.instagram">
-                                                Social media:
+                                                Soziale Medien:
                                                 <div class="social-links">
                                                     <a :href="user.facebook" v-if="user.facebook">
                                                         <i class="fab fa-facebook-f"></i>
@@ -569,9 +569,9 @@
                     <div class="row">
                         <div class="content-column col-lg-8 col-md-12 col-sm-12 order-2">
                             <div class="job-detail" v-if="selectedPortfolio == null">
-                                <h4>About {{ user.b_name ? user.b_name : '' }}</h4>
+                                <h4>Über {{ user.b_name ? user.b_name : '' }}</h4>
                                 <p v-if="user.description">{{ user.description }}</p>
-                                <p v-else>No Description added</p>
+                                <p v-else>Keine Beschreibung hinzugefügt</p>
                                 <!-- Portfolio -->
                                 <div class="portfolio-outer">
                                     <div class="row" v-if="user.user_portfolio.length > 0">
@@ -621,7 +621,7 @@
                                     <div class="col-12 text-center mt-3">
                                         <button type="button" class="btn btn-primary"
                                                 @click="selectedPortfolio=null">
-                                            Back
+                                            Zurück
                                         </button>
                                     </div>
                                 </div>
@@ -637,13 +637,13 @@
                                         <ul class="job-overview">
                                             <li v-if="user.experience">
                                                 <i class="icon icon-calendar"></i>
-                                                <h5>Experience:</h5>
-                                                <span>{{ user.experience }} Years</span>
+                                                <h5>Erfahrung:</h5>
+                                                <span>{{ user.experience }} Jahre</span>
                                             </li>
 
                                             <li v-if="user.education">
                                                 <i class="icon icon-degree"></i>
-                                                <h5>Education Level:</h5>
+                                                <h5>Bildungsniveau:</h5>
                                                 <span>{{ user.education }}</span>
                                             </li>
 
@@ -654,7 +654,7 @@
 
                                 <div class="sidebar-widget social-media-widget"
                                      v-if="user.facebook || user.twitter || user.instagram || user.linkedin">
-                                    <h4 class="widget-title">Social media</h4>
+                                    <h4 class="widget-title">Soziale Medien</h4>
                                     <div class="widget-content">
                                         <div class="social-links">
                                             <a :href="user.facebook" v-if="user.facebook">
@@ -676,7 +676,7 @@
 
                                 <div class="sidebar-widget" v-if="user.skill">
                                     <!-- Job Skills -->
-                                    <h4 class="widget-title">Professional Skills</h4>
+                                    <h4 class="widget-title">Berufliche Fähigkeiten</h4>
                                     <div class="widget-content">
                                         <ul class="job-skills">
                                             <li v-for="skill in user.skill">

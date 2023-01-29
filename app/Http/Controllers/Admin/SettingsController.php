@@ -25,6 +25,15 @@ class SettingsController extends Controller
             $image->move('images/logo/', $newName);
             $data['logo'] = $newName;
         }
+        if ($request->hasFile('about_image')) {
+            if ($settings && File::exists('images/' . $settings->about_image))
+                File::delete('images/' . $settings->about_image);
+            $image = $request->file('about_image');
+            $filename = $image->getClientOriginalName();
+            $newName = uniqid() . '-' . now()->timestamp . $filename;
+            $image->move('images/', $newName);
+            $data['about_image'] = $newName;
+        }
         if($settings)
             $settings->update($data);
         else

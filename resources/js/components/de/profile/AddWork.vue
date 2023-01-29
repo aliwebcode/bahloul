@@ -2,7 +2,7 @@
     <section class="user-dashboard">
         <div class="dashboard-outer">
             <div class="upper-title-box">
-                <h3>Post a New Work</h3>
+                <h3>Neue Arbeit hinzufügen</h3>
             </div>
 
             <div class="row">
@@ -14,7 +14,7 @@
                                 <h4>Post Work</h4>
                                 <div class="chosen-outer">
                                     <router-link to="/profile/portfolio" class="btn btn-primary">
-                                        Back To Portfolio
+                                        Zurück
                                         <i class="fa fa-angle-right"></i>
                                     </router-link>
                                 </div>
@@ -26,25 +26,25 @@
                                     <div class="row">
                                         <!-- Input -->
                                         <div class="form-group col-lg-12 col-md-12">
-                                            <label>Work Title</label>
+                                            <label>Arbeitstitel</label>
                                             <input type="text" v-model="work.title" required>
                                         </div>
 
                                         <!-- Input -->
                                         <div class="form-group col-lg-12 col-md-12">
-                                            <label>Work Description</label>
+                                            <label>Arbeitsbeschreibung</label>
                                             <textarea v-model="work.description" required></textarea>
                                         </div>
 
                                         <!-- Input -->
                                         <div class="form-group col-lg-12 col-md-12">
-                                            <label>Work URL (optional)</label>
+                                            <label>Arbeit URL (optional)</label>
                                             <input type="url" v-model="work.url">
                                         </div>
 
                                         <!-- Input -->
                                         <div class="form-group col-lg-12 col-md-12">
-                                            <label>Work Images</label>
+                                            <label>Arbeit Bilder</label>
                                             <div class="uploading-outer">
                                                 <div class="uploadButton">
                                                     <input class="uploadButton-input"
@@ -58,9 +58,6 @@
                                                     <label class="uploadButton-button ripple-effect" for="upload">Browse
                                                         Image</label>
                                                     <span class="uploadButton-file-name"></span>
-                                                </div>
-                                                <div class="text">Max file size is 1MB, Minimum dimension: 330x300 And
-                                                    Suitable files are .jpg & .png
                                                 </div>
                                             </div>
                                             <div class="preview" v-if="preview.length > 0">
@@ -76,7 +73,7 @@
                                         <!-- Input -->
                                         <div v-if="errors.empty"
                                              class="form-group col-lg-12 col-md-6 alert alert-danger">
-                                            Please fill all required fields.
+                                            Bitte alle Felder ausfüllen.
                                         </div>
 
                                         <!-- Input -->
@@ -84,7 +81,7 @@
                                             <button class="btn btn-success"
                                                     type="button"
                                                     @click="addWork">
-                                                Add
+                                                Hinzufügen
                                             </button>
                                         </div>
 

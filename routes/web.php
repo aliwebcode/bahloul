@@ -1,18 +1,48 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 Auth::routes();
 
+Route::get('/in', function () {
+    phpinfo();
+});
+
 // Handle All Requests
 Route::group(['prefix' => 'request', 'as' => 'request.'], function () {
+
+    Route::post('/near', function (Request $request) {
+
+        $cities = \App\City::where('city', '!=', null)
+            ->when($request->long and $request->lat, function ($q) use ($request) {
+                $q->addSelect(\Illuminate\Support\Facades\DB::raw(
+                    "*, (((acos(sin(( '$request->lat' *pi()/180)) * sin((`lat`*pi()/180)) + cos(( '$request->lat' *pi()/180)) * cos((`lat`*pi()/180))* cos((('$request->long' - `lng`) * pi()/180)))) * 180/pi()) * 60 * 1.1515 * 1.609344) as distance")
+                );
+//            ->when($request->long and $request->lat, function ($q) use ($request) {
+//                $q->addSelect(\Illuminate\Support\Facades\DB::raw("
+//                lat_lng_distance('$request->lat', '$request->long', 'lat', 'lng')
+//                "));
+            })
+            ->orderBy('distance', 'asc')
+            ->get();
+        return response()->json($cities);
+    });
 
     // Get City
     Route::get('/get-city/{id}',function ($id) {
         return response()->json(\App\City::where('country_id', $id)->get());
     });
+    // Get cities
+    Route::get('/get-cities', function () {
+        return \App\City::get(['id', 'city']);
+    });
     Route::get('/get-all-categories', function () {
         return response()->json(\App\Category::all());
+    });
+
+    Route::get('/get-settings', function () {
+        return \App\Setting::first();
     });
 
     // Profile Requests

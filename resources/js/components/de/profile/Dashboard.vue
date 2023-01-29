@@ -3,7 +3,7 @@
         <section class="user-dashboard" v-if="user.type == 1">
             <div class="dashboard-outer">
                 <div class="upper-title-box">
-                    <h3>Welcome, {{ user.name }}</h3>
+                    <h3>Willkommen, {{ user.name }}</h3>
                 </div>
 
 
@@ -20,22 +20,22 @@
                                 </div>
                                 <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mt-4">
                                     <div class="upper-title-box">
-                                        <h3 class="text-left">Increase your chances by:</h3>
+                                        <h3 class="text-left">Erhöhen Sie Ihre Chancen um:</h3>
                                         <ul class="complete-profile-list">
                                             <li v-if="user.complete.profile > 5">
-                                                <a href="/profile">Complete your information</a>
+                                                <a href="/profile">Vervollständigen Sie Ihre Angaben</a>
                                             </li>
                                             <li v-if="user.complete.portfolio">
-                                                <a href="/profile/portfolio">Create Attractive Gallery</a>
+                                                <a href="/profile/portfolio">Attraktive Galerie erstellen</a>
                                             </li>
                                             <li v-if="user.complete.edu">
-                                                <a href="/profile/resume">Add Education Levels</a>
+                                                <a href="/profile/resume">Bildungsstufen hinzufügen</a>
                                             </li>
                                             <li v-if="user.complete.exp">
-                                                <a href="/profile/resume">Add Experience Careers</a>
+                                                <a href="/profile/resume">Berufserfahrung hinzufügen</a>
                                             </li>
                                             <li v-if="user.complete.cv">
-                                                <a href="/profile/resume">Upload your CV</a>
+                                                <a href="/profile/resume">Laden Sie Ihren Lebenslauf hoch</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -56,7 +56,7 @@
                             </div>
                             <div class="right">
                                 <h4>{{ user.applicants.length }}</h4>
-                                <p>Applied Jobs</p>
+                                <p>Beworbene Jobs</p>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                             </div>
                             <div class="right">
                                 <h4>{{ user.shortlists.length }}</h4>
-                                <p>Shortlist</p>
+                                <p>Auswahlliste</p>
                             </div>
                         </div>
                     </div>
@@ -97,9 +97,9 @@
                         <div class="graph-widget ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>Suggested Jobs</h4>
+                                    <h4>Vorgeschlagene Jobs</h4>
                                     <div class="chosen-outer">
-                                        <a href="/jobs" v-if="suggestedJobs.length > 0">Show All</a>
+                                        <a href="/jobs" v-if="suggestedJobs.length > 0">Alle anzeigen</a>
                                     </div>
                                 </div>
 
@@ -111,7 +111,7 @@
                                         <div class="col-12 text-center py-3" v-else>
                                             <h6 class="mb-4">
                                                 No Category added yet,
-                                                <a href="/profile">Complete your profile</a>.
+                                                <a href="/profile">Vervollständigen Sie Ihre Angaben</a>.
                                             </h6>
                                             <a href="/profile">
                                                 <img src="/assets/images/add_category.svg" style="width: 300px;">
@@ -147,7 +147,7 @@
                                                         </li>
                                                         <li v-if="job.type === 'Freelance'">
                                                             <span class="icon flaticon-monitor"></span>
-                                                            Remotely
+                                                            Aus der Ferne
                                                         </li>
                                                         <li>
                                                             <span class="icon flaticon-clock-3"></span>
@@ -172,9 +172,9 @@
                         <!-- applicants Widget -->
                         <div class="applicants-widget ls-widget">
                             <div class="widget-title">
-                                <h4>Jobs Applied Recently</h4>
+                                <h4>Kürzlich beworbene Stellen</h4>
                                 <div class="chosen-outer">
-                                    <a href="/profile/applied-jobs">Show All</a>
+                                    <a href="/profile/applied-jobs">Alle anzeigen</a>
                                 </div>
                             </div>
                             <div class="widget-content">
@@ -208,7 +208,7 @@
                                                     </li>
                                                     <li v-if="applicant.job.type === 'Freelance'">
                                                         <span class="icon flaticon-monitor"></span>
-                                                        Remotely
+                                                        Aus der Ferne
                                                     </li>
                                                     <li>
                                                         <span class="icon flaticon-clock-3"></span>
@@ -224,7 +224,7 @@
                                 </div>
                                 <div class="row" v-else>
                                     <div class="col-md-12 text-center">
-                                        <p>No Applicants yet.</p>
+                                        <p>Keine Bewerber.</p>
                                     </div>
                                 </div>
                             </div>
@@ -237,7 +237,7 @@
         <section class="user-dashboard" v-if="user.type == 2">
             <div class="dashboard-outer">
                 <div class="upper-title-box">
-                    <h3>Welcome, {{ user.name }}</h3>
+                    <h3>Willkommen, {{ user.name }}</h3>
                 </div>
 
                 <div class="ls-widget"
@@ -254,10 +254,10 @@
                                 </div>
                                 <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mt-4">
                                     <div class="upper-title-box">
-                                        <h3 class="text-left">Increase your chances by:</h3>
+                                        <h3 class="text-left">Erhöhen Sie Ihre Chancen um:</h3>
                                         <ul class="complete-profile-list">
                                             <li v-if="user.complete > 5">
-                                                <a href="/profile">Complete your information</a>
+                                                <a href="/profile">Vervollständigen Sie Ihre Angaben</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -275,7 +275,7 @@
                             </div>
                             <div class="right">
                                 <h4>{{ user.jobs.length }}</h4>
-                                <p>Posted Jobs</p>
+                                <p>Stellenanzeigen</p>
                             </div>
                         </div>
                     </div>
@@ -286,7 +286,7 @@
                             </div>
                             <div class="right">
                                 <h4>{{ unreadNotifications }}</h4>
-                                <p>Notifications</p>
+                                <p>Benachrichtigungen</p>
                             </div>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
                             </div>
                             <div class="right">
                                 <h4>{{ user.shortlists.length }}</h4>
-                                <p>Shortlist</p>
+                                <p>Auswahllisten</p>
                             </div>
                         </div>
                     </div>
@@ -308,7 +308,7 @@
                     <div class="col-lg-12">
                         <!-- Notification Widget -->
                         <div class="notification-widget ls-widget">
-                            <div class="widget-title"><h4>Notifications</h4></div>
+                            <div class="widget-title"><h4>Benachrichtigungen</h4></div>
                             <div class="widget-content">
                                 <ul class="notification-list" v-if="notifications.length">
                                     <li v-for="(notification, index) in notifications" :key="index">
@@ -325,7 +325,7 @@
                                         </span>
                                     </li>
                                 </ul>
-                                <p v-else class="text-center">No notifications yet.</p>
+                                <p v-else class="text-center">Keine Benachrichtigungen.</p>
                             </div>
                         </div>
                     </div>
@@ -335,7 +335,7 @@
         <section class="user-dashboard" v-if="user.type == 3">
             <div class="dashboard-outer">
                 <div class="upper-title-box">
-                    <h3>Welcome, {{ user.name }}</h3>
+                    <h3>Willkommen, {{ user.name }}</h3>
                 </div>
 
                 <div class="ls-widget"
@@ -352,13 +352,13 @@
                                 </div>
                                 <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center mt-4">
                                     <div class="upper-title-box">
-                                        <h3 class="text-left">Increase your chances by:</h3>
+                                        <h3 class="text-left">Erhöhen Sie Ihre Chancen um:</h3>
                                         <ul class="complete-profile-list">
                                             <li v-if="user.complete.profile > 5">
-                                                <a href="/profile">Complete your information</a>
+                                                <a href="/profile">Vervollständigen Sie Ihre Angaben</a>
                                             </li>
                                             <li v-if="user.complete.portfolio">
-                                                <a href="/profile/portfolio">Create Attractive Gallery</a>
+                                                <a href="/profile/portfolio">Attraktive Galerie erstellen</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -387,7 +387,7 @@
                             </div>
                             <div class="right">
                                 <h4>{{ user.shortlists.length }}</h4>
-                                <p>Shortlist</p>
+                                <p>Auswahllisten</p>
                             </div>
                         </div>
                     </div>

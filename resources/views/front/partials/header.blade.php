@@ -12,15 +12,15 @@
                     <div class="logo">
                         @if(substr(Request::path(), 0, 2) == "ar")
                             <a href="/ar">
-                                <img src="{{ asset('assets/images/logo.png') }}" alt="Bahloul" title="Bahloul">
+                                <img src="{{ asset('assets/images/logo.png') }}">
                             </a>
                         @elseif(substr(Request::path(), 0, 2) == "en")
                             <a href="/en">
-                                <img src="{{ asset('assets/images/logo.png') }}" alt="Bahloul" title="Bahloul">
+                                <img src="{{ asset('assets/images/logo.png') }}">
                             </a>
                         @else
                             <a href="/">
-                                <img src="{{ asset('assets/images/logo.png') }}" alt="Bahloul" title="Bahloul">
+                                <img src="{{ asset('assets/images/logo.png') }}">
                             </a>
                         @endif
                     </div>
@@ -34,7 +34,7 @@
                             @elseif(substr(Request::path(), 0, 2) == "ar")
                                 <a href="/ar" id="header-home">الرئيسية</a>
                             @else
-                                <a href="/" id="header-home">Home de</a>
+                                <a href="/" id="header-home">Startseite</a>
                             @endif
                         </li>
 
@@ -44,7 +44,7 @@
                             @elseif(substr(Request::path(), 0, 2) == "ar")
                                 <a href="/ar/jobs" id="header-jobs">الوظائف</a>
                             @else
-                                <a href="/jobs" id="header-jobs">Jobs de</a>
+                                <a href="/jobs" id="header-jobs">Jobs</a>
                             @endif
                         </li>
 
@@ -54,7 +54,7 @@
                             @elseif(substr(Request::path(), 0, 2) == "ar")
                                 <a href="/ar/resumes" id="header-candidates">المستقلين</a>
                             @else
-                                <a href="/resumes" id="header-candidates">Candidates de</a>
+                                <a href="/resumes" id="header-candidates">Bewerber</a>
                             @endif
                         </li>
                         <li>
@@ -63,17 +63,17 @@
                             @elseif(substr(Request::path(), 0, 2) == "ar")
                                 <a href="/ar/local-businesses" id="header-business">أعمال محلية</a>
                             @else
-                                <a href="/local-businesses" id="header-business">Local Businesses de</a>
+                                <a href="/local-businesses" id="header-business">Lokale Unternehmen</a>
                             @endif
                         </li>
 
                         <li>
                             @if(substr(Request::path(), 0, 2) == "en")
-                                <a href="#">Blog</a>
+                                <a href="/blog">Blog</a>
                             @elseif(substr(Request::path(), 0, 2) == "ar")
-                                <a href="#">المدونة</a>
+                                <a href="/blog">المدونة</a>
                             @else
-                                <a href="#">Blog de</a>
+                                <a href="/blog">Blog</a>
                             @endif
                         </li>
                     </ul>
@@ -139,7 +139,13 @@
                         <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
                             <img src="{{ auth()->user()->image ? asset('/images/users/' . auth()->user()->image) : asset('assets/images/default_avatar.png') }}"
                                  alt="avatar" class="thumb">
-                            <span class="name">My Account</span>
+                            @if(substr(Request::path(), 0, 2) == "en")
+                                <span class="name">My Account</span>
+                            @elseif(substr(Request::path(), 0, 2) == "ar")
+                                <span class="name">حسابي</span>
+                            @else
+                                <span class="name">Mein Konto</span>
+                            @endif
                         </a>
                     </div>
                 </div>
@@ -152,7 +158,7 @@
                             @elseif(substr(Request::path(), 0, 2) == "ar")
                                 <a href="/ar/login">تسجيل الدخول</a>
                             @else
-                                <a href="/login">Login de</a>
+                                <a href="/login">Anmelden</a>
                             @endif
                         </li>
                         <li>
@@ -161,7 +167,7 @@
                             @elseif(substr(Request::path(), 0, 2) == "ar")
                                 <a href="/ar/register">حساب جديد</a>
                             @else
-                                <a href="/register">Register de</a>
+                                <a href="/register">Registrieren</a>
                             @endif
                         </li>
                         <li class="nav-item dropdown">

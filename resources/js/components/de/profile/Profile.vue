@@ -3,7 +3,7 @@
         <section v-if="user.type == 1" class="user-dashboard">
             <div class="dashboard-outer">
                 <div class="upper-title-box">
-                    <h3>My Profile</h3>
+                    <h3>Mein Profil</h3>
                 </div>
 
                 <div class="row">
@@ -12,7 +12,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>My Information</h4>
+                                    <h4>Meine Informationen</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -43,7 +43,7 @@
                                         <div class="row">
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Full Name</label>
+                                                <label>Vollständiger Name</label>
                                                 <input type="text"
                                                        name="name"
                                                        v-model="user.name"
@@ -52,7 +52,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Job Title</label>
+                                                <label>Job Titel</label>
                                                 <input type="text"
                                                        name="job_title"
                                                        v-model="user.job_title"
@@ -61,7 +61,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Phone</label>
+                                                <label>Telefon</label>
                                                 <input type="text"
                                                        name="phone"
                                                        v-model="user.phone"
@@ -70,7 +70,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Job Category</label>
+                                                <label>Job Kategorie</label>
                                                 <select class="chosen-select"
                                                         v-model="user.category_id"
                                                         @change="showSaveBtn = true">
@@ -94,14 +94,14 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Birthday Date</label>
+                                                <label>Geburtstagsdatum</label>
                                                 <input type="date" v-model="user.birthday" @change="showSaveBtn = true">
                                             </div>
 
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Languages</label>
+                                                <label>Sprachen</label>
                                                 <v-select :options="languages"
                                                           v-model="user.lang"
                                                           @input="setLanguages"
@@ -111,21 +111,21 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Experience (years)</label>
+                                                <label>Erfahrung (Jahre)</label>
                                                 <select class="chosen-select"
                                                         v-model="user.experience"
                                                         @change="showSaveBtn = true">
-                                                    <option value="0-2">0 to 2 (Years)</option>
-                                                    <option value="3-5">3 to 5 (Years)</option>
-                                                    <option value="6-8">6 to 8 (Years)</option>
-                                                    <option value="+9">+9 (Years)</option>
+                                                    <option value="0-2">0 to 2 (Jahre)</option>
+                                                    <option value="3-5">3 to 5 (Jahre)</option>
+                                                    <option value="6-8">6 to 8 (Jahre)</option>
+                                                    <option value="+9">+9 (Jahre)</option>
                                                 </select>
                                             </div>
 
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Education Level</label>
+                                                <label>Bildungsniveau</label>
                                                 <select class="chosen-select"
                                                         v-model="user.education"
                                                         @change="showSaveBtn = true">
@@ -141,7 +141,7 @@
 
                                             <!-- Search Select -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Skills</label>
+                                                <label>Fähigkeiten</label>
                                                 <v-select :options="skills"
                                                           v-model="user.skill"
                                                           @input="setSkills"
@@ -150,7 +150,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Allow In Search & Listing</label>
+                                                <label>In Suche & Auflistung zulassen</label>
                                                 <select class="chosen-select"
                                                         v-model="user.status"
                                                         @change="showSaveBtn = true">
@@ -161,7 +161,7 @@
 
                                             <!-- About Company -->
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label>About me</label>
+                                                <label>Über mich</label>
                                                 <textarea
                                                     name="description"
                                                     @keydown="showSaveBtn = true"
@@ -182,7 +182,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>Social Network</h4>
+                                    <h4>Soziale Medien</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -239,7 +239,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>Contact Information</h4>
+                                    <h4>Kontaktinformationen</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -247,10 +247,9 @@
                                         <div class="row">
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Country</label>
+                                                <label>Land</label>
                                                 <select class="chosen-select"
-                                                        v-model="user.country_id"
-                                                        @change="selectCities('input'), showSaveBtn = true">
+                                                        v-model="user.country_id">
                                                     <option v-for="country in countries"
                                                             :selected="country.id === user.country_id"
                                                             :value="country.id">
@@ -261,21 +260,18 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>City</label>
-                                                <select class="chosen-select"
-                                                        v-model="user.city_id"
-                                                        @change="showSaveBtn = true">
-                                                    <option v-for="city in selectedCities"
-                                                            :selected="city.id === user.city_id"
-                                                            :value="city.id">
-                                                        {{ city.name }}
-                                                    </option>
-                                                </select>
+                                                <label>Stadt</label>
+                                                <strong v-if="user.city_id">({{ selectedCity().city }})</strong>
+
+                                                <v-select :options="cities.map(e => e.city)"
+                                                          v-model="selectedCityTmp"
+                                                          @input="setCity()"
+                                                ></v-select>
                                             </div>
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label>Complete Address</label>
+                                                <label>Adresse</label>
                                                 <input type="text"
                                                        v-model="user.address"
                                                        @keydown="showSaveBtn = true">
@@ -299,7 +295,7 @@
         <section v-if="user.type == 2" class="user-dashboard">
             <div class="dashboard-outer">
                 <div class="upper-title-box">
-                    <h3>My Profile</h3>
+                    <h3>Mein Profil</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
@@ -307,7 +303,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>My Information</h4>
+                                    <h4>Meine Informationen</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -334,7 +330,7 @@
                                         <div class="row">
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Company name</label>
+                                                <label>Unternehmensname</label>
                                                 <input type="text"
                                                        v-model="user.name"
                                                        @keydown="showSaveBtn = true">
@@ -342,7 +338,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Company email</label>
+                                                <label>Unternehmen E-Mail</label>
                                                 <input type="email"
                                                        v-model="user.company_email"
                                                        @keydown="showSaveBtn = true">
@@ -350,7 +346,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Phone</label>
+                                                <label>Telefon</label>
                                                 <input type="text"
                                                        v-model="user.phone"
                                                        @keydown="showSaveBtn = true">
@@ -366,7 +362,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Founded In (year)</label>
+                                                <label>Gegründet in (Jahre)</label>
                                                 <input type="number"
                                                        v-model="user.founded_in"
                                                        @keydown="showSaveBtn = true">
@@ -374,7 +370,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Team Size</label>
+                                                <label>Teamgröße</label>
                                                 <select class="chosen-select"
                                                         v-model="user.company_size"
                                                         @change="showSaveBtn = true">
@@ -388,7 +384,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Allow In Search & Listing</label>
+                                                <label>In Suche & Auflistung zulassen</label>
                                                 <select class="chosen-select"
                                                         v-model="user.status"
                                                         @change="showSaveBtn = true">
@@ -399,7 +395,7 @@
 
                                             <!-- About Company -->
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label>About Company</label>
+                                                <label>Über das Unternehmen</label>
                                                 <textarea
                                                     v-model="user.description"
                                                     @keydown="showSaveBtn = true"></textarea>
@@ -420,7 +416,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>Social Network</h4>
+                                    <h4>Soziale Medien</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -477,7 +473,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>Contact Information</h4>
+                                    <h4>Kontaktinformationen</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -485,10 +481,9 @@
                                         <div class="row">
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Country</label>
+                                                <label>Land</label>
                                                 <select class="chosen-select"
-                                                        v-model="user.country_id"
-                                                        @change="selectCities('input'), showSaveBtn = true">
+                                                        v-model="user.country_id">
                                                     <option v-for="country in countries"
                                                             :selected="country.id === user.country_id"
                                                             :value="country.id">
@@ -499,21 +494,18 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>City</label>
-                                                <select class="chosen-select"
-                                                        v-model="user.city_id"
-                                                        @change="showSaveBtn = true">
-                                                    <option v-for="city in selectedCities"
-                                                            :selected="city.id === user.city_id"
-                                                            :value="city.id">
-                                                        {{ city.name }}
-                                                    </option>
-                                                </select>
+                                                <label>Stadt</label>
+                                                <strong v-if="user.city_id">({{ selectedCity().city }})</strong>
+
+                                                <v-select :options="cities.map(e => e.city)"
+                                                          v-model="selectedCityTmp"
+                                                          @input="setCity()"
+                                                ></v-select>
                                             </div>
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label>Complete Address</label>
+                                                <label>Adresse</label>
                                                 <input type="text"
                                                        v-model="user.address"
                                                        @keydown="showSaveBtn = true">
@@ -521,7 +513,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label>Postal Code</label>
+                                                <label>Postleitzahl</label>
                                                 <input type="text"
                                                        v-model="user.zip"
                                                        @keydown="showSaveBtn = true">
@@ -546,7 +538,7 @@
         <section v-if="user.type == 3" class="user-dashboard">
             <div class="dashboard-outer">
                 <div class="upper-title-box">
-                    <h3>My Profile</h3>
+                    <h3>Mein Profil</h3>
                 </div>
 
                 <div class="row">
@@ -555,7 +547,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>My Information</h4>
+                                    <h4>Meine Informationen</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -573,9 +565,6 @@
                                                 Browse Image
                                             </label>
                                             <span class="uploadButton-file-name"></span>
-                                        </div>
-                                        <div class="text">Max file size is 1MB, Minimum dimension: 330x300 And Suitable
-                                            files are .jpg & .png
                                         </div>
                                     </div>
                                     <div class="preview view-personal-image" v-if="previewImage || user.image">
@@ -599,9 +588,6 @@
                                             </label>
                                             <span class="uploadButton-file-name"></span>
                                         </div>
-                                        <div class="text">Max file size is 1MB, Minimum dimension: 330x300 And Suitable
-                                            files are .jpg & .png
-                                        </div>
                                     </div>
 
                                     <div class="preview view-personal-image cover-preview" v-if="previewCover || user.cover">
@@ -613,7 +599,7 @@
                                         <div class="row">
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Full Name</label>
+                                                <label>Vollständiger Name</label>
                                                 <input type="text"
                                                        name="name"
                                                        v-model="user.name"
@@ -621,7 +607,7 @@
                                             </div>
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Business Name</label>
+                                                <label>Firmenname</label>
                                                 <input type="text"
                                                        name="name"
                                                        v-model="user.b_name"
@@ -629,7 +615,7 @@
                                             </div>
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Business Email</label>
+                                                <label>Geschäftliche E-Mail</label>
                                                 <input type="text"
                                                        name="name"
                                                        v-model="user.b_email"
@@ -638,7 +624,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Phone</label>
+                                                <label>Telefon</label>
                                                 <input type="text"
                                                        name="phone"
                                                        v-model="user.phone"
@@ -647,7 +633,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Job Category</label>
+                                                <label>Job Kategorie</label>
                                                 <select class="chosen-select"
                                                         v-model="user.category_id"
                                                         @change="showSaveBtn = true">
@@ -671,14 +657,14 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Birthday Date</label>
+                                                <label>Geburtstagsdatum</label>
                                                 <input type="date" v-model="user.birthday" @change="showSaveBtn = true">
                                             </div>
 
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Languages</label>
+                                                <label>Sprachen</label>
                                                 <v-select :options="languages"
                                                           v-model="user.lang"
                                                           @input="setLanguages"
@@ -688,21 +674,21 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Experience (years)</label>
+                                                <label>Erfahrung (Jahre)</label>
                                                 <select class="chosen-select"
                                                         v-model="user.experience"
                                                         @change="showSaveBtn = true">
-                                                    <option value="0-2">0 to 2 (Years)</option>
-                                                    <option value="3-5">3 to 5 (Years)</option>
-                                                    <option value="6-8">6 to 8 (Years)</option>
-                                                    <option value="+9">+9 (Years)</option>
+                                                    <option value="0-2">0 to 2 (Jahre)</option>
+                                                    <option value="3-5">3 to 5 (Jahre)</option>
+                                                    <option value="6-8">6 to 8 (Jahre)</option>
+                                                    <option value="+9">+9 (Jahre)</option>
                                                 </select>
                                             </div>
 
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Education Level</label>
+                                                <label>Bildungsniveau</label>
                                                 <select class="chosen-select"
                                                         v-model="user.education"
                                                         @change="showSaveBtn = true">
@@ -718,7 +704,7 @@
 
                                             <!-- Search Select -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Skills</label>
+                                                <label>Fähigkeiten</label>
                                                 <v-select :options="skills"
                                                           v-model="user.skill"
                                                           @input="setSkills"
@@ -727,7 +713,7 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Allow In Search & Listing</label>
+                                                <label>In Suche & Auflistung zulassen</label>
                                                 <select class="chosen-select"
                                                         v-model="user.status"
                                                         @change="showSaveBtn = true">
@@ -738,7 +724,7 @@
 
                                             <!-- About Company -->
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label>About me</label>
+                                                <label>Über mich</label>
                                                 <textarea
                                                     name="description"
                                                     @keydown="showSaveBtn = true"
@@ -759,7 +745,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>Social Network</h4>
+                                    <h4>Soziale Medien</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -816,7 +802,7 @@
                         <div class="ls-widget">
                             <div class="tabs-box">
                                 <div class="widget-title">
-                                    <h4>Contact Information</h4>
+                                    <h4>Kontaktinformationen</h4>
                                 </div>
 
                                 <div class="widget-content">
@@ -824,10 +810,9 @@
                                         <div class="row">
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>Country</label>
+                                                <label>Land</label>
                                                 <select class="chosen-select"
-                                                        v-model="user.country_id"
-                                                        @change="selectCities('input'), showSaveBtn = true">
+                                                        v-model="user.country_id">
                                                     <option v-for="country in countries"
                                                             :selected="country.id === user.country_id"
                                                             :value="country.id">
@@ -838,21 +823,18 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-6 col-md-12">
-                                                <label>City</label>
-                                                <select class="chosen-select"
-                                                        v-model="user.city_id"
-                                                        @change="showSaveBtn = true">
-                                                    <option v-for="city in selectedCities"
-                                                            :selected="city.id === user.city_id"
-                                                            :value="city.id">
-                                                        {{ city.name }}
-                                                    </option>
-                                                </select>
+                                                <label>Stadt</label>
+                                                <strong v-if="user.city_id">({{ selectedCity().city }})</strong>
+
+                                                <v-select :options="cities.map(e => e.city)"
+                                                          v-model="selectedCityTmp"
+                                                          @input="setCity()"
+                                                ></v-select>
                                             </div>
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label>Complete Address</label>
+                                                <label>Adresse</label>
                                                 <input type="text"
                                                        v-model="user.address"
                                                        @keydown="showSaveBtn = true">
@@ -860,10 +842,22 @@
 
                                             <!-- Input -->
                                             <div class="form-group col-lg-12 col-md-12">
-                                                <label>Postal Code</label>
+                                                <label>Postleitzahl</label>
                                                 <input type="text"
                                                        v-model="user.zip"
                                                        @keydown="showSaveBtn = true">
+                                            </div>
+
+                                            <!-- Input -->
+                                            <div class="form-group col-lg-12 col-md-12">
+                                                <label>Location on map</label>
+                                                <div class="col-5">
+                                                    <input type="text" class="form-control" placeholder="lat" name="lat" id="lat">
+                                                </div>
+                                                <div class="col-5">
+                                                    <input type="text" class="form-control" placeholder="lng" name="lng" id="lng">
+                                                </div>
+                                                <div id="map" style="height:400px; width: 800px;" class="my-3"></div>
                                             </div>
                                         </div>
                                     </form>
@@ -889,14 +883,14 @@
                     @click="saveChanges"
                     type="button"
                     id="saveBtn">
-                <span v-if="!btnLoading">Save</span>
+                <span v-if="!btnLoading">Speichern</span>
                 <i class="fas fa-spinner fa-pulse fa-lg" v-if="btnLoading"></i>
             </button>
         </div>
     </div>
 </template>
-
 <script>
+
 export default {
     mounted() {
         document.title = "Dashboard - Profile"
@@ -911,12 +905,16 @@ export default {
                 this.countries = res.data.countries
                 this.cities = res.data.cities
                 // Trigger Cities
-                this.selectCities()
+                // this.selectCities()
                 this.loading = false
             })
             .catch((err) => {
                 console.log(err)
             })
+        axios.get('/request/get-cities')
+        .then((res) => {
+            this.cities = res.data
+        })
     },
     data: function () {
         return {
@@ -948,7 +946,8 @@ export default {
                 'Arabic',
                 'Germany',
             ],
-            loading: true
+            loading: true,
+            selectedCityTmp: null
         }
     },
     methods: {
@@ -1028,9 +1027,22 @@ export default {
             this.user.skills = this.user.skill.join()
             this.showSaveBtn = true
         },
+        setCity: function () {
+            this.cities.find((e) => {
+                if(e.city == this.selectedCityTmp)
+                    this.user.city_id = e.id
+            })
+            this.showSaveBtn = true
+        },
         setLanguages: function () {
             this.user.languages = this.user.lang.join()
             this.showSaveBtn = true
+        },
+        selectedCity() {
+            return this.cities.find((e) => {
+                if(this.user.city_id == e.id)
+                    return e.city
+            })
         }
     }
 }

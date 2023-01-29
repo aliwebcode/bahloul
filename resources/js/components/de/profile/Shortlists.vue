@@ -2,7 +2,7 @@
     <section class="user-dashboard">
         <div class="dashboard-outer">
             <div class="upper-title-box">
-                <h3>Shortlists</h3>
+                <h3>Auswahllisten</h3>
             </div>
 
             <div class="row">
@@ -11,7 +11,7 @@
                     <div class="ls-widget">
                         <div class="tabs-box">
                             <div class="widget-title">
-                                <h4>My Favorite Items</h4>
+                                <h4>Meine bevorzugten Artikel</h4>
                             </div>
 
                             <div class="widget-content">
@@ -19,10 +19,10 @@
                                     <table class="default-table manage-job-table">
                                         <thead>
                                         <tr>
-                                            <th>Title</th>
-                                            <th>Type</th>
-                                            <th>Date Shortlisted</th>
-                                            <th>Action</th>
+                                            <th>Titel</th>
+                                            <th>Typ</th>
+                                            <th>Datum in der Auswahlliste</th>
+                                            <th>Optionen</th>
                                         </tr>
                                         </thead>
                                         <tbody>
