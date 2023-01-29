@@ -48,6 +48,17 @@ Route::group(['namespace' => 'Admin','middleware' => 'auth:admin', 'as' => 'admi
     // Delete FAQ
     Route::post('/faq/delete', 'FaqController@delete')->name('faq.delete');
 
+    // Services
+    Route::get('/services', 'ServicesController@index')->name('services.index');
+    // Save Service
+    Route::post('/services', 'ServicesController@save')->name('services.save');
+    // Edit Service
+    Route::get('/services/{id}/edit', 'ServicesController@edit')->name('services.edit');
+    // Update Service
+    Route::post('/services/update', 'ServicesController@update')->name('services.update');
+    // Delete Service
+    Route::post('/services/delete', 'ServicesController@delete')->name('services.delete');
+
     // Settings
     Route::get('/settings', 'SettingsController@index')->name('settings.index');
     // Settings Update

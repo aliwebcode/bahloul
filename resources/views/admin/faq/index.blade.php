@@ -68,7 +68,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>في حال التأكيد لا يمكنك التراجع وسيتم حذف كل بيانات المستخدم.</p>
+                    <p>في حال التأكيد لا يمكنك التراجع.</p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">إلغاء</button>

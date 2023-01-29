@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\City;
 use App\Faq;
+use App\Service;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -42,5 +43,10 @@ class HomeController extends Controller
         $city = City::where('city', 'like', '%' . $c. '%')
             ->get();
         return response()->json($city);
+    }
+
+    public function get_services() {
+        $services = Service::latest()->get();
+        return response()->json($services);
     }
 }

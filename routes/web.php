@@ -124,6 +124,8 @@ Route::group(['prefix' => 'request', 'as' => 'request.'], function () {
             Route::get('/get-cities/{c}','HomeController@get_cities');
             /* Get FAQ */
             Route::get('/get-faq','HomeController@get_faq');
+            /* Get Services */
+            Route::get('/get-services','HomeController@get_services');
         });
 
 

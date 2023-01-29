@@ -71,7 +71,13 @@
 {{--        </a>--}}
 {{--    </li>--}}
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item @yield('services')">
+        <a class="nav-link" href="{{ route('admin.services.index') }}">
+            <i class="fas fa-fw fa-bars"></i>
+            <span>الخدمات</span>
+        </a>
+    </li>
+
     <li class="nav-item @yield('faq')">
         <a class="nav-link" href="{{ route('admin.faq.index') }}">
             <i class="fas fa-fw fa-question"></i>

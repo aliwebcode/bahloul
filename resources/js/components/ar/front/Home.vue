@@ -125,25 +125,16 @@
                     <div class="text">اكتشف خدماتنا الاحترافية</div>
                 </div>
 
-                <div class="row wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                    <!-- Process Block -->
-                    <div class="process-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="icon-box"><img src="assets/images/process-1.png" alt=""></div>
-                        <h4>Register an account <br>to start</h4>
-                    </div>
+                <div v-if="services.length" class="row wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
 
-                    <!-- Process Block -->
-                    <div class="process-block col-lg-4 col-md-6 col-sm-12">
-                        <div class="icon-box"><img src="assets/images/process-2.png" alt=""></div>
-                        <h4>Explore over thousands <br>of resumes</h4>
-                    </div>
-
-                    <!-- Process Block -->
-                    <div class="process-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="process-block col-lg-4 col-md-6 col-sm-12"
+                         v-for="service in services" :key="service.id">
                         <div class="icon-box"><img src="assets/images/process-3.png" alt=""></div>
-                        <h4>Find the most suitable <br>candidate</h4>
+                        <h4>{{service.name_ar}}</h4>
                     </div>
+
                 </div>
+
             </div>
         </section>
         <!-- End Services -->
@@ -284,6 +275,10 @@ export default {
             .then((response) => {
                 this.faq = response.data
             })
+        axios.get("/request/front/home/get-services")
+            .then((response) => {
+                this.services = response.data
+            })
         axios.get("/blog/wp-json/wp/v2/posts?_embed&per_page=3&order=desc")
             .then((res) => {
                 this.posts = res.data
@@ -303,7 +298,8 @@ export default {
                 type: "",
             },
             posts: [],
-            faq: {}
+            faq: {},
+            services: {}
         }
     },
     methods: {
