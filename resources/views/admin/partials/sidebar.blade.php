@@ -71,6 +71,13 @@
 {{--        </a>--}}
 {{--    </li>--}}
 
+    <li class="nav-item @yield('pages')">
+        <a class="nav-link" href="{{ route('admin.pages.index') }}">
+            <i class="fas fa-fw fa-bars"></i>
+            <span>الصفحات</span>
+        </a>
+    </li>
+
     <li class="nav-item @yield('services')">
         <a class="nav-link" href="{{ route('admin.services.index') }}">
             <i class="fas fa-fw fa-bars"></i>

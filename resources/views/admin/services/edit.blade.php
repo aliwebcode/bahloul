@@ -32,6 +32,16 @@
                     <input type="text" class="form-control text-left" name="name_en" value="{{ $service->name_en }}">
                 </div>
                 <div class="form-group">
+                    <label for="page_id">الصفحة (الرابط)</label>
+                    <select class="form-control" name="page_id" id="page_id">
+                        @forelse($pages as $page)
+                            <option value="{{ $page->id }}" {{ $page->id == $service->page_id ? 'selected' : '' }}>{{ $page->name }}</option>
+                        @empty
+                            <option value="">لا يوجد صفحات</option>
+                        @endforelse
+                    </select>
+                </div>
+                <div class="form-group">
                     <input type="submit" class="btn btn-success" value="تعديل">
                 </div>
             </form>

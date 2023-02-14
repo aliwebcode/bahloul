@@ -130,7 +130,9 @@
                     <div class="process-block col-lg-4 col-md-6 col-sm-12"
                          v-for="service in services" :key="service.id">
                         <div class="icon-box"><img src="assets/images/process-3.png" alt=""></div>
-                        <h4>{{service.name_en}}</h4>
+                        <h4>
+                            <a :href="'/en/page/' + service.page_id">{{service.name_en}}</a>
+                        </h4>
                     </div>
 
                 </div>

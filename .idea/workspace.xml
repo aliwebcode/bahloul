@@ -3,14 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="7bd9eba2-50d7-4de9-8f8b-5fa4f7ca2c32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ServicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ServicesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/ar/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ar/front/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/de/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/de/front/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/en/front/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/en/front/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/faq/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/faq/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/services/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/services/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/services/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/services/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -352,7 +353,10 @@
       <workItem from="1664190471279" duration="3944000" />
       <workItem from="1664286528135" duration="800000" />
       <workItem from="1664299153946" duration="931000" />
-      <workItem from="1674994943093" duration="4170000" />
+      <workItem from="1674994943093" duration="7066000" />
+      <workItem from="1675017102099" duration="761000" />
+      <workItem from="1675435633093" duration="554000" />
+      <workItem from="1676380196903" duration="4429000" />
     </task>
     <servers />
   </component>
@@ -360,13 +364,17 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1674997838159">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1676381942571">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1674997838159" />
-    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1674997280550">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1676381942571" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1675436197054">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1674997280550" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1675436197054" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1676380995121">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1676380995121" />
   </component>
 </project>

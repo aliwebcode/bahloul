@@ -128,6 +128,9 @@ Route::group(['prefix' => 'request', 'as' => 'request.'], function () {
             Route::get('/get-services','HomeController@get_services');
         });
 
+        // Pages
+        Route::get('/get-page/{slug}', 'PagesController@index');
+
 
     });
 

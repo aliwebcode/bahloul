@@ -29,6 +29,7 @@ import JobsFront from "../components/de/front/Jobs";
 import Resumes from "../components/de/front/Resumes";
 import Business from "../components/de/front/Business";
 import Home from "../components/de/front/Home";
+import Page from "../components/de/front/Page"
 // Global Components
 import NotFound from "../components/de/global/NotFound";
 
@@ -58,6 +59,7 @@ import JobsFrontEn from "../components/en/front/Jobs";
 import ResumesEn from "../components/en/front/Resumes";
 import BusinessEn from "../components/en/front/Business";
 import HomeEn from "../components/en/front/Home";
+import PageEn from "../components/en/front/Page"
 
 /* Arabic */
 
@@ -85,7 +87,7 @@ import JobsFrontAr from "../components/ar/front/Jobs";
 import ResumesAr from "../components/ar/front/Resumes";
 import BusinessAr from "../components/ar/front/Business";
 import HomeAr from "../components/ar/front/Home";
-
+import PageAr from "../components/ar/front/Page"
 
 const routes = new VueRouter({
     mode: 'history',
@@ -191,6 +193,11 @@ const routes = new VueRouter({
             component: Shortlists,
             name: 'shortlists'
         },
+        {
+            path: '/page/:slug',
+            component: Page,
+            name: 'page'
+        },
         // English
         {
             path: '/en',
@@ -292,6 +299,11 @@ const routes = new VueRouter({
             component: ShortlistsEn,
             name: 'shortlists-en'
         },
+        {
+          path: '/en/page/:slug',
+          component: PageEn,
+          name: 'page-en'
+        },
         // Arabic
         {
             path: '/ar',
@@ -392,6 +404,11 @@ const routes = new VueRouter({
             path: '/ar/profile/shortlists',
             component: ShortlistsAr,
             name: 'shortlists-ar'
+        },
+        {
+            path: '/ar/page/:slug',
+            component: PageAr,
+            name: 'page-ar'
         },
         {
             path: '*',

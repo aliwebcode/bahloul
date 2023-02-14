@@ -65,6 +65,20 @@ Route::group(['namespace' => 'Admin','middleware' => 'auth:admin', 'as' => 'admi
     Route::post('/settings', 'SettingsController@update')->name('settings.update');
 
 
+    // Pages
+    Route::get('/pages', 'PagesController@index')->name('pages.index');
+    // Create Page
+    Route::get('/pages/add', 'PagesController@create')->name('pages.create');
+    // Store Page
+    Route::post('/pages/store', 'PagesController@store')->name('pages.store');
+    // Edit Page
+    Route::get('/pages/{id}/edit', 'PagesController@edit')->name('pages.edit');
+    // Update Page
+    Route::post('/pages/update', 'PagesController@update')->name('pages.update');
+    // Delete Page
+    Route::post('/pages/delete', 'PagesController@delete')->name('pages.delete');
+
+
     /* Admin Area */
 
     // Profile Page
